@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- STREAMING_CHUNK: Configuring document head and loading external dependencies... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инфографика: ИИ в работе депутата Маслихата</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- 
+        ЦВЕТОВАЯ ПАЛИТРА: "Energetic & Playful / Executive Kazakh"
+        - Основной темный (Navy): #1A237E
+        - Акцентный золотой (Gold): #FFD600
+        - Бирюзовый (Teal): #00BFA5
+        - Фон страницы: #F5F7FA
+        - Аварийный красный (Red): #D50000
+    -->
+    <style>
+        :root {
+            --primary: #1A237E;
+            --accent: #FFD600;
+            --tech: #00BFA5;
+            --bg: #F5F7FA;
+            --danger: #D50000;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg);
+            color: #1E293B;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            height: 320px;
+        }
+        .card {
+            background: white;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.12);
+        }
+        .gradient-header {
+            background: linear-gradient(135deg, #1A237E 0%, #0D47A1 50%, #1565C0 100%);
+        }
+        .prompt-code {
+            background-color: #0F172A;
+            color: #E2E8F0;
+            border-left: 4px solid var(--accent);
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .timeline-badge {
+            background: linear-gradient(135deg, #1A237E 0%, #00BFA5 100%);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+    <div class="bg-indigo-950 border-b border-indigo-800 py-2 px-6 text-xs text-white">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href="../index.html" class="hover:text-amber-400 font-semibold flex items-center gap-1">
+            ← Вернуться к каталогу лекций
+        </a>
+        <span class="opacity-60">Раздел: Госсектор & Маслихаты</span>
+    </div>
+</div>
+    <!-- STREAMING_CHUNK: Rendering page header and hero section... -->
+    <header class="gradient-header text-white py-16 px-6 text-center shadow-xl relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-block bg-yellow-400 text-indigo-950 font-bold px-4 py-1 rounded-full text-xs uppercase tracking-widest mb-4">
+                Мастер-скрипт & Практикум
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 uppercase tracking-tight">
+                Искусственный Интеллект для депутата Маслихата
+            </h1>
+            <p class="text-lg md:text-xl opacity-90 font-light max-w-2xl mx-auto leading-relaxed">
+                Мастерство цифровых коммуникаций в эпоху e-Otinish: от снятия информационного цунами до работы с ИИ-ассистентом.
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 max-w-6xl">
+
+        <!-- STREAMING_CHUNK: Building section 1 - Data and problem overview... -->
+        <!-- БЛОК 1: ИНФОРМАЦИОННОЕ ЦУНАМИ И ЭФФЕКТИВНОСТЬ -->
+        <section class="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="card p-8 border-l-8 border-[#1A237E]">
+                <h2 class="text-2xl font-bold mb-4 text-[#1A237E] flex items-center">
+                    <span class="mr-3">📈</span> Рост цифровых обращений
+                </h2>
+                <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                    Поток официальных обращений через систему <strong>e-Otinish</strong> и социальные сети ставит народных избранников перед вызовом: физически невозможно вычитывать сотни документов без потерь качества.
+                </p>
+                <div class="chart-container">
+                    <canvas id="growthChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card p-8 border-l-8 border-[#00BFA5]">
+                <h2 class="text-2xl font-bold mb-4 text-[#1A237E] flex items-center">
+                    <span class="mr-3">⚡</span> Затраты времени: Человек vs ИИ
+                </h2>
+                <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                    ИИ не заменяет депутата, а берет на себя рутину. Сокращение времени обработки типовых документов высвобождает часы для личных встреч с жителями.
+                </p>
+                <div class="chart-container">
+                    <canvas id="efficiencyChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- STREAMING_CHUNK: Building section 2 - Mindset shift metaphors... -->
+        <!-- БЛОК 2: МЕНТАЛЬНЫЙ СДВИГ — 3 МЕТАФОРЫ -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center uppercase tracking-wide text-[#1A237E]">
+                Цифровое мышление: 3 метафоры ИИ
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card p-6 border-t-4 border-[#00BFA5]">
+                    <div class="w-12 h-12 bg-teal-100 text-teal-800 rounded-full flex items-center justify-center text-2xl mb-4 font-bold">⌨️</div>
+                    <h3 class="font-bold text-xl mb-2 text-[#1A237E]">Супер-Т9</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Не мыслящий разум, а космический предсказатель паттернов. Угадывает точную последовательность слов для законов и запросов.
+                    </p>
+                </div>
+                <div class="card p-6 border-t-4 border-[#FFD600]">
+                    <div class="w-12 h-12 bg-yellow-100 text-yellow-800 rounded-full flex items-center justify-center text-2xl mb-4 font-bold">🎓</div>
+                    <h3 class="font-bold text-xl mb-2 text-[#1A237E]">Стажер «Болашак»</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Обладает феноменальной памятью, но нулевым жизненным опытом. Требует точного постановления задач и постоянного контроля "босса".
+                    </p>
+                </div>
+                <div class="card p-6 border-t-4 border-[#1A237E]">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-900 rounded-full flex items-center justify-center text-2xl mb-4 font-bold">🦄</div>
+                    <h3 class="font-bold text-xl mb-2 text-[#1A237E]">Цифровой Кентавр</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Непобедимый симбиоз: интуиция, эмпатия и живой опыт человека в сочетании с вычислительной мощью алгоритмов.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- STREAMING_CHUNK: Building section 3 - Dedicated 1 Day in the Life section... -->
+        <!-- БЛОК 3: ОТДЕЛЬНЫЙ РАЗДЕЛ "1 ДЕНЬ ИЗ ЖИЗНИ ДЕПУТАТА" (Из сценария PDF) -->
+        <section class="mb-16">
+            <div class="bg-indigo-950 text-white rounded-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+                <div class="border-b border-indigo-800 pb-6 mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <span class="bg-[#FFD600] text-indigo-950 text-xs font-bold px-3 py-1 rounded-full uppercase">Сквозной кейс</span>
+                        <h2 class="text-2xl md:text-4xl font-extrabold mt-2 text-white">
+                            📅 1 день из жизни депутата с ИИ-ассистентом
+                        </h2>
+                    </div>
+                    <div class="text-sm opacity-80 max-w-xs">
+                        Хронологическая структура работы квалифицированного референта в течение 24 часов.
+                    </div>
+                </div>
+
+                <!-- Хронологический Таймлайн -->
+                <div class="space-y-10">
+
+                    <!-- Этап 1 -->
+                    <div class="bg-indigo-900/80 p-6 rounded-xl border border-indigo-700/60">
+                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="timeline-badge text-white px-3 py-1 rounded-lg text-sm font-bold">09:00 - 10:00</span>
+                                <h3 class="text-xl font-bold text-yellow-400">Этап 1. Экспресс-анализ перед выездом в округ</h3>
+                            </div>
+                            <span class="text-xs text-teal-300 bg-teal-950/60 border border-teal-800 px-3 py-1 rounded-full">Экономия: 3 часа</span>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-4">
+                            <strong>Задача:</strong> За 10 минут вычленить скрытые триггеры из массива 50 разрозненных жалоб жителей Алматинского района.
+                        </p>
+                        <div class="prompt-code p-4 rounded-lg text-xs leading-relaxed mb-3">
+                            <span class="text-yellow-400 font-bold block mb-1">ПРОМПТ (АНАЛИЗ ЖАЛОБ ОКРУГА):</span>
+                            Проанализируй следующие 50 обращений жителей Алматинского района города.<br>
+                            Выполни три задачи:<br>
+                            1. Выдели топ-3 системные проблемы района, которые упоминаются чаще всего.<br>
+                            2. По каждой проблеме кратко укажи, на какие конкретно локации (улицы, дома) жалуются люди.<br>
+                            3. Сформулируй 3 точечных вопроса, которые мне, как депутату, стоит задать главе районной администрации (акиму) на основе этих жалоб.<br>
+                            Вот текст обращений: [Вставить сырой текст]
+                        </div>
+                        <div class="text-xs text-teal-400 font-semibold">
+                            ✓ Результат: Папка аналитики за 10 минут, точечные вопросы к Акиму района.
+                        </div>
+                    </div>
+
+                    <!-- Этап 2 -->
+                    <div class="bg-indigo-900/80 p-6 rounded-xl border border-indigo-700/60">
+                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="timeline-badge text-white px-3 py-1 rounded-lg text-sm font-bold">11:00 - 13:00</span>
+                                <h3 class="text-xl font-bold text-yellow-400">Этап 2. Интеллектуальное протоколирование встречи</h3>
+                            </div>
+                            <span class="text-xs text-teal-300 bg-teal-950/60 border border-teal-800 px-3 py-1 rounded-full">Экономия: 2 часа</span>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-4">
+                            <strong>Задача:</strong> Перевод аудиозаписи живого диалога во дворах в структурированный протокол встречи без словесного мусора.
+                        </p>
+                        <div class="prompt-code p-4 rounded-lg text-xs leading-relaxed mb-3">
+                            <span class="text-yellow-400 font-bold block mb-1">ПРОМПТ (УМНЫЙ ПРОТОКОЛ):</span>
+                            Перед тобой стенограмма встречи депутата с жителями. Текст содержит разговорные фразы и повторы. Сделай из него официальный протокол по схеме:<br>
+                            1. Дата и место (если упомянуты).<br>
+                            2. Список поднятых вопросов (ФИО жителя, суть проблемы, точный адрес).<br>
+                            3. Принятые решения и обязательства депутата (сроки и действия).<br>
+                            Очисти текст от мусора, сделай тон строго деловым.<br>
+                            Вот стенограмма: [Вставить расшифровку аудио]
+                        </div>
+                        <div class="text-xs text-teal-400 font-semibold">
+                            ✓ Результат: Депутат 100% сфокусирован на живом общении, а не на блокноте.
+                        </div>
+                    </div>
+
+                    <!-- Этап 3 -->
+                    <div class="bg-indigo-900/80 p-6 rounded-xl border border-indigo-700/60">
+                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="timeline-badge text-white px-3 py-1 rounded-lg text-sm font-bold">14:30 - 16:00</span>
+                                <h3 class="text-xl font-bold text-yellow-400">Этап 3. Кабинетная работа (Депутатские запросы)</h3>
+                            </div>
+                            <span class="text-xs text-teal-300 bg-teal-950/60 border border-teal-800 px-3 py-1 rounded-full">Экономия: 4 часа</span>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-4">
+                            <strong>Задача:</strong> Трансформировать пункты протокола в юр. выверенные депутатские запросы в государственные органы.
+                        </p>
+                        <div class="prompt-code p-4 rounded-lg text-xs leading-relaxed mb-3">
+                            <span class="text-yellow-400 font-bold block mb-1">ПРОМПТ (ОФИЦИАЛЬНЫЙ ЗАПРОС):</span>
+                            На основе пункта №2 из протокола (жалоба на бездействие КСК по ул. Абая 12, течь крыши) составь проект Депутатского запроса на имя Руководителя Управления жилищной инспекции.<br>
+                            Требования:<br>
+                            - Официально-деловой и юридический стиль.<br>
+                            - Ссылки на жилищное законодательство РК (оставь маркеры [Указать статью закона]).<br>
+                            - Требование выездной проверки и отчета в установленный законом срок.
+                        </div>
+                        <div class="text-xs text-teal-400 font-semibold">
+                            ✓ Результат: Готовый юридический документ, требующий только подписи.
+                        </div>
+                    </div>
+
+                    <!-- Этап 4 -->
+                    <div class="bg-indigo-900/80 p-6 rounded-xl border border-indigo-700/60">
+                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="timeline-badge text-white px-3 py-1 rounded-lg text-sm font-bold">16:30 - 17:30</span>
+                                <h3 class="text-xl font-bold text-yellow-400">Этап 4. Публичный отчёт и SMM/PR</h3>
+                            </div>
+                            <span class="text-xs text-teal-300 bg-teal-950/60 border border-teal-800 px-3 py-1 rounded-full">Экономия: 2 часа</span>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-4">
+                            <strong>Задача:</strong> Упаковать протокол встречи в мультиформатные медиа-продукты для граждан и СМИ.
+                        </p>
+                        <div class="prompt-code p-4 rounded-lg text-xs leading-relaxed mb-3">
+                            <span class="text-yellow-400 font-bold block mb-1">ПРОМПТ (МУЛЬТИФОРМАТНЫЙ PR):</span>
+                            Используя протокол нашей встречи с жителями, создай три медиа-продукта:<br>
+                            1. Пост для Telegram-канала депутата (живой тон, эмодзи, хэштеги).<br>
+                            2. Официальный пресс-релиз для СМИ (строгий новостной стиль, заголовок).<br>
+                            3. Сценарий (раскадровка) для 60-секундного видео-отчета Reels/Shorts (текст и B-roll).
+                        </div>
+                        <div class="text-xs text-teal-400 font-semibold">
+                            ✓ Результат: Полный пакет медиа-контента за 2 минуты без найма SMM-агентства.
+                        </div>
+                    </div>
+
+                    <!-- Этап 5 -->
+                    <div class="bg-indigo-900/80 p-6 rounded-xl border border-indigo-700/60">
+                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="timeline-badge text-white px-3 py-1 rounded-lg text-sm font-bold">18:00 - 19:00</span>
+                                <h3 class="text-xl font-bold text-yellow-400">Этап 5. Мониторинг обратной связи</h3>
+                            </div>
+                            <span class="text-xs text-teal-300 bg-teal-950/60 border border-teal-800 px-3 py-1 rounded-full">Экономия: 1.5 часа</span>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-4">
+                            <strong>Задача:</strong> Экспресс-анализ тональности комментариев под опубликованными постами без ручного чтения.
+                        </p>
+                        <div class="text-xs text-teal-400 font-semibold">
+                            ✓ Результат: Понимание реального социального настроения округа и сгруппированные новые предложения.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- STREAMING_CHUNK: Building section 4 - Useful Prompts Library... -->
+        <!-- БЛОК 4: БИБЛИОТЕКА «ПОЛЕЗНЫЕ ПРОМПТЫ» (Кейсы из лекции) -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center uppercase tracking-wide text-[#1A237E]">
+                📚 Полезные промпты (Библиотека депутата)
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Промпт 1: Двуязычие -->
+                <div class="card p-6 border-l-8 border-[#00BFA5]">
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="font-bold text-lg text-[#1A237E]">1. Двуязычие & Казахский стилистический регистр</h3>
+                        <span class="text-xs bg-teal-100 text-teal-800 px-2 py-1 rounded font-bold">Языковой баланс</span>
+                    </div>
+                    <p class="text-gray-600 text-xs mb-4">
+                        ИИ переводит не просто слова, а контекст и форму уважения к аксакалам или молодежи.
+                    </p>
+                    <div class="prompt-code p-4 rounded-lg text-xs mb-3">
+                        "Переведи данный текст на государственный язык. Стиль — [іскерлік-ресми стиль / қарапайым, халыққа жақын, сыпайы]. Учти нормы уважения при обращении к жителям старшего поколения."
+                    </div>
+                    <div class="text-xs text-gray-500 italic">
+                        * Лайфхак: Добавляйте метку «іскерлік-ресми» для запросов и «халыққа жақын» для соцсетей.
+                    </div>
+                </div>
+
+                <!-- Промпт 2: Анализ 150-страничных бюджетов -->
+                <div class="card p-6 border-l-8 border-[#FFD600]">
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="font-bold text-lg text-[#1A237E]">2. Сжатие 150-страничных отчетов и бюджетов</h3>
+                        <span class="text-xs bg-yellow-100 text-yellow-900 px-2 py-1 rounded font-bold">Аналитика</span>
+                    </div>
+                    <p class="text-gray-600 text-xs mb-4">
+                        Быстрый поиск нестыковок и неосвоенных средств перед сессией Маслихата.
+                    </p>
+                    <div class="prompt-code p-4 rounded-lg text-xs mb-3">
+                        "Найди в документе разделы о финансировании ремонта школ. Выпиши таблицу: выделено vs потрачено, и несданные объекты. Выдели жирным нестыковки в цифрах."
+                    </div>
+                    <div class="text-xs text-gray-500 italic">
+                        * Позволяет задавать точечные вопросы руководителям Управлений акимата на заседаниях комиссий.
+                    </div>
+                </div>
+
+                <!-- Промпт 3: Антикризисный кейс "Автобус №45" -->
+                <div class="card p-6 border-l-8 border-[#1A237E]">
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="font-bold text-lg text-[#1A237E]">3. Антикризис: Кейс Маршрута №45</h3>
+                        <span class="text-xs bg-indigo-100 text-indigo-900 px-2 py-1 rounded font-bold">Кризис-менеджмент</span>
+                    </div>
+                    <p class="text-gray-600 text-xs mb-4">
+                        Разрядка социальной напряженности при угрозе перекрытия дорог или митингов.
+                    </p>
+                    <div class="prompt-code p-4 rounded-lg text-xs mb-3">
+                        "В моем округе ЧП / недовольство жителей маршрутом №45. 1. Выдели социальные риски. 2. Напиши запрос Акиму по Закону 'О статусе депутатов'. 3. Напиши теплый пост в WhatsApp."
+                    </div>
+                    <div class="text-xs text-gray-500 italic">
+                        * Снимает панику за 2 минуты, трансформируя эмоции в четкий правовой алгоритм.
+                    </div>
+                </div>
+
+                <!-- Промпт 4: Анти-Дипфейк пиар -->
+                <div class="card p-6 border-l-8 border-red-600">
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="font-bold text-lg text-[#1A237E]">4. Защита от информационной атаки (Дипфейки)</h3>
+                        <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded font-bold">Репутация</span>
+                    </div>
+                    <p class="text-gray-600 text-xs mb-4">
+                        Реактивный ответ на провокации и поддельные аудио/видео материалы в сети.
+                    </p>
+                    <div class="prompt-code p-4 rounded-lg text-xs mb-3">
+                        "Составь официальное заявление депутата в связи с распространением сгенерированного дипфейка. Тон: спокойный, уверенный, с упоминанием передачи материалов на цифровую экспертизу Минюста РК."
+                    </div>
+                    <div class="text-xs text-gray-500 italic">
+                        * Помогает сохранить хладнокровие и оперативно перехватить инициативу в СМИ.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- STREAMING_CHUNK: Building section 5 - Digital hygiene and security... -->
+        <!-- БЛОК 5: ЦИФРОВАЯ ГИГИЕНА И БЕЗОПАСНОСТЬ -->
+        <section class="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="card p-8 border-l-8 border-red-600">
+                <h2 class="text-2xl font-bold mb-4 text-red-600 flex items-center">
+                    <span class="mr-3">⚠️</span> Ловушки и цифровая гигиена
+                </h2>
+                <div class="space-y-6 text-sm">
+                    <div>
+                        <h4 class="font-bold text-gray-900">1. Галлюцинации ИИ</h4>
+                        <p class="text-gray-600 text-xs mt-1">
+                            ИИ может выдумать норму закона (как в деле адвоката Шварца в США). <strong>Правило:</strong> ИИ дает форму, но фактчекинг делает человек!
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900">2. Конфиденциальность и Закон РК «О персональных данных»</h4>
+                        <p class="text-gray-600 text-xs mt-1">
+                            Не загружайте ИИН, адреса и служебные документы ДСП в открытые нейросети. Обезличивайте данные (Ибрагимов Б.А. ➔ Гражданин А).
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900">3. Дипфейк-защита («Кодовое слово»)</h4>
+                        <p class="text-gray-600 text-xs mt-1">
+                            Внедрите секретный пароль (например, «Байтерек-2015») внутри аппарата для подтверждения голосовых поручений в WhatsApp.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-8">
+                <h2 class="text-2xl font-bold mb-4 text-[#1A237E]">Матрица рисков для депутата</h2>
+                <div class="chart-container">
+                    <canvas id="riskChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- STREAMING_CHUNK: Building footer... -->
+    <footer class="bg-gray-900 text-white py-12 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-bold mb-3">«Цифровой чемоданчик депутата»</h2>
+            <p class="text-gray-400 text-sm mb-6">
+                Сборник 20 выверенных инструкций-промптов для ChatGPT и Claude, разработанных под законодательство Республики Казахстан.
+            </p>
+            <button class="bg-[#FFD600] text-indigo-950 font-bold px-8 py-4 rounded-full text-sm uppercase tracking-wider hover:bg-yellow-300 transition-all transform hover:scale-105 shadow-lg">
+                Получить доступ к библиотеке промптов
+            </button>
+            <div class="mt-8 text-xs text-gray-600">
+                &copy; 2026 Программа цифровизации Маслихатов Республики Казахстан. Для профессионального использования.
+            </div>
+        </div>
+    </footer>
+
+    <!-- STREAMING_CHUNK: Scripting chart rendering logic... -->
+    <script>
+        // Функция автоматического переноса строк подписей для Chart.js
+        function wrapLabel(label, limit = 16) {
+            if (Array.isArray(label)) return label;
+            if (label.length <= limit) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+
+            words.forEach(word => {
+                if ((currentLine + word).length <= limit) {
+                    currentLine += (currentLine === '' ? '' : ' ') + word;
+                } else {
+                    lines.push(currentLine);
+                    currentLine = word;
+                }
+            });
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // Стандартная конфигурация тултипов
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // 1. График роста обращений
+        const ctxGrowth = document.getElementById('growthChart').getContext('2d');
+        new Chart(ctxGrowth, {
+            type: 'line',
+            data: {
+                labels: ['2020', '2021', '2022', '2023', '2024 (прогноз)'],
+                datasets: [{
+                    label: 'Объем обращений в e-Otinish',
+                    data: [100, 145, 210, 280, 390],
+                    borderColor: '#1A237E',
+                    backgroundColor: 'rgba(26, 35, 126, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false }, tooltip: tooltipConfig },
+                scales: {
+                    y: { beginAtZero: true, grid: { display: false } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // 2. График эффективности обработки задач
+        const ctxEff = document.getElementById('efficiencyChart').getContext('2d');
+        new Chart(ctxEff, {
+            type: 'bar',
+            data: {
+                labels: [
+                    wrapLabel('Анализ отчета (150 стр)'),
+                    wrapLabel('Кризисный пост в соцсетях'),
+                    wrapLabel('Официальный запрос в Акимат')
+                ],
+                datasets: [
+                    {
+                        label: 'Вручную (минуты)',
+                        data: [120, 45, 60],
+                        backgroundColor: '#1A237E'
+                    },
+                    {
+                        label: 'С ИИ (минуты)',
+                        data: [2, 1, 1],
+                        backgroundColor: '#FFD600'
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: { tooltip: tooltipConfig },
+                scales: {
+                    x: { title: { display: true, text: 'Время (минуты)' }, grid: { display: false } }
+                }
+            }
+        });
+
+        // 3. Полярный график рисков
+        const ctxRisk = document.getElementById('riskChart').getContext('2d');
+        new Chart(ctxRisk, {
+            type: 'polarArea',
+            data: {
+                labels: [
+                    wrapLabel('Нарушение Закона о ПД'),
+                    wrapLabel('Галлюцинации законов'),
+                    wrapLabel('Дипфейк-мошенничество'),
+                    wrapLabel('Репутационный риск отписок')
+                ],
+                datasets: [{
+                    data: [85, 70, 95, 60],
+                    backgroundColor: [
+                        'rgba(26, 35, 126, 0.7)',
+                        'rgba(255, 214, 0, 0.7)',
+                        'rgba(213, 0, 0, 0.7)',
+                        'rgba(0, 191, 165, 0.7)'
+                    ]
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: { tooltip: tooltipConfig },
+                scales: { r: { ticks: { display: false } } }
+            }
+        });
+    </script>
+</body>
+</html>
+```eof
