@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генеративті ЖИ жүйелері | Генеративные системы ИИ</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <meta name="description" content="LLM жүйелерін (ChatGPT, Gemini) құжаттамада, арыздарды талдауда және ресми хаттар дайындауда қауіпсіз қолдану. Интерактивті промпттар кітапханасы.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Генеративті ЖИ жүйелері: Мемлекеттік сектордағы тәжірибе">
+    <meta property="og:description" content="LLM жүйелерін (ChatGPT, Gemini) құжаттамада, арыздарды талдауда және ресми хаттар дайындауда қауіпсіз қолдану. Интерактивті промпттар кітапханасы.">
+    <meta property="og:image" content="../assets/images/lector.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Генеративті ЖИ жүйелері: Мемлекеттік сектордағы тәжірибе">
+    <meta name="twitter:description" content="LLM жүйелерін (ChatGPT, Gemini) құжаттамада, арыздарды талдауда және ресми хаттар дайындауда қауіпсіз қолдану. Интерактивті промпттар кітапханасы.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/lecture.css">
+    <style>
+        .gradient-header {
+            background: linear-gradient(135deg, #1A237E 0%, #0D47A1 50%, #1565C0 100%);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden" data-lang="kk">
+
+    <!-- Верхняя панель навигации и переключатель языка -->
+    <div class="bg-indigo-950 border-b border-indigo-800 py-3 px-6 text-sm text-white sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="../index.html" class="hover:text-amber-400 font-semibold flex items-center gap-1 transition-colors">
+                ← <span class="lang-kk">Дәрістер каталогына оралу</span><span class="lang-ru">Вернуться к каталогу лекций</span>
+            </a>
+            
+            <div class="flex items-center gap-4">
+                <span class="opacity-60 hidden sm:inline">
+                    <span class="lang-kk">Бөлім: Мемлекеттік сектор & ЖИ</span><span class="lang-ru">Раздел: Госсектор & ИИ</span>
+                </span>
+
+                <!-- Языковой переключатель -->
+                <div class="inline-flex items-center bg-indigo-900/80 p-1 rounded-xl border border-indigo-700/60 text-sm">
+                    <button onclick="setLanguage('kk')" id="btn-lang-kk" class="px-3 py-1 rounded-lg transition-all text-indigo-950 bg-amber-400 font-bold shadow">
+                        ҚАЗ
+                    </button>
+                    <button onclick="setLanguage('ru')" id="btn-lang-ru" class="px-3 py-1 rounded-lg transition-all text-indigo-200 hover:text-white">
+                        RU
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Хедер статьи -->
+    <header class="gradient-header text-white py-14 px-6 text-center shadow-xl relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-block bg-amber-400 text-indigo-950 font-bold px-4 py-1 rounded-full text-sm uppercase tracking-widest mb-4 shadow-sm">
+                <span class="lang-kk">Интерактивті дәріс & Практикум</span>
+                <span class="lang-ru">Интерактивная лекция & Практикум</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight">
+                <span class="lang-kk">Генеративті жасанды интеллект жүйелері</span>
+                <span class="lang-ru">Генеративные системы искусственного интеллекта</span>
+            </h1>
+            <p class="text-base md:text-xl opacity-90 font-light max-w-3xl mx-auto leading-relaxed text-indigo-100">
+                <span class="lang-kk">Мемлекеттік қызметшілерге арналған практикум: LLM жүйелерін құжаттамада, аналитикада және азаматтармен коммуникацияда қауіпсіз қолдану.</span>
+                <span class="lang-ru">Практикум для госслужащих: безопасная интеграция LLM в документооборот, аналитику и коммуникации с гражданами.</span>
+            </p>
+
+            <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm font-medium text-slate-200">
+                
+                <span class="bg-indigo-900/60 px-3 py-1.5 rounded-lg border border-indigo-700/50">🎯 <span class="lang-kk">ҚР Мемлекеттік қызметшілері</span><span class="lang-ru">Госслужащие РК</span></span>
+                <span class="bg-indigo-900/60 px-3 py-1.5 rounded-lg border border-indigo-700/50">💻 <span class="lang-kk">Демонстрация + Промпттар</span><span class="lang-ru">Демонстрация + Промпты</span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент страницы -->
+    <main class="container mx-auto px-4 py-12 max-w-6xl">
+
+        <!-- БЛОК 1: КІРІСПЕ ЖӘНЕ НЕГІЗГІ КОНЦЕПЦИЯЛАР -->
+        <section class="mb-16">
+            <div class="card p-8 border-l-8 border-[#1A237E]">
+                <h2 class="text-2xl font-bold mb-4 text-[#1A237E] flex items-center">
+                    <span class="mr-3">🚀</span> 
+                    <span class="lang-kk">1. Кіріспе және негізгі концепциялар</span>
+                    <span class="lang-ru">1. Введение и основные концепции</span>
+                </h2>
+
+                <!-- Вводный текст лекции -->
+                <div class="bg-slate-50 border-l-4 border-indigo-900 p-6 rounded-r-xl mb-6 text-base text-slate-700 leading-relaxed">
+                    <span class="lang-kk">Бүгін біз бүкіл әлемдегі мемлекеттік басқаруды өзгертіп жатқан технология — <strong>генеративті жасанды интеллект</strong> туралы сөйлесеміз.<br><br>Қарапайым фактіден бастайық: өткен жылдың басында ChatGPT сервисі іске қосылып, бар болғаны <strong>2 ай ішінде 100 миллион пайдаланушы</strong> жинады! Салыстыру үшін: Instagram бұл межеге 2,5 жылда, ал телефон — 75 жылда жеткен еді. Бұл жай ғана интернет-сервис емес, бұл мемлекеттік қызметшілердің күнделікті жұмыс уақытын үнемдейтін заманауи құрал.</span>
+                    <span class="lang-ru">Сегодня мы говорим о технологии, которая кардинально меняет государственное управление по всему миру — о <strong>генеративном искусственном интеллекте</strong>.<br><br>Начнём с простого факта: сервис ChatGPT за первые <strong>2 месяца набрал 100 миллионов пользователей</strong>! Для сравнения: Instagram для этого потребовалось 2,5 года, а городскому телефону — 75 лет. Это не просто интернет-сервис, а рабочий инструмент, который уже сегодня освобождает госслужащих от рутины.</span>
+                </div>
+
+                <!-- Сравнение Обычного и Генеративного ИИ -->
+                <h3 class="font-bold text-lg text-indigo-950 mb-4 mt-8">
+                    <span class="lang-kk">ЖИ аналогиясы: Әдеттегі ЖИ vs Генеративті ЖИ</span>
+                    <span class="lang-ru">Аналогия ИИ: Обычный ИИ vs Генеративный ИИ</span>
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="card p-6 border-t-4 border-slate-400 bg-slate-50">
+                        <div class="text-2xl mb-2">⚙️</div>
+                        <h4 class="font-bold text-indigo-950 mb-2">
+                            <span class="lang-kk">Обычный (Классикалық) ЖИ</span>
+                            <span class="lang-ru">Обычный (Классический) ИИ</span>
+                        </h4>
+                        <p class="text-base text-slate-600 leading-relaxed">
+                            <span class="lang-kk">Поштадағы <strong>автоматты сұрыптау желісі</strong> сияқты: кіріс хаттарды қалталарға бөледі («жалоба», «запрос», «спам»). Жас жаңа мазмұн жасамайды.</span>
+                            <span class="lang-ru">Как <strong>автоматическая сортировочная линия на почте</strong>: он раскладывает письма по ящикам (классифицирует). Новый контент не создаёт.</span>
+                        </p>
+                    </div>
+
+                    <div class="card p-6 border-t-4 border-amber-400 bg-amber-50/50">
+                        <div class="text-2xl mb-2">✨</div>
+                        <h4 class="font-bold text-indigo-950 mb-2">
+                            <span class="lang-kk">Генеративті ЖИ</span>
+                            <span class="lang-ru">Генеративный ИИ</span>
+                        </h4>
+                        <p class="text-base text-slate-600 leading-relaxed">
+                            <span class="lang-kk">Акиматтың 10 жылдық архивін, барлық заңдарды оқып шыққан <strong>тәжірибелі хатшы</strong> сияқты. Сіздің тапсырмаңыз бойынша жаңа ресми құжаттың жобасын дайындайды.</span>
+                            <span class="lang-ru">Как <strong>опытный секретарь</strong>, прочитавший все архивы акимата за 10 лет и все законы. Он сам составляет готовый юридический черновик ответа.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 2: ТӘЖІРИБЕЛІК ДЕМОНСТРАЦИЯ -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center tracking-wide text-[#1A237E]">
+                <span class="lang-kk">🖥️ ChatGPT-ті жұмыста қолдану демонстрациясы</span>
+                <span class="lang-ru">🖥️ Живая демонстрация ChatGPT в работе</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Демо 1 -->
+                <div class="card p-6 border-l-8 border-[#00BFA5] flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="font-bold text-base text-[#1A237E]">
+                                <span class="lang-kk">1. Әкімнің ресми хатын дайындау</span>
+                                <span class="lang-ru">1. Подготовка официального письма акима</span>
+                            </h3>
+                            <span class="text-[10px] bg-teal-100 text-teal-800 font-bold px-2 py-0.5 rounded">e-Otinish / Құжат</span>
+                        </div>
+                        <p class="text-base text-slate-600 mb-4">
+                            <span class="lang-kk">Суды жоспарлы өшіру туралы тұрғындарға арналған ресми хаттың жобасын 10 секундта жасау.</span>
+                            <span class="lang-ru">Создание готового официального уведомления жителям о плановом отключении воды за 10 секунд.</span>
+                        </p>
+                        <div class="prompt-card relative">
+                            <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-4">
+                                <span class="text-amber-400 font-bold block mb-1">ПРОМПТ:</span>
+<span class="lang-kk">Аудан әкімінің атынан тұрғындарға ресми хат дайында.
+Тақырыбы: Сумен қамтуды жоспарлы өшіру
+Мәліметтер:
+- Күні: 2025 жылғы 5-7 қараша
+- Аумақ: Абай көшесі, 125-200 үйлер
+- Себебі: Магистральды жүйені техникалық жөндеу
+- Уақыты: 08:00 - 18:00
+- Талап: Кешірім сұрау, су қорын жинауды ұсыну. Түр: ресми, сыпайы.</span>
+<span class="lang-ru">Составь официальное письмо от имени акима района к жителям.
+Тема: Плановое отключение водоснабжения
+Детали:
+- Дата: 5-7 ноября 2025 года
+- Район: квартиры по улице Абая, дом 125-200
+- Причина: техническое обслуживание системы
+- Время: с 8:00 до 18:00
+- Требование: извиниться, рекомендовать запастись водой. Тон: официальный, вежливый.</span>
+                            </div>
+                            <button onclick="copyPrompt(this)" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                                <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Демо 2 -->
+                <div class="card p-6 border-l-8 border-[#FFD600] flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="font-bold text-base text-[#1A237E]">
+                                <span class="lang-kk">2. Азаматтың арызын экспресс-талдау</span>
+                                <span class="lang-ru">2. Экспресс-анализ жалобы гражданина</span>
+                            </h3>
+                            <span class="text-[10px] bg-amber-100 text-amber-900 font-bold px-2 py-0.5 rounded">Аналитика</span>
+                        </div>
+                        <p class="text-base text-slate-600 mb-4">
+                            <span class="lang-kk">Ұзын арыздан 5 секунд ішінде негізгі фактілерді, түйінді мәселені және қай бөлімге бағыттау керектігін анықтау.</span>
+                            <span class="lang-ru">Извлечение сути, ключевых фактов и маршрутизация сложного обращения за 5 секунд.</span>
+                        </p>
+                        <div class="prompt-card relative">
+                            <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-4">
+                                <span class="text-amber-400 font-bold block mb-1">ПРОМПТ:</span>
+<span class="lang-kk">Төмендегі арыз мәтінін талдап, 3 нәрсені шығар:
+1. Басты мәселе (1 сөйлем)
+2. Негізгі фактілер (3 пункт)
+3. Қай бөлімге жіберу керек және неге?
+
+Мәтін: "Сәлеметсіз бе! Мен 3 қарашада үйімде жарықты ескертусіз өшіргені үшін арызданамын. Мен 73 жастағы зейнеткермін, созылмалы ауруым бар. Берешегім 2500 тг болған, бірақ ереже бойынша 5 күн бұрын тапсырыс хатпен ескертулеріңіз керек еді. Өтемақы талап етемін."</span>
+<span class="lang-ru">Я дам тебе текст жалобы от гражданина. Сделай три вещи:
+1. Главная проблема в одном предложении.
+2. Ключевые факты (3-5 пунктов).
+3. Рекомендация — какому отделу отправить и почему.
+
+Текст: "Добрый день! Я хочу подать жалобу на неправомерное отключение электроэнергии 3 ноября без уведомления. Я пенсионер, мне 73 года, болею. Долг 2500 тг, но по регламенту вы обязаны уведомить за 5 дней заказным письмом. Требую восстановление и компенсацию."</span>
+                            </div>
+                            <button onclick="copyPrompt(this)" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                                <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 3: ШЕКТЕУЛЕР ЖӘНЕ ҚАУІПСІЗДІК -->
+        <section class="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="card p-8 border-l-8 border-red-600">
+                <h2 class="text-2xl font-bold mb-4 text-red-600 flex items-center">
+                    <span class="mr-3">⚠️</span> 
+                    <span class="lang-kk">ЖИ шектеулері мен қауіпсіздік</span>
+                    <span class="lang-ru">Ограничения и безопасность ИИ</span>
+                </h2>
+                <div class="space-y-4 text-sm text-slate-700 leading-relaxed">
+                    <div class="p-3 bg-red-50 rounded-lg border border-red-100">
+                        <strong class="text-red-900 block font-bold mb-0.5">1. Галлюцинациялар (Hallucinations):</strong>
+                        <span class="lang-kk">ЖИ жоқ заң баптары мен заңнамалық нөмірлерді ойдан шығаруы мүмкін. <strong>Ереже:</strong> Барлық фактілер мен баптарды адам тексереді!</span>
+                        <span class="lang-ru">ИИ может сгенерировать выдуманные номера законов. <strong>Правило:</strong> Всегда проверяйте факты и статьи законов вручную!</span>
+                    </div>
+
+                    <div class="p-3 bg-red-50 rounded-lg border border-red-100">
+                        <strong class="text-red-900 block font-bold mb-0.5">2. Дербес деректерді қорғау:</strong>
+                        <span class="lang-kk">Ашық ЖИ жүйелеріне азаматтардың ЖСН (ИИН), төлқұжат нөмірлерін, құпия қызметтік құжаттарды енгізуге <strong>қатаң тыйым салынады</strong>. Деректерді анонимдеңіз!</span>
+                        <span class="lang-ru">Категорически запрещено вводить ИИН, паспортные данные граждан и секретные документы. Обезличивайте данные!</span>
+                    </div>
+
+                    <div class="p-3 bg-slate-100 rounded-lg">
+                        <strong class="text-slate-900 block font-bold mb-0.5">3. Жауапкершілік:</strong>
+                        <span class="lang-kk">ЖИ — тек ассистент. Заңды және әлеуметтік жауапкершілікті тек <strong>мемлекеттік қызметші (адам)</strong> арқалайды.</span>
+                        <span class="lang-ru">ИИ — только ассистент. Юридическую ответственность за принятое решение несёт только госслужащий.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Экономический эффект -->
+            <div class="card p-8 border-l-8 border-[#1A237E] flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold mb-4 text-[#1A237E] flex items-center">
+                        <span class="mr-3">📈</span> 
+                        <span class="lang-kk">Қазақстан үшін экономикалық тиімділік</span>
+                        <span class="lang-ru">Экономический эффект для Казахстана</span>
+                    </h2>
+                    <p class="text-base text-slate-600 mb-6 leading-relaxed">
+                        <span class="lang-kk">Қазақстандағы 100 000 мемлекеттік қызметші күнделікті рутиналық жұмыс уақытын ИИ арқылы 105 минутқа қысқартса:</span>
+                        <span class="lang-ru">Если 100 000 госслужащих РК сократят рутинную нагрузку на 105 минут в день благодаря ИИ:</span>
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100">
+                            <div class="text-2xl font-extrabold text-indigo-950">10.5 млн</div>
+                            <div class="text-sm text-slate-500 mt-1">
+                                <span class="lang-kk">сағат/жыл үнемделеді</span><span class="lang-ru">часов/год экономии</span>
+                            </div>
+                        </div>
+                        <div class="bg-amber-50 p-4 rounded-xl border border-amber-200">
+                            <div class="text-2xl font-extrabold text-amber-900">2.6 млрд ₸</div>
+                            <div class="text-sm text-amber-800 mt-1">
+                                <span class="lang-kk">бюджет үнемдеу эквиваленті</span><span class="lang-ru">эквивалент экономии</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 text-sm text-slate-500 italic bg-slate-50 p-3 rounded-lg border border-slate-200">
+                    <span class="lang-kk">«Депутаттар мен мемлекеттік қызметшілер рутинадан босап, азаматтармен тікелей жұмыс істеуге көбірек уақыт бөледі.»</span>
+                    <span class="lang-ru">«Освобождение от рутины позволяет фокусироваться на живом общении с гражданами и принятии решений.»</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 4: ИНТЕРАКТИВТІ ПРАКТИКУМ -->
+        <section class="mt-16 bg-gradient-to-b from-sky-50 to-indigo-50 border-2 border-sky-200 rounded-3xl p-6 md:p-10 shadow-xl">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="bg-sky-600 text-white font-bold px-4 py-1 rounded-full text-sm uppercase tracking-widest shadow-sm">
+                    <span class="lang-kk">Өз бетінше тексеру</span><span class="lang-ru">Самостоятельная проверка</span>
+                </span>
+                <h2 class="text-2xl md:text-4xl font-extrabold mt-3 text-sky-950">
+                    🚀 <span class="lang-kk">Практикалық интерактивті блок</span>
+                    <span class="lang-ru">Практический интерактивный блок</span>
+                </h2>
+                <p class="text-base md:text-base text-sky-800 mt-2 leading-relaxed">
+                    <span class="lang-kk">Төмендегі дайын кейстердің промптын басып көшіріп алыңыз да, ашық ChatGPT (chat.openai.com), Gemini немесе Claude жүйесіне қойып, нәтижесін бірден тексеріңіз!</span>
+                    <span class="lang-ru">Скопируйте готовые промпты ниже, вставьте их в бесплатный ChatGPT (chat.openai.com), Gemini или Claude и мгновенно оцените результат!</span>
+                </p>
+            </div>
+
+            <div class="space-y-6">
+
+                <!-- Кейс 1 -->
+                <div class="card p-6 border border-sky-100">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-8 h-8 rounded-full bg-sky-600 text-white font-bold flex items-center justify-center text-sm shadow-sm">1</span>
+                        <h3 class="font-bold text-base text-sky-950">
+                            <span class="lang-kk">Кейс 1: ТҮКШ (ЖКХ) арызын экспресс-талдау</span>
+                            <span class="lang-ru">Кейс 1: Экспресс-анализ жалобы по ЖКХ</span>
+                        </h3>
+                    </div>
+                    <p class="text-base text-slate-600 mb-4">
+                        <span class="lang-kk">Азаматтың эмоционалды хатынан негізгі түйінді 3 секундта шығару:</span>
+                        <span class="lang-ru">Вычленение сути из эмоционального обращения гражданина за 3 секунды:</span>
+                    </p>
+                    <div class="prompt-card">
+                        <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-3">
+<span class="lang-kk">Төмендегі арызды талдап, қысқаша қорытынды бер:
+1. Мәселенің басты түйіні (1 сөйлем)
+2. Негізгі фактілер (күні, мекенжайы, сомасы)
+3. Әкімдіктің қай бөліміне тапсыру керек?
+4. Шұғылдық деңгейі (Жай / Шұғыл / Критикалық)
+
+Арыз мәтіні:
+"Сәлеметсіз бе! Сатпаев көшесі 45 үйдің ауласында құбыр жарылып, су ағып жатқанына екі күн болды! 'Сервис-Плюс' басқарушы компаниясы телефонға жауап бермейді. Кеше су подвалға кіріп, жарық өшті. Үйде зейнеткерлер мен кішкентай балалар бар! Тез арада авариялық бригада жіберулеріңізді талап етеміз!"</span>
+<span class="lang-ru">Проанализируй следующую жалобу и выдай короткую выжимку:
+1. Главная суть проблемы (1 предложение)
+2. Ключевые факты (дата, адрес, сумма)
+3. Какому отделу акимата передать в работу?
+4. Уровень срочности (Обычный / Срочный / Критический)
+
+Вот текст жалобы:
+"Здравствуйте! Наш дом по ул. Сатпаева 45 затапливает из-за прорыва трубы во дворе уже вторые сутки! Управляющая компания 'Сервис-Плюс' на звонки не отвечает, диспетчер грубит. Вчера вода подтопила подвал и отключилось электричество. В доме живут пенсионеры и маленькие дети! Требуем срочно прислать аварийную бригаду!"</span>
+                        </div>
+                        <button onclick="copyPrompt(this)" class="bg-sky-700 hover:bg-sky-800 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                            <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Кейс 2 -->
+                <div class="card p-6 border border-sky-100">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-8 h-8 rounded-full bg-sky-600 text-white font-bold flex items-center justify-center text-sm shadow-sm">2</span>
+                        <h3 class="font-bold text-base text-sky-950">
+                            <span class="lang-kk">Кейс 2: Нормативтік құжатты тұрғындарға бейімдеу</span>
+                            <span class="lang-ru">Кейс 2: Адаптация нормативного документа для жителей</span>
+                        </h3>
+                    </div>
+                    <p class="text-base text-slate-600 mb-4">
+                        <span class="lang-kk">Ресми құжат мәтінін Instagram/Telegram-ға арналған қарапайым постқа айналдыру:</span>
+                        <span class="lang-ru">Превращение сухого текста постановления в понятный пост для соцсетей:</span>
+                    </p>
+                    <div class="prompt-card">
+                        <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-3">
+<span class="lang-kk">Бұл қаулы мәтінін аудан тұрғындарына түсінікті тілде қайта жаз.
+Instagram форматында жаса: эмодзилерді, құрылымдалған тізімді және соңында әрекетке шақыруды қос.
+
+Мәтін:
+"№504 қаулыға сәйкес, келесі айдың 1-ші жұлдызынан бастап халықтың әлеуметтік осал топтары санаттары үшін жылыту жабдықтарын ауыстыру бойынша шығындарды өтеуге құжаттарды қабылдау басталады. Өтініш берушілер eGov.kz порталы арқылы табысының жоқтығы туралы анықтаманы, тұрғын үйді тексеру актісін ұсынуы тиіс."</span>
+<span class="lang-ru">Перепиши этот текст постановления простым и понятным языком для жителей района.
+Сделай формат поста для Instagram: используй структурированный список, эмодзи и понятный призыв к действию.
+
+Текст:
+"Согласно постановлению №504, с 1-го числа следующего месяца начинается приём документов на возмещение затрат по замене отопительного оборудования для категорий социально уязвимых слоёв населения. Заявители должны предоставить справку об отсутствии доходов, акт обследования жилья и документы на собственность через портал eGov.kz."</span>
+                        </div>
+                        <button onclick="copyPrompt(this)" class="bg-sky-700 hover:bg-sky-800 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                            <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Кейс 3 -->
+                <div class="card p-6 border border-sky-100">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-8 h-8 rounded-full bg-sky-600 text-white font-bold flex items-center justify-center text-sm shadow-sm">3</span>
+                        <h3 class="font-bold text-base text-sky-950">
+                            <span class="lang-kk">Кейс 3: Солысу күн тәртібін 1 минутта құрастыру</span>
+                            <span class="lang-ru">Кейс 3: Генератор повестки совещания за 1 минуту</span>
+                        </h3>
+                    </div>
+                    <div class="prompt-card">
+                        <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-3">
+<span class="lang-kk">Әкімдіктің 60 минуттық жумыс кеңесін жоспарлап бер.
+Тақырыбы: Жылыту маусымына дайындық және жылу желілерін жөндеу.
+Дайында:
+1. Минутпен есептелген күн тәртібі
+2. ТҮКШ бөлімі басшысына қойылатын 3 өткір сұрақ
+3. Хаттама шешімдерінің дайын шаблоны</span>
+<span class="lang-ru">Спланируй рабочее совещание акимата на 60 минут.
+Тема: Подготовка к отопительному сезону и ремонт теплосетей.
+Создай:
+1. Повестку дня с тайм-слотами по минутам
+2. 3 острых вопроса руководителю отдела ЖКХ
+3. Шаблон итогового протокола решений</span>
+                        </div>
+                        <button onclick="copyPrompt(this)" class="bg-sky-700 hover:bg-sky-800 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                            <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Футер страницы -->
+    <footer class="bg-indigo-950 text-white py-10 px-6 text-center text-sm border-t border-indigo-900">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-slate-400 mb-2">
+                &copy; 2026 <span class="lang-kk">Сандық коммуникациялар & ЖИ білім порталы. Барлық құқықтар қорғалған.</span>
+                <span class="lang-ru">Образовательный портал цифровых коммуникаций и ИИ. Все права защищены.</span>
+            </p>
+            <p class="text-slate-500 text-sm">
+                <span class="lang-kk">Қазақстан Республикасының Мемлекеттік қызметшілері мен мәслихат депутаттарына арналған.</span>
+                <span class="lang-ru">Предназначено для государственных служащих и депутатов маслихатов Республики Казахстан.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

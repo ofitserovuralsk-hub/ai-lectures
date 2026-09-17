@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дәріскер туралы | О лекторе</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <meta name="description" content="Дәріскердің резюмесі, тәжірибесі және серіктестерге арналған байланыс ақпараты.">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Дәріскер туралы | О лекторе">
+    <meta property="og:description" content="Резюме, тәжірибе, нәтижелер және серіктестік бойынша байланыс.">
+    <meta property="og:image" content="assets/images/lector.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/lecture.css">
+    <style>
+        .fill-in {
+            border: 1.5px dashed #CBD5E1;
+            background: #F8FAFC;
+            color: #64748B;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col" data-lang="kk">
+
+    <!-- Хедер (как на index.html / videos.html) -->
+    <header class="bg-indigo-950 text-white shadow-md border-b border-indigo-800 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 pt-6 pb-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="bg-amber-400 text-indigo-950 text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        <span class="lang-kk">Білім беру порталы</span>
+                        <span class="lang-ru">Образовательный портал</span>
+                    </span>
+                    <div class="inline-flex items-center bg-indigo-900/80 p-1 rounded-xl border border-indigo-700/60 text-sm">
+                        <button onclick="setLanguage('kk')" id="btn-lang-kk" class="px-3 py-1 rounded-lg transition-all text-indigo-950 bg-amber-400 font-bold shadow">ҚАЗ</button>
+                        <button onclick="setLanguage('ru')" id="btn-lang-ru" class="px-3 py-1 rounded-lg transition-all text-indigo-200 hover:text-white">RU</button>
+                    </div>
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">
+                    <span class="lang-kk">Дәріскер туралы</span>
+                    <span class="lang-ru">О лекторе</span>
+                </h1>
+            </div>
+        </div>
+        <div class="bg-indigo-900/60 border-t border-indigo-800/80 px-6 py-2.5">
+            <div class="max-w-6xl mx-auto flex flex-wrap items-center gap-x-3 sm:gap-x-6 gap-y-2 text-xs sm:text-sm md:text-base font-semibold">
+                <a href="index.html" class="text-slate-300 hover:text-amber-400 transition-colors">
+                    <span class="lang-kk">Бас бет (Дәрістер)</span>
+                    <span class="lang-ru">Главная (Лекции)</span>
+                </a>
+                <a href="videos.html" class="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                    <svg class="w-4 h-4 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    <span class="lang-kk">Бейнесабақтар</span>
+                    <span class="lang-ru">Видеоуроки</span>
+                </a>
+                <a href="o-lektore.html" class="text-amber-400 font-bold flex items-center gap-1.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                    <span class="lang-kk">Дәріскер туралы</span>
+                    <span class="lang-ru">О лекторе</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-10 flex-grow w-full">
+
+        <!-- ============ 1. HERO: фото + имя + должность + CTA ============ -->
+        <section class="bg-white rounded-3xl border border-slate-200/90 p-6 md:p-8 shadow-sm mb-8 flex flex-col md:flex-row gap-8 items-center md:items-start">
+            <img src="assets/images/lector.jpg" alt="Лектор" width="176" height="176"
+                 class="w-36 h-36 md:w-44 md:h-44 rounded-2xl object-cover border-4 border-indigo-50 shadow-md flex-shrink-0">
+            <div class="text-center md:text-left flex-grow">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-indigo-950 mb-1">Офицеров Сергей</h2>
+                <p class="text-slate-600 text-base mb-4">
+                    <span class="lang-kk">Mercury Development халықаралық IT-компаниясының Қазақстандағы филиалының директоры</span>
+                    <span class="lang-ru">Директор Казахстанского филиала международной IT-компании Mercury Development</span>
+                </p>
+                <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                    <a href="assets/files/cv.pdf" class="bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-2.5 px-5 rounded-xl transition-colors">
+                        <span class="lang-kk">Резюмені жүктеу (PDF)</span><span class="lang-ru">Скачать резюме (PDF)</span>
+                    </a>
+                    <a href="mailto:ofitserovuralsk@gmail.com" class="bg-amber-400 hover:bg-amber-300 text-indigo-950 font-semibold text-sm py-2.5 px-5 rounded-xl transition-colors">
+                        <span class="lang-kk">Хабарласу</span><span class="lang-ru">Написать</span>
+                    </a>
+                </div>
+                <p class="fill-in rounded-lg px-3 py-2 text-base mt-3 inline-block">
+                    [Файл резюме assets/files/cv.pdf ещё не добавлен — загрузите PDF, когда он будет готов]
+                </p>
+            </div>
+        </section>
+
+        <!-- ============ 2. ЦИФРЫ И РЕЗУЛЬТАТЫ ============ -->
+        <section class="mb-12">
+            <h3 class="text-xl font-bold text-indigo-950 mb-4">
+                <span class="lang-kk">Сандар мен нәтижелер</span><span class="lang-ru">Цифры и результаты</span>
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="card p-5 text-center">
+                    <div class="text-3xl font-extrabold text-indigo-950">50+</div>
+                    <div class="text-sm text-slate-500 mt-1"><span class="lang-kk">лекция өткізілді</span><span class="lang-ru">лекций проведено</span></div>
+                </div>
+                <div class="card p-5 text-center">
+                    <div class="text-3xl font-extrabold text-indigo-950">200+</div>
+                    <div class="text-sm text-slate-500 mt-1"><span class="lang-kk">мемлекеттік қызметші оқытылды</span><span class="lang-ru">госслужащих обучено</span></div>
+                </div>
+                <div class="card p-5 text-center">
+                    <div class="text-3xl font-extrabold text-indigo-950">3</div>
+                    <div class="text-sm text-slate-500 mt-1"><span class="lang-kk">ұйым/әкімдік/колледж</span><span class="lang-ru">организаций-партнёров</span></div>
+                </div>
+                <div class="card p-5 text-center">
+                    <div class="text-3xl font-extrabold text-indigo-950">14</div>
+                    <div class="text-sm text-slate-500 mt-1"><span class="lang-kk">жыл тәжірибе</span><span class="lang-ru">лет практики</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 3. ОБРАЗОВАНИЕ ============ -->
+        <section class="mb-12">
+            <h3 class="text-xl font-bold text-indigo-950 mb-4">
+                <span class="lang-kk">Білім</span><span class="lang-ru">Образование</span>
+            </h3>
+            <div class="space-y-4">
+                <div class="card p-6 border-l-4 border-indigo-900">
+                    <div class="text-sm font-bold text-indigo-600 uppercase mb-1">2015 — 2017</div>
+                    <div class="font-bold text-indigo-950">Государственный университет «Дубна»</div>
+                    <p class="text-base text-slate-600 mt-1">
+                        <span class="lang-kk">Жүйелік талдау магистрі</span><span class="lang-ru">Магистр системного анализа</span>
+                    </p>
+                </div>
+                <div class="card p-6 border-l-4 border-slate-300">
+                    <div class="text-sm font-bold text-indigo-600 uppercase mb-1">2012 — 2015</div>
+                    <div class="font-bold text-indigo-950">
+                        <span class="lang-kk">Қазақстандық инновациялық және телекоммуникациялық жүйелер университеті</span>
+                        <span class="lang-ru">Казахстанский университет инновационных и телекоммуникационных систем</span>
+                    </div>
+                    <p class="text-base text-slate-600 mt-1">
+                        <span class="lang-kk">Инженер-бағдарламашы</span><span class="lang-ru">Инженер-программист</span>
+                    </p>
+                </div>
+                <div class="card p-6 border-l-4 border-slate-300">
+                    <div class="text-sm font-bold text-indigo-600 uppercase mb-1">2008 — 2012</div>
+                    <div class="font-bold text-indigo-950">
+                        <span class="lang-kk">Экономика және ақпараттық технологиялар колледжі</span>
+                        <span class="lang-ru">Колледж экономики и информационных технологий</span>
+                    </div>
+                    <p class="text-base text-slate-600 mt-1">
+                        <span class="lang-kk">Өндірістік оқыту шебері, техник-бағдарламашы</span>
+                        <span class="lang-ru">Мастер производственного обучения, техник-программист</span>
+                    </p>
+                </div>
+                <div class="card p-6 border-l-4 border-slate-300">
+                    <div class="text-sm font-bold text-indigo-600 uppercase mb-1">2006 — 2008</div>
+                    <div class="font-bold text-indigo-950">
+                        <span class="lang-kk">ҚАЗИИТУ жанындағы Ақпараттық технологиялар лицейі</span>
+                        <span class="lang-ru">Лицей информационных технологий при КАЗИИТУ</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 4. ПРОФЕССИОНАЛЬНЫЙ ОПЫТ (таймлайн) ============ -->
+        <section class="mb-12">
+            <h3 class="text-xl font-bold text-indigo-950 mb-4">
+                <span class="lang-kk">Кәсіби тәжірибе</span><span class="lang-ru">Профессиональный опыт</span>
+            </h3>
+            <div class="space-y-4">
+                <div class="card p-6 border-l-4 border-indigo-900">
+                    <div class="text-sm font-bold text-indigo-600 uppercase mb-1">2020 — <span class="lang-kk">қазіргі уақыт</span><span class="lang-ru">наст. время</span></div>
+                    <div class="font-bold text-indigo-950">
+                        <span class="lang-kk">Директор, әзірлеуші</span><span class="lang-ru">Директор, разработчик</span>
+                    </div>
+                    <p class="text-base text-slate-600 mt-1">
+                        <span class="lang-kk">Mercury Development халықаралық IT-компаниясының Қазақстандағы филиалы</span>
+                        <span class="lang-ru">Казахстанский филиал международной IT-компании Mercury Development</span>
+                    </p>
+                </div>
+                <div class="card p-6 border-l-4 border-slate-300">
+                    <div class="text-sm font-bold text-indigo-600 uppercase mb-1">2016 — 2020</div>
+                    <div class="font-bold text-indigo-950">
+                        <span class="lang-kk">Директор</span><span class="lang-ru">Директор</span>
+                    </div>
+                    <p class="text-base text-slate-600 mt-1">
+                        <span class="lang-kk">ҚАЗИИТУ Ақпараттық технологиялар орталығы</span>
+                        <span class="lang-ru">Центр информационных технологий, КАЗИИТУ</span>
+                    </p>
+                </div>
+                <div class="card p-6 border-l-4 border-slate-300">
+                    <div class="text-sm font-bold text-indigo-600 uppercase mb-1">2013 — 2016</div>
+                    <div class="font-bold text-indigo-950">
+                        <span class="lang-kk">Аға IT-маман</span><span class="lang-ru">Старший IT-специалист</span>
+                    </div>
+                    <p class="text-base text-slate-600 mt-1">
+                        <span class="lang-kk">Ақпараттық технологиялар орталығы</span>
+                        <span class="lang-ru">Центр информационных технологий</span>
+                    </p>
+                </div>
+                <div class="card p-6 border-l-4 border-slate-300">
+                    <div class="text-sm font-bold text-indigo-600 uppercase mb-1">2009 — 2012</div>
+                    <div class="font-bold text-indigo-950">
+                        <span class="lang-kk">IT-маман</span><span class="lang-ru">IT-специалист</span>
+                    </div>
+                    <p class="text-base text-slate-600 mt-1 fill-in rounded inline-block">[Уточните организацию]</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 5. ГЕОГРАФИЯ И ОРГАНИЗАЦИИ-ПАРТНЁРЫ ============ -->
+        <section class="mb-12">
+            <h3 class="text-xl font-bold text-indigo-950 mb-4">
+                <span class="lang-kk">Қамту географиясы және серіктес ұйымдар</span><span class="lang-ru">География и организации-партнёры</span>
+            </h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="fill-in px-3 py-1.5 rounded-lg text-base">[Акимат / колледж / маслихат №1]</span>
+                <span class="fill-in px-3 py-1.5 rounded-lg text-base">[Организация №2]</span>
+                <span class="fill-in px-3 py-1.5 rounded-lg text-base">[Организация №3]</span>
+                <span class="fill-in px-3 py-1.5 rounded-lg text-base">[+ добавьте свои]</span>
+            </div>
+        </section>
+
+        <!-- ============ 6. ДОСТИЖЕНИЯ И ПРИЗНАНИЕ ============ -->
+        <section class="mb-12">
+            <h3 class="text-xl font-bold text-indigo-950 mb-4">
+                <span class="lang-kk">Жетістіктер мен танылу</span><span class="lang-ru">Достижения и признание</span>
+            </h3>
+            <ul class="card p-6 space-y-2 text-base text-slate-700 list-disc list-inside">
+                <li>
+                    <span class="lang-kk">ҚР Ұлттық инженерлік академиясының академиялық кеңесшісі</span>
+                    <span class="lang-ru">Академический советник Национальной инженерной академии РК</span>
+                </li>
+                <li>
+                    <span class="lang-kk">Электромобиль жобасымен EXPO-2017 көрмесінің қатысушысы</span>
+                    <span class="lang-ru">Участник выставки EXPO-2017 с проектом электромобиля</span>
+                </li>
+                <li>
+                    <span class="lang-kk">ҚАЗИИТУ университетіндегі конструкторлық бюроның негізін салушы</span>
+                    <span class="lang-ru">Основатель конструкторского бюро в университете КАЗИИТУ</span>
+                </li>
+                <li>
+                    <span class="lang-kk">Орал қаласы мәслихатының бұрынғы депутаты</span>
+                    <span class="lang-ru">Бывший депутат городского маслихата Уральска</span>
+                </li>
+                <li class="fill-in rounded">[Место для новых наград / упоминаний в СМИ]</li>
+            </ul>
+        </section>
+
+        <!-- ============ 7. ОТЗЫВЫ ============ -->
+        <section class="mb-12">
+            <h3 class="text-xl font-bold text-indigo-950 mb-4">
+                <span class="lang-kk">Пікірлер</span><span class="lang-ru">Отзывы</span>
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="card p-5">
+                    <p class="text-base text-slate-600 italic fill-in rounded">"[Цитата отзыва о качестве лекции/практикума]"</p>
+                    <p class="text-base font-bold text-indigo-950 mt-3 fill-in inline-block rounded">[Имя, должность, организация]</p>
+                </div>
+                <div class="card p-5">
+                    <p class="text-base text-slate-600 italic fill-in rounded">"[Цитата отзыва]"</p>
+                    <p class="text-base font-bold text-indigo-950 mt-3 fill-in inline-block rounded">[Имя, должность, организация]</p>
+                </div>
+                <div class="card p-5">
+                    <p class="text-base text-slate-600 italic fill-in rounded">"[Цитата отзыва]"</p>
+                    <p class="text-base font-bold text-indigo-950 mt-3 fill-in inline-block rounded">[Имя, должность, организация]</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 8. ВИДЕО-ПОДТВЕРЖДЕНИЯ ============ -->
+        <section class="mb-12 card p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+                <h3 class="text-lg font-bold text-indigo-950">
+                    <span class="lang-kk">Бейне дәлелдер</span><span class="lang-ru">Видео-подтверждения</span>
+                </h3>
+                <p class="text-base text-slate-600 mt-1">
+                    <span class="lang-kk">Мемлекеттік қызметшілермен өткізілген нақты сабақтардың бейнежазбалары</span>
+                    <span class="lang-ru">Записи реальных занятий с госслужащими — смотрите на странице видео</span>
+                </p>
+            </div>
+            <a href="videos.html" class="bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-2.5 px-5 rounded-xl transition-colors whitespace-nowrap">
+                <span class="lang-kk">Бейнелерді көру →</span><span class="lang-ru">Смотреть видео →</span>
+            </a>
+        </section>
+
+        <!-- ============ 9. ДЛЯ ПАРТНЁРОВ И ОРГАНИЗАЦИЙ ============ -->
+        <section class="bg-indigo-950 text-white rounded-3xl p-6 md:p-10">
+            <h3 class="text-xl md:text-2xl font-extrabold mb-3">
+                <span class="lang-kk">Ұйымдар мен серіктестерге</span><span class="lang-ru">Для организаций и партнёров</span>
+            </h3>
+            <p class="text-indigo-200 text-base mb-6 max-w-2xl fill-in bg-indigo-900/60 border-indigo-700 rounded-lg px-3 py-2">
+                [Впишите 2-4 предложения: какие форматы предлагаете (лекция / практикум / серия для акимата или вуза),
+                на какой масштаб готовы (город / регион / республика), какие темы охватываете.]
+            </p>
+            <div class="flex flex-wrap gap-3 text-sm font-semibold">
+                <a href="mailto:ofitserovuralsk@gmail.com" class="inline-flex items-center gap-2 bg-amber-400 text-indigo-950 px-4 py-2.5 rounded-xl">
+                    <span class="lang-kk">Ресми email</span><span class="lang-ru">Официальный email</span>: ofitserovuralsk@gmail.com
+                </a>
+                <a href="tel:+77055904646" class="inline-flex items-center gap-2 bg-indigo-900/80 px-4 py-2.5 rounded-xl">
+                    +7 (705) 590-46-46
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-6 px-6 text-center text-sm text-slate-500">
+        <p>&copy; 2026 <span class="lang-kk">Білім қоры мен дәріс материалдары. Барлық құқықтар қорғалған.</span><span class="lang-ru">База знаний и лекционных материалов. Все права защищены.</span></p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

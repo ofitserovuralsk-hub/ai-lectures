@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Мәслихат депутатының жұмысындағы ЖИ: Практикум</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <meta name="description" content="Мастер-скрипт, «Депутаттың 1 күні» кейсі, дағдарыстарды шешу алгоритмі және ҚР заңнамасына арналған промпттар.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Мәслихат депутатының жұмысындағы ЖИ">
+    <meta property="og:description" content="Мастер-скрипт, «Депутаттың 1 күні» кейсі, дағдарыстарды шешу алгоритмі және ҚР заңнамасына арналған промпттар.">
+    <meta property="og:image" content="../assets/images/lector.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Мәслихат депутатының жұмысындағы ЖИ">
+    <meta name="twitter:description" content="Мастер-скрипт, «Депутаттың 1 күні» кейсі, дағдарыстарды шешу алгоритмі және ҚР заңнамасына арналған промпттар.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/lecture.css">
+    <style>
+        .gradient-header {
+            background: linear-gradient(135deg, #1A237E 0%, #0D47A1 50%, #1565C0 100%);
+        }
+        .timeline-badge {
+            background: linear-gradient(135deg, #1A237E 0%, #00BFA5 100%);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden" data-lang="kk">
+
+    <!-- Навигационная панель с переключателем языка -->
+    <div class="bg-indigo-950 border-b border-indigo-800 py-3 px-6 text-sm text-white sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="../index.html" class="hover:text-amber-400 font-semibold flex items-center gap-2 transition-colors">
+                <span class="lang-kk">← Дәрістер каталогына оралу</span>
+                <span class="lang-ru">← Вернуться к каталогу лекций</span>
+            </a>
+            
+            <div class="flex items-center gap-4">
+                <span class="opacity-60 hidden sm:inline">
+                    <span class="lang-kk">Бөлім: Мемлекеттік сектор & Мәслихаттар</span>
+                    <span class="lang-ru">Раздел: Госсектор & Маслихаты</span>
+                </span>
+                
+                <!-- Переключатель языков -->
+                <div class="inline-flex items-center bg-indigo-900/80 p-1 rounded-xl border border-indigo-700/60 text-sm">
+                    <button onclick="setLanguage('kk')" id="btn-lang-kk" class="px-3 py-1 rounded-lg transition-all text-indigo-950 bg-amber-400 font-bold shadow">
+                        ҚАЗ
+                    </button>
+                    <button onclick="setLanguage('ru')" id="btn-lang-ru" class="px-3 py-1 rounded-lg transition-all text-indigo-200 hover:text-white">
+                        RU
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Шапка страницы -->
+    <header class="gradient-header text-white py-16 px-6 text-center shadow-xl relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-block bg-yellow-400 text-indigo-950 font-bold px-4 py-1 rounded-full text-sm uppercase tracking-widest mb-4">
+                <span class="lang-kk">Мастер-скрипт & Практикум</span>
+                <span class="lang-ru">Мастер-скрипт & Практикум</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">
+                <span class="lang-kk">Мәслихат депутатының жұмысындағы Жасанды Интеллект</span>
+                <span class="lang-ru">Искусственный Интеллект для депутата Маслихата</span>
+            </h1>
+            <p class="text-lg md:text-xl opacity-90 font-light max-w-2xl mx-auto leading-relaxed">
+                <span class="lang-kk">e-Otinish дәуіріндегі цифрлық коммуникация шеберлігі: ақпараттық цунамиді еңсеруден ЖИ-ассистентпен жұмыс істеуге дейін.</span>
+                <span class="lang-ru">Мастерство цифровых коммуникаций в эпоху e-Otinish: от снятия информационного цунами до работы с ИИ-ассистентом.</span>
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 max-w-6xl">
+
+        <!-- БЛОК 1: ИНФОРМАЦИОННОЕ ЦУНАМИ И ЭФФЕКТИВНОСТЬ -->
+        <section class="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="card p-8 border-l-8 border-[#1A237E]">
+                <h2 class="text-2xl font-bold mb-4 text-[#1A237E] flex items-center">
+                    <span class="mr-3">📈</span> 
+                    <span class="lang-kk">Цифрлық өтініштердің өсуі</span>
+                    <span class="lang-ru">Рост цифровых обращений</span>
+                </h2>
+                <p class="text-gray-600 text-base mb-6 leading-relaxed">
+                    <span class="lang-kk"><strong>e-Otinish</strong> жүйесі мен әлеуметтік желілер арқылы түсетін ресми өтініштер ағыны халық қалаулыларына үлкен салмақ түсіреді: сапаны жоғалтпай жүздеген құжатты оқып шығу мүмкін емес.</span>
+                    <span class="lang-ru">Поток официальных обращений через систему <strong>e-Otinish</strong> и социальные сети ставит народных избранников перед вызовом: физически невозможно вычитывать сотни документов без потерь качества.</span>
+                </p>
+                <div class="chart-container">
+                    <canvas id="growthChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card p-8 border-l-8 border-[#00BFA5]">
+                <h2 class="text-2xl font-bold mb-4 text-[#1A237E] flex items-center">
+                    <span class="mr-3">⚡</span> 
+                    <span class="lang-kk">Уақыт шығыны: Адам vs ЖИ</span>
+                    <span class="lang-ru">Затраты времени: Человек vs ИИ</span>
+                </h2>
+                <p class="text-gray-600 text-base mb-6 leading-relaxed">
+                    <span class="lang-kk">ЖИ депутатты алмастырмайды, ол тек күнделікті рутинаны өз мойнына алады. Стандартты құжаттарды өңдеу уақытын қысқарту тұрғындармен жеке кездесулерге уақыт босатады.</span>
+                    <span class="lang-ru">ИИ не заменяет депутата, а берет на себя рутину. Сокращение времени обработки типовых документов высвобождает часы для личных встреч с жителями.</span>
+                </p>
+                <div class="chart-container">
+                    <canvas id="efficiencyChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 2: МЕНТАЛЬНЫЙ СДВИГ — 3 МЕТАФОРЫ -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center tracking-wide text-[#1A237E]">
+                <span class="lang-kk">Цифрлық ойлау: ЖИ-дің 3 метафорасы</span>
+                <span class="lang-ru">Цифровое мышление: 3 метафоры ИИ</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card p-6 border-t-4 border-[#00BFA5]">
+                    <div class="w-12 h-12 bg-teal-100 text-teal-800 rounded-full flex items-center justify-center text-2xl mb-4 font-bold">⌨️</div>
+                    <h3 class="font-bold text-xl mb-2 text-[#1A237E]">Супер-Т9</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        <span class="lang-kk">Ойлайтын сана емес, үлгілерді болжайтын жүйе. Заңдар мен сұраныстар үшін сөздердің дәл тізбегін болжайды.</span>
+                        <span class="lang-ru">Не мыслящий разум, а космический предсказатель паттернов. Угадывает точную последовательность слов для законов и запросов.</span>
+                    </p>
+                </div>
+                <div class="card p-6 border-t-4 border-[#FFD600]">
+                    <div class="w-12 h-12 bg-yellow-100 text-yellow-800 rounded-full flex items-center justify-center text-2xl mb-4 font-bold">🎓</div>
+                    <h3 class="font-bold text-xl mb-2 text-[#1A237E]">
+                        <span class="lang-kk">«Болашақ» стажеры</span>
+                        <span class="lang-ru">Стажер «Болашақ»</span>
+                    </h3>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        <span class="lang-kk">Феноменалды жады бар, бірақ өмірлік тәжірибесі жоқ. Нақты тапсырма қоюды және «бастықтың» тұрақты бақылауын талап етеді.</span>
+                        <span class="lang-ru">Обладает феноменальной памятью, но нулевым жизненным опытом. Требует точного постановления задач и постоянного контроля "босса".</span>
+                    </p>
+                </div>
+                <div class="card p-6 border-t-4 border-[#1A237E]">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-900 rounded-full flex items-center justify-center text-2xl mb-4 font-bold">🦄</div>
+                    <h3 class="font-bold text-xl mb-2 text-[#1A237E]">
+                        <span class="lang-kk">Цифрлық Кентавр</span>
+                        <span class="lang-ru">Цифровой Кентавр</span>
+                    </h3>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        <span class="lang-kk">Жеңілмейтін симбиоз: алгоритмдердің есептеу қуатымен біріктірілген адамның түйсігі, эмпатиясы мен тірі тәжірибесі.</span>
+                        <span class="lang-ru">Непобедимый симбиоз: интуиция, эмпатия и живой опыт человека в сочетании с вычислительной мощью алгоритмов.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 3: ОТДЕЛЬНЫЙ РАЗДЕЛ "1 ДЕНЬ ИЗ ЖИЗНИ ДЕПУТАТА" -->
+        <section class="mb-16">
+            <div class="bg-indigo-950 text-white rounded-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+                <div class="border-b border-indigo-800 pb-6 mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <span class="bg-[#FFD600] text-indigo-950 text-sm font-bold px-3 py-1 rounded-full uppercase">Сквозной кейс</span>
+                        <h2 class="text-2xl md:text-4xl font-extrabold mt-2 text-white">
+                            <span class="lang-kk">📅 ЖИ-ассистенті бар депутаттың 1 күні</span>
+                            <span class="lang-ru">📅 1 день из жизни депутата с ИИ-ассистентом</span>
+                        </h2>
+                    </div>
+                    <div class="text-base opacity-80 max-w-xs">
+                        <span class="lang-kk">24 сағат ішінде білікті референт жұмысының хронологиялық құрылымы.</span>
+                        <span class="lang-ru">Хронологическая структура работы квалифицированного референта в течение 24 часов.</span>
+                    </div>
+                </div>
+
+                <!-- Хронологический Таймлайн -->
+                <div class="space-y-10">
+
+                    <!-- Этап 1 -->
+                    <div class="bg-indigo-900/80 p-6 rounded-xl border border-indigo-700/60">
+                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="timeline-badge text-white px-3 py-1 rounded-lg text-base font-bold">09:00 - 10:00</span>
+                                <h3 class="text-xl font-bold text-yellow-400">
+                                    <span class="lang-kk">1-кезең. Округке шығар алдындағы экспресс-талдау</span>
+                                    <span class="lang-ru">Этап 1. Экспресс-анализ перед выездом в округ</span>
+                                </h3>
+                            </div>
+                            <span class="text-sm text-teal-300 bg-teal-950/60 border border-teal-800 px-3 py-1 rounded-full">
+                                <span class="lang-kk">Үнемдеу: 3 сағат</span><span class="lang-ru">Экономия: 3 часа</span>
+                            </span>
+                        </div>
+                        <p class="text-base text-gray-300 mb-4">
+                            <strong><span class="lang-kk">Тапсырма:</span><span class="lang-ru">Задача:</span></strong> 
+                            <span class="lang-kk">10 минут ішінде Алматы ауданы тұрғындарының 50 әртүрлі шағымынан жасырын триггерлерді бөліп алу.</span>
+                            <span class="lang-ru">За 10 минут вычленить скрытые триггеры из массива 50 разрозненных жалоб жителей Алматинского района.</span>
+                        </p>
+                        <div class="prompt-code p-4 rounded-lg text-sm leading-relaxed mb-3">
+                            <span class="text-yellow-400 font-bold block mb-1">
+                                <span class="lang-kk">ПРОМПТ (ОКРУГ ШАҒЫМДАРЫН ТАЛДАУ):</span>
+                                <span class="lang-ru">ПРОМПТ (АНАЛИЗ ЖАЛОБ ОКРУГА):</span>
+                            </span>
+                            <div class="lang-kk">Қаланың Алматы ауданы тұрғындарының келесі 50 өтінішін талда.<br>Үш тапсырманы орында:<br>1. Ең жиі аталатын ауданның топ-3 жүйелі мәселесін бөліп көрсет.<br>2. Әрбір мәселе бойынша адамдар нақты қай орындарға (көшелер, үйлер) шағымданатынын қысқаша көрсет.<br>3. Осы шағымдар негізінде депутат ретінде аудан әкіміне қоятын 3 нақты сұрақты тұжырымда.<br>Міне, өтініштер мәтіні: [Шикі мәтінді қою]</div>
+                            <div class="lang-ru">Проанализируй следующие 50 обращений жителей Алматинского района города.<br>Выполни три задачи:<br>1. Выдели топ-3 системные проблемы района, которые упоминаются чаще всего.<br>2. По каждой проблеме кратко укажи, на какие конкретно локации (улицы, дома) жалуются люди.<br>3. Сформулируй 3 точечных вопроса, которые мне, как депутату, стоит задать главе районной администрации (акиму) на основе этих жалоб.<br>Вот текст обращений: [Вставить сырой текст]</div>
+                        </div>
+                        <div class="text-sm text-teal-400 font-semibold">
+                            <span class="lang-kk">✓ Нәтиже: 10 минут ішіндегі аналитикалық папка, аудан әкіміне нақты сұрақтар.</span>
+                            <span class="lang-ru">✓ Результат: Папка аналитики за 10 минут, точечные вопросы к Акиму района.</span>
+                        </div>
+                    </div>
+
+                    <!-- Этап 2 -->
+                    <div class="bg-indigo-900/80 p-6 rounded-xl border border-indigo-700/60">
+                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="timeline-badge text-white px-3 py-1 rounded-lg text-base font-bold">11:00 - 13:00</span>
+                                <h3 class="text-xl font-bold text-yellow-400">
+                                    <span class="lang-kk">2-кезең. Кездесуді интеллектуалды хаттамалау</span>
+                                    <span class="lang-ru">Этап 2. Интеллектуальное протоколирование встречи</span>
+                                </h3>
+                            </div>
+                            <span class="text-sm text-teal-300 bg-teal-950/60 border border-teal-800 px-3 py-1 rounded-full">
+                                <span class="lang-kk">Үнемдеу: 2 сағат</span><span class="lang-ru">Экономия: 2 часа</span>
+                            </span>
+                        </div>
+                        <p class="text-base text-gray-300 mb-4">
+                            <strong><span class="lang-kk">Тапсырма:</span><span class="lang-ru">Задача:</span></strong> 
+                            <span class="lang-kk">Аулалардағы сұхбаттың аудиожазбасын артық сөзсіз құрылымдалған хаттамаға айналдыру.</span>
+                            <span class="lang-ru">Перевод аудиозаписи живого диалога во дворах в структурированный протокол встречи без словесного мусора.</span>
+                        </p>
+                        <div class="prompt-code p-4 rounded-lg text-sm leading-relaxed mb-3">
+                            <span class="text-yellow-400 font-bold block mb-1">
+                                <span class="lang-kk">ПРОМПТ (АҚЫЛДЫ ХАТТАМА):</span>
+                                <span class="lang-ru">ПРОМПТ (УМНЫЙ ПРОТОКОЛ):</span>
+                            </span>
+                            <div class="lang-kk">Алдыңда депутаттың тұрғындармен кездесуінің стенограммасы тұр. Мәтінде ауызекі сөздер мен қайталаулар бар. Одан келесі схема бойынша ресми хаттама жаса:<br>1. Күні мен орны (егер аталса).<br>2. Көтерілген сұрақтар тізімі (тұрғынның АЖБ, мәселе мәні, нақты мекенжайы).<br>3. Қабылданған шешімдер мен депутаттың міндеттемелері (мерзімдері мен әрекеттері).<br>Мәтінді артық сөздерден тазарт, тонды қатаң іскерлік ет.<br>Міне стенограмма: [Аудио шифрын қою]</div>
+                            <div class="lang-ru">Перед тобой стенограмма встречи депутата с жителями. Текст содержит разговорные фразы и повторы. Сделай из него официальный протокол по схеме:<br>1. Дата и место (если упомянуты).<br>2. Список поднятых вопросов (ФИО жителя, суть проблемы, точный адрес).<br>3. Принятые решения и обязательства депутата (сроки и действия).<br>Очисти текст от мусора, сделай тон строго деловым.<br>Вот стенограмма: [Вставить расшифровку аудио]</div>
+                        </div>
+                        <div class="text-sm text-teal-400 font-semibold">
+                            <span class="lang-kk">✓ Нәтиже: Депутат блокнотқа емес, 100% жанды қарым-қатынасқа назар аударады.</span>
+                            <span class="lang-ru">✓ Результат: Депутат 100% сфокусирован на живом общении, а не на блокноте.</span>
+                        </div>
+                    </div>
+
+                    <!-- Этап 3 -->
+                    <div class="bg-indigo-900/80 p-6 rounded-xl border border-indigo-700/60">
+                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="timeline-badge text-white px-3 py-1 rounded-lg text-base font-bold">14:30 - 16:00</span>
+                                <h3 class="text-xl font-bold text-yellow-400">
+                                    <span class="lang-kk">3-кезең. Кабинеттік жұмыс (Депутаттық сұрау салулар)</span>
+                                    <span class="lang-ru">Этап 3. Кабинетная работа (Депутатские запросы)</span>
+                                </h3>
+                            </div>
+                            <span class="text-sm text-teal-300 bg-teal-950/60 border border-teal-800 px-3 py-1 rounded-full">
+                                <span class="lang-kk">Үнемдеу: 4 сағат</span><span class="lang-ru">Экономия: 4 часа</span>
+                            </span>
+                        </div>
+                        <p class="text-base text-gray-300 mb-4">
+                            <strong><span class="lang-kk">Тапсырма:</span><span class="lang-ru">Задача:</span></strong> 
+                            <span class="lang-kk">Хаттама тармақтарын заңды түрде тексерілген мемлекеттік органдарға депутаттық сұрау салуларға айналдыру.</span>
+                            <span class="lang-ru">Трансформировать пункты протокола в юр. выверенные депутатские запросы в государственные органы.</span>
+                        </p>
+                        <div class="prompt-code p-4 rounded-lg text-sm leading-relaxed mb-3">
+                            <span class="text-yellow-400 font-bold block mb-1">
+                                <span class="lang-kk">ПРОМПТ (РЕСМИ СҰРАУ СAЛУ):</span>
+                                <span class="lang-ru">ПРОМПТ (ОФИЦИАЛЬНЫЙ ЗАПРОС):</span>
+                            </span>
+                            <div class="lang-kk">Хаттамадағы №2 тармақ негізінде (Абай к-сі 12 мекенжайы бойынша ПӘК-нің әрекетсіздігіне шағым, шатырдың ағуы) Тұрғын үй инспекциясы басқармасы басшысының атына Депутаттық сұрау салу жобасын құрастыр.<br>Талаптар:<br>- Resmi-іскерлік және заңгерлік стиль.<br>- ҚР тұрғын үй заңнамасына сілтемелер ([Заң бабын көрсету] маркерлерін қалдыр).<br>- Көшпелі тексеру жүргізу және заңмен белгіленген мерзімде есеп беру талабы.</div>
+                            <div class="lang-ru">На основе пункта №2 из протокола (жалоба на бездействие КСК по ул. Абая 12, течь крыши) составь проект Депутатского запроса на имя Руководителя Управления жилищной инспекции.<br>Требования:<br>- Официально-деловой и юридический стиль.<br>- Ссылки на жилищное законодательство РК (оставь маркеры [Указать статью закона]).<br>- Требование выездной проверки и отчета в установленный законом срок.</div>
+                        </div>
+                        <div class="text-sm text-teal-400 font-semibold">
+                            <span class="lang-kk">✓ Нәтиже: Тек қол қоюды талап ететін дайын заңды құжат.</span>
+                            <span class="lang-ru">✓ Результат: Готовый юридический документ, требующий только подписи.</span>
+                        </div>
+                    </div>
+
+                    <!-- Этап 4 -->
+                    <div class="bg-indigo-900/80 p-6 rounded-xl border border-indigo-700/60">
+                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="timeline-badge text-white px-3 py-1 rounded-lg text-base font-bold">16:30 - 17:30</span>
+                                <h3 class="text-xl font-bold text-yellow-400">
+                                    <span class="lang-kk">4-кезең. Қоғамдық есеп және SMM/PR</span>
+                                    <span class="lang-ru">Этап 4. Публичный отчёт и SMM/PR</span>
+                                </h3>
+                            </div>
+                            <span class="text-sm text-teal-300 bg-teal-950/60 border border-teal-800 px-3 py-1 rounded-full">
+                                <span class="lang-kk">Үнемдеу: 2 сағат</span><span class="lang-ru">Экономия: 2 часа</span>
+                            </span>
+                        </div>
+                        <p class="text-base text-gray-300 mb-4">
+                            <strong><span class="lang-kk">Тапсырма:</span><span class="lang-ru">Задача:</span></strong> 
+                            <span class="lang-kk">Кездесу хаттамасын азаматтар мен БАҚ үшін мультиформатты медиа-өнімдерге орау.</span>
+                            <span class="lang-ru">Упаковать протокол встречи в мультиформатные медиа-продукты для граждан и СМИ.</span>
+                        </p>
+                        <div class="prompt-code p-4 rounded-lg text-sm leading-relaxed mb-3">
+                            <span class="text-yellow-400 font-bold block mb-1">
+                                <span class="lang-kk">ПРОМПТ (МУЛЬТИФОРМАТТЫ PR):</span>
+                                <span class="lang-ru">ПРОМПТ (МУЛЬТИФОРМАТНЫЙ PR):</span>
+                            </span>
+                            <div class="lang-kk">Тұрғындармен кездесуіміздің хаттамасын пайдаланып, үш медиа-өнім жаса:<br>1. Депутаттың Telegram-каналына арналған пост (жанды тон, эмодзи, хэштегтер).<br>2. БАҚ үшін ресми пресс-релиз (қатаң жаңалық стилі, тақырып).<br>3. 60 секундтық Reels/Shorts видео-есебіне арналған сценарий (раскадровка, мәтін және B-roll).</div>
+                            <div class="lang-ru">Используя протокол нашей встречи с жителями, создай три медиа-продукта:<br>1. Пост для Telegram-канала депутата (живой тон, эмодзи, хэштеги).<br>2. Официальный пресс-релиз для СМИ (строгий новостной стиль, заголовок).<br>3. Сценарий (раскадровка) для 60-секундного видео-отчета Reels/Shorts (текст и B-roll).</div>
+                        </div>
+                        <div class="text-sm text-teal-400 font-semibold">
+                            <span class="lang-kk">✓ Нәтиже: SMM-агенттігін жалдамай-ақ 2 минут ішінде медиа-контенттің толық пакеті.</span>
+                            <span class="lang-ru">✓ Результат: Полный пакет медиа-контента за 2 минуты без найма SMM-агентства.</span>
+                        </div>
+                    </div>
+
+                    <!-- Этап 5 -->
+                    <div class="bg-indigo-900/80 p-6 rounded-xl border border-indigo-700/60">
+                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="timeline-badge text-white px-3 py-1 rounded-lg text-base font-bold">18:00 - 19:00</span>
+                                <h3 class="text-xl font-bold text-yellow-400">
+                                    <span class="lang-kk">5-кезең. Кері байланыс мониторингі</span>
+                                    <span class="lang-ru">Этап 5. Мониторинг обратной связи</span>
+                                </h3>
+                            </div>
+                            <span class="text-sm text-teal-300 bg-teal-950/60 border border-teal-800 px-3 py-1 rounded-full">
+                                <span class="lang-kk">Үнемдеу: 1.5 сағат</span><span class="lang-ru">Экономия: 1.5 часа</span>
+                            </span>
+                        </div>
+                        <p class="text-base text-gray-300 mb-4">
+                            <strong><span class="lang-kk">Тапсырма:</span><span class="lang-ru">Задача:</span></strong> 
+                            <span class="lang-kk">Жарияланған посттардың астындағы пікірлердің тоналдылығын қолмен оқымай экспресс-талдау.</span>
+                            <span class="lang-ru">Экспресс-анализ тональности комментариев под опубликованными постами без ручного чтения.</span>
+                        </p>
+                        <div class="text-sm text-teal-400 font-semibold">
+                            <span class="lang-kk">✓ Нәтиже: Округтің шынайы әлеуметтік көңіл-күйін түсіну және топтастырылған жаңа ұсыныстар.</span>
+                            <span class="lang-ru">✓ Результат: Понимание реального социального настроения округа и сгруппированные новые предложения.</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 4: БИБЛИОТЕКА «ПОЛЕЗНЫЕ ПРОМПТЫ» -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center tracking-wide text-[#1A237E]">
+                <span class="lang-kk">📚 Пайдалы промпттар (Депутат кітапханасы)</span>
+                <span class="lang-ru">📚 Полезные промпты (Библиотека депутата)</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Промпт 1 -->
+                <div class="card p-6 border-l-8 border-[#00BFA5]">
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="font-bold text-lg text-[#1A237E]">
+                            <span class="lang-kk">1. Қос тілділік & Қазақ тілінің стилистикалық регистрі</span>
+                            <span class="lang-ru">1. Двуязычие & Казахский стилистический регистр</span>
+                        </h3>
+                        <span class="text-sm bg-teal-100 text-teal-800 px-2 py-1 rounded font-bold">
+                            <span class="lang-kk">Тілдік баланс</span><span class="lang-ru">Языковой баланс</span>
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-base mb-4">
+                        <span class="lang-kk">ЖИ тек сөздерді емес, контекст пен ақсақалдарға немесе жастарға құрмет көрсету формасын аударады.</span>
+                        <span class="lang-ru">ИИ переводит не просто слова, а контекст и форму уважения к аксакалам или молодежи.</span>
+                    </p>
+                    <div class="prompt-code p-4 rounded-lg text-sm mb-3">
+                        <span class="lang-kk">"Осы мәтінді мемлекеттік тілге аудар. Стилі — [іскерлік-ресми стиль / қарапайым, халыққа жақын, сыпайы]. Аға буын тұрғындарына хабарласқанда құрмет нормаларын ескер."</span>
+                        <span class="lang-ru">"Переведи данный текст на государственный язык. Стиль — [іскерлік-ресми стиль / қарапайым, халыққа жақын, сыпайы]. Учти нормы уважения при обращении к жителям старшего поколения."</span>
+                    </div>
+                    <div class="text-sm text-gray-500 italic">
+                        <span class="lang-kk">* Лайфхак: Сұраныстар үшін «іскерлік-ресми» және әлеуметтік желілер үшін «халыққа жақын» белгісін қосыңыз.</span>
+                        <span class="lang-ru">* Лайфхак: Добавляйте метку «іскерлік-ресми» для запросов и «халыққа жақын» для соцсетей.</span>
+                    </div>
+                </div>
+
+                <!-- Промпт 2 -->
+                <div class="card p-6 border-l-8 border-[#FFD600]">
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="font-bold text-lg text-[#1A237E]">
+                            <span class="lang-kk">2. 150 беттік есептер мен бюджеттерді сығу</span>
+                            <span class="lang-ru">2. Сжатие 150-страничных отчетов и бюджетов</span>
+                        </h3>
+                        <span class="text-sm bg-yellow-100 text-yellow-900 px-2 py-1 rounded font-bold">
+                            <span class="lang-kk">Аналитика</span><span class="lang-ru">Аналитика</span>
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-base mb-4">
+                        <span class="lang-kk">Мәслихат сессиясы алдында сәйкессіздіктер мен игерілмеген қаражатты жылдам іздеу.</span>
+                        <span class="lang-ru">Быстрый поиск нестыковок и неосвоенных средств перед сессией Маслихата.</span>
+                    </p>
+                    <div class="prompt-code p-4 rounded-lg text-sm mb-3">
+                        <span class="lang-kk">"Құжаттан мектептерді жөндеуді қаржыландыру туралы бөлімдерді тап. Кестені жаз: бөлінген vs жұмсалған және тапсырылмаған объектілер. Сандардағы сәйкессіздіктерді жуан қаріппен бөл."</span>
+                        <span class="lang-ru">"Найди в документе разделы о финансировании ремонта школ. Выпиши таблицу: выделено vs потрачено, и несданные объекты. Выдели жирным нестыковки в цифрах."</span>
+                    </div>
+                    <div class="text-sm text-gray-500 italic">
+                        <span class="lang-kk">* Комиссия отырыстарында әкімдік басқарма басшыларына нақты сұрақтар қоюға мүмкіндік береді.</span>
+                        <span class="lang-ru">* Позволяет задавать точечные вопросы руководителям Управлений акимата на заседаниях комиссий.</span>
+                    </div>
+                </div>
+
+                <!-- Промпт 3 -->
+                <div class="card p-6 border-l-8 border-[#1A237E]">
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="font-bold text-lg text-[#1A237E]">
+                            <span class="lang-kk">3. Дағдарысқа қарсы: №45 Маршрут кейсі</span>
+                            <span class="lang-ru">3. Антикризис: Кейс Маршрута №45</span>
+                        </h3>
+                        <span class="text-sm bg-indigo-100 text-indigo-900 px-2 py-1 rounded font-bold">
+                            <span class="lang-kk">Дағдарыс-менеджмент</span><span class="lang-ru">Кризис-менеджмент</span>
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-base mb-4">
+                        <span class="lang-kk">Жолдарды жабу немесе митингтер қаупі төнген кезде әлеуметтік шиеленісті азайту.</span>
+                        <span class="lang-ru">Разрядка социальной напряженности при угрозе перекрытия дорог или митингов.</span>
+                    </p>
+                    <div class="prompt-code p-4 rounded-lg text-sm mb-3">
+                        <span class="lang-kk">"Менің округімде төтенше жағдай / тұрғындардың №45 маршрутқа көңілі толмауы. 1. Әлеуметтік тәуекелдерді бөл. 2. Әкімге 'Депутаттардың мәртебесі туралы' Заң бойынша сұраныс жаз. 3. WhatsApp-қа жылы пост жаз."</span>
+                        <span class="lang-ru">"В моем округе ЧП / недовольство жителей маршрутом №45. 1. Выдели социальные риски. 2. Напиши запрос Акиму по Закону 'О статусе депутатов'. 3. Напиши теплый пост в WhatsApp."</span>
+                    </div>
+                    <div class="text-sm text-gray-500 italic">
+                        <span class="lang-kk">* Эмоцияларды айқын құқықтық алгоритмге айналдыра отырып, 2 минут ішінде паниканы басады.</span>
+                        <span class="lang-ru">* Снимает панику за 2 минуты, трансформируя эмоции в четкий правовой алгоритм.</span>
+                    </div>
+                </div>
+
+                <!-- Промпт 4 -->
+                <div class="card p-6 border-l-8 border-red-600">
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="font-bold text-lg text-[#1A237E]">
+                            <span class="lang-kk">4. Ақпараттық шабуылдан қорғау (Дипфейктер)</span>
+                            <span class="lang-ru">4. Защита от информационной атаки (Дипфейки)</span>
+                        </h3>
+                        <span class="text-sm bg-red-100 text-red-800 px-2 py-1 rounded font-bold">
+                            <span class="lang-kk">Репутация</span><span class="lang-ru">Репутация</span>
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-base mb-4">
+                        <span class="lang-kk">Желідегі провокациялар мен жасанды аудио/бейне материалдарға жедел жауап беру.</span>
+                        <span class="lang-ru">Реактивный ответ на провокации и поддельные аудио/видео материалы в сети.</span>
+                    </p>
+                    <div class="prompt-code p-4 rounded-lg text-sm mb-3">
+                        <span class="lang-kk">"Генерацияланған дипфейктің таралуына байланысты депутаттың ресми мәлімдемесін құрастыр. Тон: сабырлы, сенімді, материалдарды ҚР Әділет министрлігінің цифрлық сараптамасына беруді атап өтумен."</span>
+                        <span class="lang-ru">"Составь официальное заявление депутата в связи с распространением сгенерированного дипфейка. Тон: спокойный, уверенный, с упоминанием передачи материалов на цифровую экспертизу Минюста РК."</span>
+                    </div>
+                    <div class="text-sm text-gray-500 italic">
+                        <span class="lang-kk">* Сабырлықты сақтауға және БАҚ-та бастаманы жедел қолға алуға көмектеседі.</span>
+                        <span class="lang-ru">* Помогает сохранить хладнокровие и оперативно перехватить инициативу в СМИ.</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- БЛОК 5: ЦИФРОВАЯ ГИГИЕНА И БЕЗОПАСНОСТЬ -->
+        <section class="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="card p-8 border-l-8 border-red-600">
+                <h2 class="text-2xl font-bold mb-4 text-red-600 flex items-center">
+                    <span class="mr-3">⚠️</span> 
+                    <span class="lang-kk">Тұзақтар мен цифрлық гигиена</span>
+                    <span class="lang-ru">Ловушки и цифровая гигиена</span>
+                </h2>
+                <div class="space-y-6 text-base">
+                    <div>
+                        <h4 class="font-bold text-gray-900">
+                            <span class="lang-kk">1. ЖИ галлюцинациялары</span>
+                            <span class="lang-ru">1. Галлюцинации ИИ</span>
+                        </h4>
+                        <p class="text-gray-600 text-base mt-1">
+                            <span class="lang-kk">ЖИ заң нормасын ойдан шығаруы мүмкін (АҚШ-тағы адвокат Шварц ісі сияқты). <strong>Ереже:</strong> ЖИ форманы береді, бірақ фактчекингті адам жасайды!</span>
+                            <span class="lang-ru">ИИ может выдумать норму закона (как в деле адвоката Шварца в США). <strong>Правило:</strong> ИИ дает форму, но фактчекинг делает человек!</span>
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900">
+                            <span class="lang-kk">2. Құпиялылық және ҚР «Жеке деректер туралы» Заңы</span>
+                            <span class="lang-ru">2. Конфиденциальность и Закон РК «О персональных данных»</span>
+                        </h4>
+                        <p class="text-gray-600 text-base mt-1">
+                            <span class="lang-kk">ИИН, мекенжайлар мен ҚБПБ қызметтік құжаттарын ашық нейрожелілерге жүктемеңіз. Деректерді анонимдеңіз (Ибрагимов Б.А. ➔ А азаматы).</span>
+                            <span class="lang-ru">Не загружайте ИИН, адреса и служебные документы ДСП в открытые нейросети. Обезличивайте данные (Ибрагимов Б.А. ➔ Гражданин А).</span>
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900">
+                            <span class="lang-kk">3. Дипфейк-қорғаныс («Кодтық сөз»)</span>
+                            <span class="lang-ru">3. Дипфейк-защита («Кодовое слово»)</span>
+                        </h4>
+                        <p class="text-gray-600 text-base mt-1">
+                            <span class="lang-kk">WhatsApp-тағы дауыстық тапсырмаларды растау үшін аппарат ішінде құпия құпия сөзді (мысалы, «Байтерек-2015») енгізіңіз.</span>
+                            <span class="lang-ru">Внедрите секретный пароль (например, «Байтерек-2015») внутри аппарата для подтверждения голосовых поручений в WhatsApp.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-8">
+                <h2 class="text-2xl font-bold mb-4 text-[#1A237E]">
+                    <span class="lang-kk">Депутатқа арналған тәуекелдер матрицасы</span>
+                    <span class="lang-ru">Матрица рисков для депутата</span>
+                </h2>
+                <div class="chart-container">
+                    <canvas id="riskChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Футер -->
+    <footer class="bg-gray-900 text-white py-12 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-bold mb-3">
+                <span class="lang-kk">«Депутаттың цифрлық портфелі»</span>
+                <span class="lang-ru">«Цифровой чемоданчик депутата»</span>
+            </h2>
+            <p class="text-gray-400 text-base mb-6">
+                <span class="lang-kk">Қазақстан Республикасының заңнамасына сәйкес әзірленген ChatGPT және Claude үшін 20 тексерілген нұсқаулық-промпттар жинағы.</span>
+                <span class="lang-ru">Сборник 20 выверенных инструкций-промптов для ChatGPT и Claude, разработанных под законодательство Республики Казахстан.</span>
+            </p>
+            <button class="bg-[#FFD600] text-indigo-950 font-bold px-8 py-4 rounded-full text-base uppercase tracking-wider hover:bg-yellow-300 transition-all transform hover:scale-105 shadow-lg">
+                <span class="lang-kk">Промпттар кітапханасына қол жеткізу</span>
+                <span class="lang-ru">Получить доступ к библиотеке промптов</span>
+            </button>
+            <div class="mt-8 text-sm text-gray-600">
+                <span class="lang-kk">&copy; 2026 Қазақстан Республикасы Мәслихаттарын цифрландыру бағдарламасы. Кәсіби пайдалану үшін.</span>
+                <span class="lang-ru">&copy; 2026 Программа цифровизации Маслихатов Республики Казахстан. Для профессионального использования.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Логика скриптов и Chart.js -->
+    <script src="../assets/js/main.js"></script>
+    <script>
+        let growthChart, efficiencyChart, riskChart;
+
+        function wrapLabel(label, limit = 16) {
+            if (Array.isArray(label)) return label;
+            if (label.length <= limit) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+
+            words.forEach(word => {
+                if ((currentLine + word).length <= limit) {
+                    currentLine += (currentLine === '' ? '' : ' ') + word;
+                } else {
+                    lines.push(currentLine);
+                    currentLine = word;
+                }
+            });
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        window.addEventListener('languageChanged', (e) => {
+            const lang = e.detail.lang;
+            const titleEl = document.getElementById('page-title');
+            if (titleEl) {
+                titleEl.innerText = lang === 'kk'
+                    ? "Мәслихат депутатының жұмысындағы ЖИ: Практикум"
+                    : "Инфографика: ИИ в работе депутата Маслихата";
+            }
+
+            // Динамическое обновление графиков Chart.js при смене языка
+            if (growthChart) {
+                growthChart.data.datasets[0].label = lang === 'kk' ? 'e-Otinish өтініштер көлемі' : 'Объем обращений в e-Otinish';
+                growthChart.update();
+            }
+
+            if (efficiencyChart) {
+                efficiencyChart.data.labels = [
+                    wrapLabel(lang === 'kk' ? 'Есепті талдау (150 бет)' : 'Анализ отчета (150 стр)'),
+                    wrapLabel(lang === 'kk' ? 'Әлеуметтік желідегі пост' : 'Кризисный пост в соцсетях'),
+                    wrapLabel(lang === 'kk' ? 'Әкімдікке ресми сұрау' : 'Официальный запрос в Акимат')
+                ];
+                efficiencyChart.data.datasets[0].label = lang === 'kk' ? 'Қолмен (минут)' : 'Вручную (минуты)';
+                efficiencyChart.data.datasets[1].label = lang === 'kk' ? 'ЖИ-мен (минут)' : 'С ИИ (минуты)';
+                efficiencyChart.options.scales.x.title.text = lang === 'kk' ? 'Уақыт (минуттар)' : 'Время (минуты)';
+                efficiencyChart.update();
+            }
+
+            if (riskChart) {
+                riskChart.data.labels = [
+                    wrapLabel(lang === 'kk' ? 'ЖД Заңын бұзу' : 'Нарушение Закона о ПД'),
+                    wrapLabel(lang === 'kk' ? 'Заңдар галлюцинациясы' : 'Галлюцинации законов'),
+                    wrapLabel(lang === 'kk' ? 'Дипфейк-алаяқтық' : 'Дипфейк-мошенничество'),
+                    wrapLabel(lang === 'kk' ? 'Абыройлық тәуекелдер' : 'Репутационный риск отписок')
+                ];
+                riskChart.update();
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('portal_lang') || 'kk';
+
+            // 1. График роста обращений
+            const ctxGrowth = document.getElementById('growthChart').getContext('2d');
+            growthChart = new Chart(ctxGrowth, {
+                type: 'line',
+                data: {
+                    labels: ['2020', '2021', '2022', '2023', '2024'],
+                    datasets: [{
+                        label: savedLang === 'kk' ? 'e-Otinish өтініштер көлемі' : 'Объем обращений в e-Otinish',
+                        data: [100, 145, 210, 280, 390],
+                        borderColor: '#1A237E',
+                        backgroundColor: 'rgba(26, 35, 126, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false }, tooltip: tooltipConfig },
+                    scales: {
+                        y: { beginAtZero: true, grid: { display: false } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // 2. График эффективности обработки задач
+            const ctxEff = document.getElementById('efficiencyChart').getContext('2d');
+            efficiencyChart = new Chart(ctxEff, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        wrapLabel(savedLang === 'kk' ? 'Есепті талдау (150 бет)' : 'Анализ отчета (150 стр)'),
+                        wrapLabel(savedLang === 'kk' ? 'Әлеуметтік желідегі пост' : 'Кризисный пост в соцсетях'),
+                        wrapLabel(savedLang === 'kk' ? 'Әкімдікке ресми сұрау' : 'Официальный запрос в Акимат')
+                    ],
+                    datasets: [
+                        {
+                            label: savedLang === 'kk' ? 'Қолмен (минут)' : 'Вручную (минуты)',
+                            data: [120, 45, 60],
+                            backgroundColor: '#1A237E'
+                        },
+                        {
+                            label: savedLang === 'kk' ? 'ЖИ-мен (минут)' : 'С ИИ (минуты)',
+                            data: [2, 1, 1],
+                            backgroundColor: '#FFD600'
+                        }
+                    ]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: { tooltip: tooltipConfig },
+                    scales: {
+                        x: { title: { display: true, text: savedLang === 'kk' ? 'Уақыт (минуттар)' : 'Время (минуты)' }, grid: { display: false } }
+                    }
+                }
+            });
+
+            // 3. Полярный график рисков
+            const ctxRisk = document.getElementById('riskChart').getContext('2d');
+            riskChart = new Chart(ctxRisk, {
+                type: 'polarArea',
+                data: {
+                    labels: [
+                        wrapLabel(savedLang === 'kk' ? 'ЖД Заңын бұзу' : 'Нарушение Закона о ПД'),
+                        wrapLabel(savedLang === 'kk' ? 'Заңдар галлюцинациясы' : 'Галлюцинации законов'),
+                        wrapLabel(savedLang === 'kk' ? 'Дипфейк-алаяқтық' : 'Дипфейк-мошенничество'),
+                        wrapLabel(savedLang === 'kk' ? 'Абыройлық тәуекелдер' : 'Репутационный риск отписок')
+                    ],
+                    datasets: [{
+                        data: [85, 70, 95, 60],
+                        backgroundColor: [
+                            'rgba(26, 35, 126, 0.7)',
+                            'rgba(255, 214, 0, 0.7)',
+                            'rgba(213, 0, 0, 0.7)',
+                            'rgba(0, 191, 165, 0.7)'
+                        ]
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    plugins: { tooltip: tooltipConfig },
+                    scales: { r: { ticks: { display: false } } }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

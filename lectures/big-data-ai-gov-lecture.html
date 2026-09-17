@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Үлкен деректерді ЖИ арқылы талдау | Анализ больших данных и ИИ в госуправлении</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <meta name="description" content="Big Data өңдеу, әлеуметтік төлемдердегі алаяқтықты анықтау, сұранысты болжау, аналитиканың 4 деңгейі және интерактивті дашбордтар.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Үлкен деректерді ЖИ арқылы талдау">
+    <meta property="og:description" content="Big Data өңдеу, әлеуметтік төлемдердегі алаяқтықты анықтау, сұранысты болжау, аналитиканың 4 деңгейі және интерактивті дашбордтар.">
+    <meta property="og:image" content="../assets/images/lector.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Үлкен деректерді ЖИ арқылы талдау">
+    <meta name="twitter:description" content="Big Data өңдеу, әлеуметтік төлемдердегі алаяқтықты анықтау, сұранысты болжау, аналитиканың 4 деңгейі және интерактивті дашбордтар.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/lecture.css">
+    <style>
+        .gradient-header {
+            background: linear-gradient(135deg, #1A237E 0%, #00BFA5 100%);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden" data-lang="kk">
+
+    <!-- Верхняя панель навигации -->
+    <div class="bg-indigo-950 border-b border-indigo-800 py-3 px-6 text-sm text-white sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="../index.html" class="hover:text-amber-400 font-semibold flex items-center gap-1 transition-colors">
+                ← <span class="lang-kk">Дәрістер каталогына оралу</span><span class="lang-ru">Вернуться к каталогу лекций</span>
+            </a>
+            
+            <div class="flex items-center gap-4">
+                <span class="opacity-60 hidden sm:inline">
+                    <span class="lang-kk">Бөлім: Аналитика & Big Data</span><span class="lang-ru">Раздел: Аналитика & Big Data</span>
+                </span>
+
+                <!-- Языковой переключатель -->
+                <div class="inline-flex items-center bg-indigo-900/80 p-1 rounded-xl border border-indigo-700/60 text-sm">
+                    <button onclick="setLanguage('kk')" id="btn-lang-kk" class="px-3 py-1 rounded-lg transition-all text-indigo-950 bg-amber-400 font-bold shadow">
+                        ҚАЗ
+                    </button>
+                    <button onclick="setLanguage('ru')" id="btn-lang-ru" class="px-3 py-1 rounded-lg transition-all text-indigo-200 hover:text-white">
+                        RU
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Хедер статьи -->
+    <header class="gradient-header text-white py-14 px-6 text-center shadow-xl relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-block bg-amber-400 text-indigo-950 font-bold px-4 py-1 rounded-full text-sm uppercase tracking-widest mb-4 shadow-sm">
+                <span class="lang-kk">Интерактивті дәріс</span>
+                <span class="lang-ru">Интерактивная лекция</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight">
+                <span class="lang-kk">Үлкен деректерді ЖИ арқылы талдау</span>
+                <span class="lang-ru">Анализ больших данных и ИИ в госуправлении</span>
+            </h1>
+            <p class="text-base md:text-xl opacity-90 font-light max-w-3xl mx-auto leading-relaxed text-teal-50">
+                <span class="lang-kk">Мемлекеттік секторда Big Data өңдеу: алаяқтықты анықтау, сұранысты болжау, аналитика түрлері және дашбордтар.</span>
+                <span class="lang-ru">Обработка Big Data в госсекторе: выявление мошенничества, прогнозирование спроса, виды аналитики и дашборды.</span>
+            </p>
+
+            <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm font-medium text-slate-200">
+                <span class="bg-teal-900/60 px-3 py-1.5 rounded-lg border border-teal-700/50">⏱️ 90 минут</span>
+                <span class="bg-teal-900/60 px-3 py-1.5 rounded-lg border border-teal-700/50">🎯 <span class="lang-kk">ҚР Мемлекеттік қызметшілері</span><span class="lang-ru">Госслужащие РК</span></span>
+                <span class="bg-teal-900/60 px-3 py-1.5 rounded-lg border border-teal-700/50">📊 <span class="lang-kk">Big Data & Аналитика</span><span class="lang-ru">Big Data & Аналитика</span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент страницы -->
+    <main class="container mx-auto px-4 py-12 max-w-6xl">
+
+        <!-- БЛОК 1: КІРІСПЕ ЖӘНЕ НЕГІЗГІ КОНЦЕПЦИЯЛАР -->
+        <section class="mb-16">
+            <div class="card p-8 border-l-8 border-[#1A237E]">
+                <h2 class="text-2xl font-bold mb-4 text-[#1A237E] flex items-center">
+                    <span class="mr-3">🚀</span> 
+                    <span class="lang-kk">1. Кіріспе және негізгі концепциялар</span>
+                    <span class="lang-ru">1. Введение и основные концепции</span>
+                </h2>
+
+                <div class="bg-slate-50 border-l-4 border-indigo-900 p-6 rounded-r-xl mb-6 text-base text-slate-700 leading-relaxed">
+                    <span class="lang-kk">Әлеуметтік қорғау бөлімінде 10 000 жәрдемақы өтініші жатыр делік. Әрбір өтінішті қолмен тексеру айлап уақыт алады. Ал ЖИ негізіндегі жүйе бұл көлемді бірнеше минутта өңдеп, қателерді табады, күдікті өтініштерді сұрыптайды.<br><br>Бұл таңғажайып сиқыр емес — бұл <strong>Жасанды интеллект көмегімен үлкен деректерді (Big Data) өңдеу</strong>.</span>
+                    <span class="lang-ru">Представьте стопку из 10,000 заявок на пособие. Ручная проверка каждой формы займёт месяцы. Системы на базе ИИ способны обработать этот массив за считанные минуты: найти ошибки, отсеять подозрительные заявки и разбить их по категориям.<br><br>Это не волшебство — это <strong>обработка больших данных (Big Data) с помощью искусственного интеллекта</strong>.</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="card p-6 bg-indigo-50/50 border-t-4 border-indigo-600">
+                        <h3 class="font-bold text-indigo-950 mb-2">
+                            <span class="lang-kk">Үлкен деректер (Big Data) деген не?</span>
+                            <span class="lang-ru">Что такое Большие данные (Big Data)?</span>
+                        </h3>
+                        <p class="text-base text-slate-600 leading-relaxed">
+                            <span class="lang-kk">Бұл қолмен өңдеуге тым үлкен, өте жылдам өзгеретін және бір уақытта әртүрлі көздерден түсетін орасан зор ақпарат ағыны (мысалы, eGov.kz-тегі миллиондаған транзакциялар).</span>
+                            <span class="lang-ru">Это огромные объёмы информации, которые слишком велики для обработки вручную, меняются очень быстро и поступают из разных источников одновременно (например, миллионы записей eGov.kz).</span>
+                        </p>
+                    </div>
+
+                    <div class="card p-6 bg-teal-50/50 border-t-4 border-teal-500">
+                        <h3 class="font-bold text-teal-950 mb-2">
+                            <span class="lang-kk">Қазақстан үшін неге маңызды?</span>
+                            <span class="lang-ru">Почему это важно для Казахстана?</span>
+                        </h3>
+                        <ul class="text-base text-slate-600 leading-relaxed space-y-1 list-disc pl-4">
+                            <li><span class="lang-kk">2024 жылы eGov.kz-ке 15 млн өтініш түскен.</span><span class="lang-ru">За 2024 год в eGov.kz подано 15 млн обращений.</span></li>
+                            <li><span class="lang-kk">Заңнамалық ережелер мен алгоритмдер күрделенуде.</span><span class="lang-ru">Правила отбора и регламенты усложняются.</span></li>
+                            <li><span class="lang-kk">Шешім қабылдау жылдамдығы азаматтар үшін шешуші.</span><span class="lang-ru">Скорость принятия решений критична для граждан.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 2: ПРАКТИЧЕСКИЕ ПРИМЕРЫ -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center tracking-wide text-[#1A237E]">
+                <span class="lang-kk">💡 Практикалық мысалдар: ЖИ үлкен деректерді қалай өңдейді</span>
+                <span class="lang-ru">💡 Практические примеры: Как ИИ обрабатывает Big Data</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Пример 1 -->
+                <div class="card p-6 border-l-8 border-teal-500 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] bg-teal-100 text-teal-800 font-bold px-2 py-0.5 rounded uppercase">Әлеуметтік төлемдер / Соцзащита</span>
+                        <h3 class="font-bold text-base text-indigo-950 mt-2 mb-2">
+                            <span class="lang-kk">1. Алаяқтықты анықтау (Fraud Detection)</span>
+                            <span class="lang-ru">1. Выявление мошенничества в соцвыплатах</span>
+                        </h3>
+                        <p class="text-base text-slate-600 leading-relaxed mb-4">
+                            <span class="lang-kk">ЖИ бір уақытта 10 дереккөзді (Салық, eGov, Мүлік реестрі, Банктер) салыстырады. Азамат кірісін жасырса немесе жалған мәлімет берсе, жүйе сәйкессіздікті 94% дәлдікпен табады.</span>
+                            <span class="lang-ru">ИИ анализирует данные из 10 источников одновременно (eGov, Налоговая, Реестр имущества, Страхование). Система находит несоответствия с точностью 94%. Экономия в США — $2.3 млрд в год.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Пример 2 -->
+                <div class="card p-6 border-l-8 border-indigo-600 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] bg-indigo-100 text-indigo-800 font-bold px-2 py-0.5 rounded uppercase">Жоспарлау / Планирование</span>
+                        <h3 class="font-bold text-base text-indigo-950 mt-2 mb-2">
+                            <span class="lang-kk">2. Сұранысты және жүктемені болжау</span>
+                            <span class="lang-ru">2. Прогнозирование спроса на услуги</span>
+                        </h3>
+                        <p class="text-base text-slate-600 leading-relaxed mb-4">
+                            <span class="lang-kk">ЖИ 5 жылдық тарихи деректерді, мерекелерді, ауа райын және БАҚ-тағы жаңалықтарды талдайды. Нәтижесінде ХҚКО-ға (ЦОН) белгілі бір күні қанша адам келетінін 99%-ға дейінгі дәлдікпен болжайды.</span>
+                            <span class="lang-ru">ИИ анализирует историю за 5 лет, дни недели, погоду и новости. Точность прогноза визитов в ЦОН составляет до 99.2%, убирая очереди и оптимизируя график сотрудников.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Пример 3 -->
+                <div class="card p-6 border-l-8 border-amber-500 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] bg-amber-100 text-amber-900 font-bold px-2 py-0.5 rounded uppercase">Қазақстан Кейсі (2025)</span>
+                        <h3 class="font-bold text-base text-indigo-950 mt-2 mb-2">
+                            <span class="lang-kk">3. Тәуекел тобындағы отбасыларды анықтау (Риддер)</span>
+                            <span class="lang-ru">3. Проблемные семьи (Риддер, 2025)</span>
+                        </h3>
+                        <p class="text-base text-slate-600 leading-relaxed mb-4">
+                            <span class="lang-kk">2025 жылы Риддер қаласында ЖИ әлеуметтік деректерді талдап, «тәуекел профилін» есептеді. Нәтижесінде шұғыл көмекке мұқтаж 177 отбасы анықталып, әлеуметтік қызметкерлер тікелей соларға жіберілді.</span>
+                            <span class="lang-ru">В 2025 году в Риддере ИИ-система проанализировала социальные данные и выявила 177 семей в зоне высокого риска. Соцработники направились точно по адресам, предотвратив кризисные ситуации.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Пример 4 -->
+                <div class="card p-6 border-l-8 border-purple-600 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] bg-purple-100 text-purple-900 font-bold px-2 py-0.5 rounded uppercase">Аналитика & Трендтер</span>
+                        <h3 class="font-bold text-base text-indigo-950 mt-2 mb-2">
+                            <span class="lang-kk">4. Арыздар мен шағымдарды трендтік талдау</span>
+                            <span class="lang-ru">4. Анализ жалоб и обращений для трендов</span>
+                        </h3>
+                        <p class="text-base text-slate-600 leading-relaxed mb-4">
+                            <span class="lang-kk">ЖИ айына түсетін 30 000 өтініштің тональдығын және тақырыбын автоматты түрде талдайды. Жол, су немесе электр мәселесі бойынша шағымдардың қай ауданда өсіп жатқанын лезде көрсетеді.</span>
+                            <span class="lang-ru">ИИ автоматизирует обработку 30,000 жалоб в месяц, извлекая эмоциональный тон и ключевые темы. Руководство сразу видит очаги проблем (например, всплеск жалоб по дорогам в конкретном районе).</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 3: ТЕХНОЛОГИЯ И ВИДЫ АНАЛИТИКИ -->
+<section class="mb-16">
+    <div class="card p-8 border-l-8 border-teal-500">
+        <h2 class="text-2xl font-bold mb-6 text-indigo-950 flex items-center">
+            <span class="mr-3">⚙️</span> 
+            <span class="lang-kk">Аналитиканың 4 деңгейі және жұмыс механизмі</span>
+            <span class="lang-ru">4 уровня аналитики и механизм работы</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center mb-8">
+            <!-- 1 Уровень -->
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <div class="text-sm text-slate-400 font-bold mb-1">
+                    <span class="lang-kk">1-ДЕҢГЕЙ</span><span class="lang-ru">1-Й УРОВЕНЬ</span>
+                </div>
+                <h4 class="font-bold text-indigo-900 text-base mb-1">
+                    <span class="lang-kk">Сипаттамалық</span><span class="lang-ru">Описательный</span>
+                </h4>
+                <p class="text-sm text-slate-500">
+                    <span class="lang-kk">«Не болды?» (Статистика, есептер)</span>
+                    <span class="lang-ru">«Что произошло?» (Статистика, отчёты)</span>
+                </p>
+            </div>
+
+            <!-- 2 Уровень -->
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <div class="text-sm text-slate-400 font-bold mb-1">
+                    <span class="lang-kk">2-ДЕҢГЕЙ</span><span class="lang-ru">2-Й УРОВЕНЬ</span>
+                </div>
+                <h4 class="font-bold text-indigo-900 text-base mb-1">
+                    <span class="lang-kk">Диагностикалық</span><span class="lang-ru">Диагностический</span>
+                </h4>
+                <p class="text-sm text-slate-500">
+                    <span class="lang-kk">«Неге бұлай болды?» (Себебін табу)</span>
+                    <span class="lang-ru">«Почему это произошло?» (Поиск причин)</span>
+                </p>
+            </div>
+
+            <!-- 3 Уровень -->
+            <div class="bg-teal-50 p-4 rounded-xl border border-teal-200">
+                <div class="text-sm text-teal-700 font-bold mb-1">
+                    <span class="lang-kk">3-ДЕҢГЕЙ</span><span class="lang-ru">3-Й УРОВЕНЬ</span>
+                </div>
+                <h4 class="font-bold text-teal-950 text-base mb-1">
+                    <span class="lang-kk">Болжамдық</span><span class="lang-ru">Предсказательный</span>
+                </h4>
+                <p class="text-sm text-teal-800">
+                    <span class="lang-kk">«Не болуы мүмкін?» (Болжау)</span>
+                    <span class="lang-ru">«Что произойдёт?» (Прогнозирование)</span>
+                </p>
+            </div>
+
+            <!-- 4 Уровень -->
+            <div class="bg-amber-50 p-4 rounded-xl border border-amber-200">
+                <div class="text-sm text-amber-800 font-bold mb-1">
+                    <span class="lang-kk">4-ДЕҢГЕЙ</span><span class="lang-ru">4-Й УРОВЕНЬ</span>
+                </div>
+                <h4 class="font-bold text-amber-950 text-base mb-1">
+                    <span class="lang-kk">Ұсынымдық</span><span class="lang-ru">Рекомендательный</span>
+                </h4>
+                <p class="text-sm text-amber-900">
+                    <span class="lang-kk">«Не істеу керек?» (Шешім ұсыну)</span>
+                    <span class="lang-ru">«Что делать?» (Выработка решений)</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-slate-900 text-slate-200 p-6 rounded-2xl">
+            <h3 class="font-bold text-amber-400 text-base mb-3">
+                <span class="lang-kk">Деректерді өңдеудің 3 негізгі қадамы:</span>
+                <span class="lang-ru">3 ключевых шага обработки данных:</span>
+            </h3>
+            <div class="space-y-3 text-sm leading-relaxed">
+                <div>
+                    <span class="lang-kk"><strong class="text-teal-400">1. Деректерді дайындау (Тазалау):</strong> Бос орындарды толтыру, форматтарды біріздендіру (мысалы, "01/01/2025" мен "1 қаңтар" жазбаларын теңестіру).</span>
+                    <span class="lang-ru"><strong class="text-teal-400">1. Подготовка данных (Очистка):</strong> Устранение пропусков, исправление ошибок и приведение разных форматов к единому стандарту.</span>
+                </div>
+                <div>
+                    <span class="lang-kk"><strong class="text-teal-400">2. Заңдылықтарды іздеу (Оқыту):</strong> Мыңдаған тарихи мысалдар ішінен ортақ заңдылықтарды автоматты табу.</span>
+                    <span class="lang-ru"><strong class="text-teal-400">2. Поиск закономерностей (Обучение):</strong> Поиск скрытых связей и закономерностей на основе тысяч исторических примеров.</span>
+                </div>
+                <div>
+                    <span class="lang-kk"><strong class="text-teal-400">3. Болжау және визуализация (Дашборд):</strong> Жаңа өтінішке ережелерді қолдану және нәтижені интерактивті дашбордқа шығару.</span>
+                    <span class="lang-ru"><strong class="text-teal-400">3. Предсказание и визуализация (Дашборд):</strong> Применение алгоритма к новым данным и выведение результатов на интерактивный дашборд.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- БЛОК 4: ВНЕДРЕНИЕ И ШАГИ -->
+<section class="mb-16">
+    <h2 class="text-2xl font-bold mb-6 text-[#1A237E] flex items-center">
+        <span class="mr-3">🗺️</span> 
+        <span class="lang-kk">Мемлекеттік органда ЖИ-ді енгізудің 5 қадамы</span>
+        <span class="lang-ru">5 шагов внедрения ИИ в госоргане</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 text-sm">
+        <div class="card p-4 bg-slate-50 border-t-4 border-indigo-900 text-center">
+            <div class="font-bold text-indigo-950 text-base mb-1">
+                <span class="lang-kk">1-ҚАДАМ</span><span class="lang-ru">ШАГ 1</span>
+            </div>
+            <span class="lang-kk">Деректерді бағалау (Excel, 1C, базалар)</span>
+            <span class="lang-ru">Оценка имеющихся данных</span>
+        </div>
+        <div class="card p-4 bg-slate-50 border-t-4 border-indigo-900 text-center">
+            <div class="font-bold text-indigo-950 text-base mb-1">
+                <span class="lang-kk">2-ҚАДАМ</span><span class="lang-ru">ШАГ 2</span>
+            </div>
+            <span class="lang-kk">Нақты міндетті белгілеу (мәселе, шығын)</span>
+            <span class="lang-ru">Определение конкретной задачи</span>
+        </div>
+        <div class="card p-4 bg-slate-50 border-t-4 border-indigo-900 text-center">
+            <div class="font-bold text-indigo-950 text-base mb-1">
+                <span class="lang-kk">3-ҚАДАМ</span><span class="lang-ru">ШАГ 3</span>
+            </div>
+            <span class="lang-kk">Шешім мен сарапшыларды таңдау</span>
+            <span class="lang-ru">Выбор решения / экспертов</span>
+        </div>
+        <div class="card p-4 bg-slate-50 border-t-4 border-teal-600 text-center">
+            <div class="font-bold text-teal-900 text-base mb-1">
+                <span class="lang-kk">4-ҚАДАМ</span><span class="lang-ru">ШАГ 4</span>
+            </div>
+            <span class="lang-kk">Пилоттық жоба (масштабтамай тұрып тексеру)</span>
+            <span class="lang-ru">Пилотный проект на малом отделе</span>
+        </div>
+        <div class="card p-4 bg-slate-50 border-t-4 border-amber-500 text-center">
+            <div class="font-bold text-amber-900 text-base mb-1">
+                <span class="lang-kk">5-ҚАДАМ</span><span class="lang-ru">ШАГ 5</span>
+            </div>
+            <span class="lang-kk">Ұжымды оқыту және масштабтау</span>
+            <span class="lang-ru">Обучение команды и масштабирование</span>
+        </div>
+    </div>
+</section>
+
+        <!-- ИНТЕРАКТИВНЫЙ БЛОК: КЕЙСЫ ДЛЯ САМОПРОВЕРКИ -->
+        <section class="mt-16 bg-gradient-to-b from-teal-50 to-indigo-50 border-2 border-teal-200 rounded-3xl p-6 md:p-10 shadow-xl">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="bg-teal-700 text-white font-bold px-4 py-1 rounded-full text-sm uppercase tracking-widest shadow-sm">
+                    <span class="lang-kk">Өз бетінше тексеру</span><span class="lang-ru">Самостоятельная проверка</span>
+                </span>
+                <h2 class="text-2xl md:text-3xl font-extrabold mt-3 text-teal-950">
+                    📊 <span class="lang-kk">Практикалық Интерактивті Блок</span>
+                    <span class="lang-ru">Практический Интерактивный Блок</span>
+                </h2>
+                <p class="text-base md:text-base text-teal-800 mt-2 leading-relaxed">
+                    <span class="lang-kk">Төмендегі деректер аналитикасы кейстерін оқып, қандай аналитика түрін қолдану керектігін анықтаңыз.</span>
+                    <span class="lang-ru">Изучите кейсы по анализу данных ниже и определите оптимальный подход к их решению.</span>
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Кейс 1 -->
+                <div class="card p-6 border border-teal-100 bg-white">
+                    <h3 class="font-bold text-base text-indigo-950 mb-2">
+                        <span class="lang-kk">Кейс 1: Әлеуметтік көмек алудағы аномалиялар</span>
+                        <span class="lang-ru">Кейс 1: Аномалии в социальных выплатах</span>
+                    </h3>
+                    <p class="text-base text-slate-700 mb-4">
+                        <span class="lang-kk">Азамат ай сайын 45 000 тг отбасылық табыс көрсетеді. Алайда оның атында 2 автокөлік тіркелген және салық базасында соңғы 3 айда ірі қаржылық транзакциялар бар.</span>
+                        <span class="lang-ru">Заявитель указывает доход 45,000 тенге. Однако в реестре имущества на него зарегистрировано 2 автомобиля, а в налоговой зафиксированы крупные переводы.</span>
+                    </p>
+                    <div class="bg-teal-50 border-l-4 border-teal-500 p-4 rounded-r-xl text-sm text-teal-950 font-medium">
+                        <span class="lang-kk">Сұрақ: Бұл жерде ИИ қандай алгоритмді қолданады және қандай шешім ұсынады?</span>
+                        <span class="lang-ru">Вопрос: Какой тип анализа применит ИИ в данном случае и каково будет его решение?</span>
+                    </div>
+                </div>
+
+                <!-- Кейс 2 -->
+                <div class="card p-6 border border-teal-100 bg-white">
+                    <h3 class="font-bold text-base text-indigo-950 mb-2">
+                        <span class="lang-kk">Кейс 2: ТҮКШ шағымдарының дашборды</span>
+                        <span class="lang-ru">Кейс 2: Дашборд жалоб по ЖКХ</span>
+                    </h3>
+                    <p class="text-base text-slate-700 mb-4">
+                        <span class="lang-kk">Ауданда 1 апта ішінде жылу желілері бойынша 400 шағым түсті. Тұрғындар әлеуметтік желіде жағымсыз пікірлер жазуда. ЖИ есепті қалай визуализациялауы тиіс?</span>
+                        <span class="lang-ru">В районе за неделю поступило 400 жалоб на отопление. ИИ должен сформировать оперативный отчет для акима.</span>
+                    </p>
+                    <div class="bg-teal-50 border-l-4 border-teal-500 p-4 rounded-r-xl text-sm text-teal-950 font-medium">
+                        <span class="lang-kk">Сұрақ: Басшыға шешім қабылдау үшін дашбордта қандай 3 негізгі метр көрсетілуі керек?</span>
+                        <span class="lang-ru">Вопрос: Какие 3 ключевые метрики ИИ должен вывести на дашборд для немедленного реагирования?</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Футер страницы -->
+    <footer class="bg-indigo-950 text-white py-10 px-6 text-center text-sm border-t border-indigo-900">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-slate-400 mb-2">
+                &copy; 2026 <span class="lang-kk">Сандық коммуникациялар & ЖИ білім порталы. Барлық құқықтар қорғалған.</span>
+                <span class="lang-ru">Образовательный портал цифровых коммуникаций и ИИ. Все права защищены.</span>
+            </p>
+            <p class="text-slate-500 text-sm">
+                <span class="lang-kk">Қазақстан Республикасының Мемлекеттік қызметшілері мен мәслихат депутаттарына арналған.</span>
+                <span class="lang-ru">Предназначено для государственных служащих и депутатов маслихатов Республики Казахстан.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

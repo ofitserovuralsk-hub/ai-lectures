@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЖИ және адам: Жұмыс мәдениеті мен бірлескен шешімдер | ИИ и человек: Культура работы и совместные решения</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <meta name="description" content="Мемлекеттік қызметтегі адамның ролі, мифтер мен шындық, 4 ролі (детектив, төреші), ЖИ-ге сұраныс қою ережелері мен 5 негізгі дағды.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ЖИ және адам: Жұмыс мәдениеті">
+    <meta property="og:description" content="Мемлекеттік қызметтегі адамның ролі, мифтер мен шындық, 4 ролі (детектив, төреші), ЖИ-ге сұраныс қою ережелері мен 5 негізгі дағды.">
+    <meta property="og:image" content="../assets/images/lector.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ЖИ және адам: Жұмыс мәдениеті">
+    <meta name="twitter:description" content="Мемлекеттік қызметтегі адамның ролі, мифтер мен шындық, 4 ролі (детектив, төреші), ЖИ-ге сұраныс қою ережелері мен 5 негізгі дағды.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/lecture.css">
+    <style>
+        .gradient-header {
+            background: linear-gradient(135deg, #1A237E 0%, #4338CA 100%);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden" data-lang="kk">
+
+    <!-- Верхняя панель навигации -->
+    <div class="bg-indigo-950 border-b border-indigo-800 py-3 px-6 text-sm text-white sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="../index.html" class="hover:text-amber-400 font-semibold flex items-center gap-1 transition-colors">
+                ← <span class="lang-kk">Дәрістер каталогына оралу</span><span class="lang-ru">Вернуться к каталогу лекций</span>
+            </a>
+            
+            <div class="flex items-center gap-4">
+                <span class="opacity-60 hidden sm:inline">
+                    <span class="lang-kk">Бөлім: Мәдениет & Ынтымақтастық</span><span class="lang-ru">Раздел: Культура & Сотрудничество</span>
+                </span>
+
+                <!-- Языковой переключатель -->
+                <div class="inline-flex items-center bg-indigo-900/80 p-1 rounded-xl border border-indigo-700/60 text-sm">
+                    <button onclick="setLanguage('kk')" id="btn-lang-kk" class="px-3 py-1 rounded-lg transition-all text-indigo-950 bg-amber-400 font-bold shadow">
+                        ҚАЗ
+                    </button>
+                    <button onclick="setLanguage('ru')" id="btn-lang-ru" class="px-3 py-1 rounded-lg transition-all text-indigo-200 hover:text-white">
+                        RU
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Хедер статьи -->
+    <header class="gradient-header text-white py-14 px-6 text-center shadow-xl relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-block bg-amber-400 text-indigo-950 font-bold px-4 py-1 rounded-full text-sm uppercase tracking-widest mb-4 shadow-sm">
+                <span class="lang-kk">Интерактивті дәріс</span>
+                <span class="lang-ru">Интерактивная лекция</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight">
+                <span class="lang-kk">ЖИ және адам: Жұмыс мәдениеті мен бірлескен шешімдер</span>
+                <span class="lang-ru">ИИ и человек: Культура работы и совместные решения</span>
+            </h1>
+            <p class="text-base md:text-xl opacity-90 font-light max-w-3xl mx-auto leading-relaxed text-indigo-100">
+                <span class="lang-kk">Мемлекеттік қызметтегі адамның ролі, мифтер мен шындық, ЖИ-ге дұрыс сұраныс қою және сыни ойлау.</span>
+                <span class="lang-ru">Роль человека в госслужбе, мифы и реальность, правила составления промптов и критическое мышление.</span>
+            </p>
+
+            <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm font-medium text-slate-200">
+                <span class="bg-indigo-900/60 px-3 py-1.5 rounded-lg border border-indigo-700/50">🎯 <span class="lang-kk">ҚР Мемлекеттік қызметшілері</span><span class="lang-ru">Госслужащие РК</span></span>
+                <span class="bg-indigo-900/60 px-3 py-1.5 rounded-lg border border-indigo-700/50">🤝 <span class="lang-kk">Адам + ЖИ синергиясы</span><span class="lang-ru">Синергия Человек + ИИ</span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент страницы -->
+    <main class="container mx-auto px-4 py-12 max-w-6xl">
+
+        <!-- БЛОК 1: КІРІСПЕ ЖӘНЕ НЕГІЗГІ ИДЕЯ -->
+        <section class="mb-16">
+            <div class="card p-8 border-l-8 border-[#1A237E]">
+                <h2 class="text-2xl font-bold mb-4 text-[#1A237E] flex items-center">
+                    <span class="mr-3">🤝</span> 
+                    <span class="lang-kk">1. Кім басты кейіпкер? ЖИ адамды алмастырмайды</span>
+                    <span class="lang-ru">1. Кто главный герой? ИИ — помощник, а не замена</span>
+                </h2>
+
+                <div class="bg-slate-50 border-l-4 border-indigo-900 p-6 rounded-r-xl mb-6 text-base text-slate-700 leading-relaxed">
+                    <h3 class="font-bold text-indigo-950 mb-2">
+                        <span class="lang-kk">Өмірлік оқиға: ЖИ қателескенде, адам аман алып қалды</span>
+                        <span class="lang-ru">Реальная история: Когда ИИ ошибся, человек спас</span>
+                    </h3>
+                    <p class="mb-3">
+                        <span class="lang-kk">Алаңдаулы жағдай: ЖИ жүйесі құжаттар бойынша "Табысы > 100 000 тг, жұмыс істейді" деп тапқан соң, зейнеткер Раиса әжеміздің жәрдемақы өтінішін автоматты түрде қабылдамай тастады. Алайда мемлекеттік қызметші Нұрбол деректерді қайта тексеріп, Раиса әжеге хабарласты. Ол бұрынғы жұмысынан 2 жыл бұрын кеткенін және қазір үйде немересіне қарайтынын біліп, шешімді қайта қарап, оң нәтиже берді.</span>
+                        <span class="lang-ru">Система ИИ отклонила заявку на пособие бабушке Раисе, обнаружа запись «Работает в магазине». Чиновник Нурбол решил проверить историю лично и позвонил: оказалось, она не работает уже 2 года и сидит с внуком. Нурбол пересмотрел решение и одобрил помощь.</span>
+                    </p>
+                    <div class="p-3 bg-amber-50 rounded-lg text-amber-900 font-semibold text-sm border border-amber-200">
+                        <span class="lang-kk">Басты идея: Басты кейіпкер — АДАМ. ЖИ — көзілдірік сияқты тек көмекші құрал. Шешімді әрдайым АДАМ қабылдайды.</span>
+                        <span class="lang-ru">Главная идея: Главный герой — ЧЕЛОВЕК. ИИ — лишь инструмент (как очки для зрения). Окончательное решение всегда за ЧЕЛОВЕКОМ.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 2: МИФ VS РЕАЛЬНОСТЬ -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 text-[#1A237E] flex items-center">
+                <span class="mr-3">🧠</span> 
+                <span class="lang-kk">2. Мифтер мен Шындық</span>
+                <span class="lang-ru">2. Мифы vs Реальность</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Миф 1 -->
+                <div class="card p-6 border-t-4 border-red-500 bg-red-50/20">
+                    <span class="text-sm font-bold text-red-600 tracking-wider uppercase">МИФ 1</span>
+                    <h3 class="font-bold text-indigo-950 text-base my-2">
+                        <span class="lang-kk">«ЖИ мені жұмысымнан айырады»</span>
+                        <span class="lang-ru">«ИИ отнимет мою работу»</span>
+                    </h3>
+                    <p class="text-base text-slate-600 leading-relaxed">
+                        <span class="lang-kk"><strong>Шындық:</strong> Қолмен дерек енгізу жойылады, бірақ сіз күрделі кейстерді шешуге, азаматтарға жеке көмектесуге және ЖИ жұмысын тексеруге уақыт бөлесіз.</span>
+                        <span class="lang-ru"><strong>Реальность:</strong> Рутинный ввод данных уйдет. Вместо этого вы будете разбирать сложные случаи, лично помогать гражданам и проверять результаты ИИ.</span>
+                    </p>
+                </div>
+
+                <!-- Миф 2 -->
+                <div class="card p-6 border-t-4 border-orange-500 bg-orange-50/20">
+                    <span class="text-sm font-bold text-orange-600 tracking-wider uppercase">МИФ 2</span>
+                    <h3 class="font-bold text-indigo-950 text-base my-2">
+                        <span class="lang-kk">«ЖИ әрдайым дұрыс айтады»</span>
+                        <span class="lang-ru">«ИИ всегда прав»</span>
+                    </h3>
+                    <p class="text-base text-slate-600 leading-relaxed">
+                        <span class="lang-kk"><strong>Шындық:</strong> ЖИ контексті түсінбейді және жиі қателеседі. ЖИ — ассистент, ал мемлекеттік қызметкер — детектив.</span>
+                        <span class="lang-ru"><strong>Реальность:</strong> ИИ часто ошибается и не знает скрытого контекста. Человек выступает детективом, а ИИ — лишь помощником.</span>
+                    </p>
+                </div>
+
+                <!-- Миф 3 -->
+                <div class="card p-6 border-t-4 border-purple-500 bg-purple-50/20">
+                    <span class="text-sm font-bold text-purple-600 tracking-wider uppercase">МИФ 3</span>
+                    <h3 class="font-bold text-indigo-950 text-base my-2">
+                        <span class="lang-kk">«ЖИ әрдайым әділ және біржақты емес»</span>
+                        <span class="lang-ru">«ИИ абсолютно беспристрастен»</span>
+                    </h3>
+                    <p class="text-base text-slate-600 leading-relaxed">
+                        <span class="lang-kk"><strong>Шындық:</strong> Егер оқыту деректерінде бұрын дискриминация болса, ЖИ оны қайталайды және күшейтеді. Адам ЖИ-дің әділдігін ұдайы мониторингтеуі тиіс.</span>
+                        <span class="lang-ru"><strong>Реальность:</strong> ИИ наследует предвзятость из исторических данных. Человек обязан мониторить ИИ на честность и объективность.</span>
+                    </p>
+                </div>
+
+                <!-- Миф 4 -->
+                <div class="card p-6 border-t-4 border-teal-500 bg-teal-50/20">
+                    <span class="text-sm font-bold text-teal-600 tracking-wider uppercase">МИФ 4</span>
+                    <h3 class="font-bold text-indigo-950 text-base my-2">
+                        <span class="lang-kk">«ЖИ-мен жұмыс істеу тым күрделі»</span>
+                        <span class="lang-ru">«Работать с ИИ слишком сложно»</span>
+                    </h3>
+                    <p class="text-base text-slate-600 leading-relaxed">
+                        <span class="lang-kk"><strong>Шындық:</strong> Бағдарламашы болудың керегі жоқ. Сізге тек дұрыс сұрақ қоюды және жауапты тексеруді білу жеткілікті (Google Maps немесе Excel сияқты).</span>
+                        <span class="lang-ru"><strong>Реальность:</strong> Не нужно знать устройство нейросетей. Нужно уметь правильно сформулировать запрос и проверить ответ (как в Google Maps).</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 3: 4 РОЛИ ЧЕЛОВЕКА -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 text-indigo-950 flex items-center">
+                <span class="mr-3">👨‍💼</span> 
+                <span class="lang-kk">Адамның ЖИ-мен жұмыстағы 4 рөлі</span>
+                <span class="lang-ru">4 роли человека при работе с ИИ</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Роль 1 -->
+                <div class="card p-5 bg-white border-b-4 border-blue-600">
+                    <div class="text-2xl mb-2">🔍</div>
+                    <h3 class="font-bold text-indigo-950 text-base mb-1">
+                        <span class="lang-kk">1. Бақылаушы (Контролёр)</span>
+                        <span class="lang-ru">1. Контролёр</span>
+                    </h3>
+                    <p class="text-base text-slate-600 leading-relaxed">
+                        <span class="lang-kk">ЖИ ұсыныстарын тексереді: табыстар мен құжаттардың түпнұсқалығын базалар бойынша салыстырады.</span>
+                        <span class="lang-ru">Проверяет корректность выводов ИИ: сверяет доходы, подлинность документов и статусы по базам.</span>
+                    </p>
+                </div>
+
+                <!-- Роль 2 -->
+                <div class="card p-5 bg-white border-b-4 border-amber-500">
+                    <div class="text-2xl mb-2">🕵️‍♂️</div>
+                    <h3 class="font-bold text-indigo-950 text-base mb-1">
+                        <span class="lang-kk">2. Детектив</span>
+                        <span class="lang-ru">2. Детектив</span>
+                    </h3>
+                    <p class="text-base text-slate-600 leading-relaxed">
+                        <span class="lang-kk">ЖИ шеше алмаған нестандартты және күрделі жағдайларды жеке зерттейді.</span>
+                        <span class="lang-ru">Разбирает нестандартные кейсы, где данные нетипичны или отсутствуют в системе.</span>
+                    </p>
+                </div>
+
+                <!-- Роль 3 -->
+                <div class="card p-5 bg-white border-b-4 border-teal-500">
+                    <div class="text-2xl mb-2">🤝</div>
+                    <h3 class="font-bold text-indigo-950 text-base mb-1">
+                        <span class="lang-kk">3. Азаматтың көмекшісі</span>
+                        <span class="lang-ru">3. Помощник гражданина</span>
+                    </h3>
+                    <p class="text-base text-slate-600 leading-relaxed">
+                        <span class="lang-kk">Азаматтарға ЖИ шешімін қарапайым тілмен түсіндіріп, қателерді түзетуге көмектеседі.</span>
+                        <span class="lang-ru">Разъясняет гражданам логику алгоритма доступным языком и помогает подать апелляцию.</span>
+                    </p>
+                </div>
+
+                <!-- Роль 4 -->
+                <div class="card p-5 bg-white border-b-4 border-purple-600">
+                    <div class="text-2xl mb-2">⚖️</div>
+                    <h3 class="font-bold text-indigo-950 text-base mb-1">
+                        <span class="lang-kk">4. Төреші (Судья)</span>
+                        <span class="lang-ru">4. Арбитр (Судья)</span>
+                    </h3>
+                    <p class="text-base text-slate-600 leading-relaxed">
+                        <span class="lang-kk">ЖИ сенімсіз болған кезде соңғы заңды және моральдық шешімді қабылдайды.</span>
+                        <span class="lang-ru">Принимает финальное юридическое и моральное решение, когда ИИ выдает спорную вероятность.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 4: ПРОМПТИНГ И КРАСНЫЕ ФЛАГИ -->
+<section class="mb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Правила вопросов -->
+        <div class="card p-6 border-l-8 border-indigo-900">
+            <h3 class="font-bold text-lg text-indigo-950 mb-4 flex items-center">
+                <span class="mr-2">📝</span>
+                <span class="lang-kk">ЖИ-ге сұрақ қоюдың 3 ережесі</span>
+                <span class="lang-ru">3 правила работы с запросами (Prompting)</span>
+            </h3>
+            <div class="space-y-4 text-sm">
+                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                    <strong class="text-indigo-900 block mb-1">
+                        <span class="lang-kk">1. Нақты болыңыз</span>
+                        <span class="lang-ru">1. Будьте конкретны</span>
+                    </strong>
+                    <p class="text-slate-600">
+                        <span class="lang-kk">❌ "Шағымды талда" → ✅ "Шағымды талда: 1. Негізгі мәселе? 2. Жауапты бөлім? 3. Шұғылдығы (1-10)?"</span>
+                        <span class="lang-ru">❌ "Проанализируй жалобу" → ✅ "Проанализируй эту жалобу: 1. Основная проблема? 2. Ответственный отдел? 3. Срочность (1-10)?"</span>
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                    <strong class="text-indigo-900 block mb-1">
+                        <span class="lang-kk">2. Контекст беріңіз</span>
+                        <span class="lang-ru">2. Дайте контекст</span>
+                    </strong>
+                    <p class="text-slate-600">
+                        <span class="lang-kk">✅ Нормативтік шектерді, жеңілдіктерді және ережелерді промптқа қоса енгізіңіз.</span>
+                        <span class="lang-ru">✅ Включайте нормативные пороги, льготы и правила непосредственно в промпт.</span>
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                    <strong class="text-indigo-900 block mb-1">
+                        <span class="lang-kk">3. Жауапты тексеріңіз</span>
+                        <span class="lang-ru">3. Проверяйте ответ</span>
+                    </strong>
+                    <p class="text-slate-600">
+                        <span class="lang-kk">✅ ЖИ жауабын азаматқа жібермес бұрын цифрлар мен нормаларды базадан қайта тексеріңіз.</span>
+                        <span class="lang-ru">✅ Перепроверяйте цифры и нормы по базе перед отправкой ответа гражданину.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Красные флаги -->
+        <div class="card p-6 border-l-8 border-red-500 bg-red-50/10">
+            <h3 class="font-bold text-lg text-red-900 mb-4 flex items-center">
+                <span class="mr-2">🚩</span>
+                <span class="lang-kk">Қателік белгілері (Қызыл жалаушалар)</span>
+                <span class="lang-ru">Признаки ошибки ИИ (Красные флаги)</span>
+            </h3>
+            <ul class="space-y-3 text-base text-slate-700">
+                <li class="flex items-start gap-2">
+                    <span>🚩</span>
+                    <div>
+                        <strong><span class="lang-kk">Тым жылдам әрі қарапайым:</span><span class="lang-ru">Слишком быстро и просто:</span></strong> 
+                        <span class="lang-kk">Күрделі кейсті 1 секундта шешсе — контекст ескерілмеген.</span>
+                        <span class="lang-ru">ИИ решил сложный случай за секунду — вероятно, пропустил контекст.</span>
+                    </div>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span>🚩</span>
+                    <div>
+                        <strong><span class="lang-kk">Біркелкі шешімдер:</span><span class="lang-ru">Шаблонные результаты:</span></strong> 
+                        <span class="lang-kk">Барлық өтініштерге бірдей бас тарту немесе мақұлдау берілсе.</span>
+                        <span class="lang-ru">Из 100 случаев 90% решены по одинаковому шаблону.</span>
+                    </div>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span>🚩</span>
+                    <div>
+                        <strong><span class="lang-kk">Қисынға қайшылық:</span><span class="lang-ru">Несоответствие логике:</span></strong> 
+                        <span class="lang-kk">Табысы жоғары адамға жәрдемақы мақұлданса.</span>
+                        <span class="lang-ru">ИИ одобрил пособие человеку с огромным доходом.</span>
+                    </div>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span>🚩</span>
+                    <div>
+                        <strong><span class="lang-kk">Идеялық әділетсіздік:</span><span class="lang-ru">Интуитивная несправедливость:</span></strong> 
+                        <span class="lang-kk">Шешім өңірлік немесе ұлттық белгісіне қарай қабылданса.</span>
+                        <span class="lang-ru">Отказ сформирован из-за региона происхождения заявителя.</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- БЛОК 5: 5 НАВЫКОВ -->
+<section class="mb-16">
+    <h2 class="text-2xl font-bold mb-6 text-[#1A237E] flex items-center">
+        <span class="mr-3">🌟</span> 
+        <span class="lang-kk">Мемлекеттік қызметшіге қажетті 5 негізгі дағды</span>
+        <span class="lang-ru">5 ключевых навыков госслужащего</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 text-sm">
+        <div class="card p-4 bg-slate-50 border-t-4 border-indigo-900 text-center">
+            <div class="font-bold text-indigo-950 text-base mb-1">
+                <span class="lang-kk">1. Сыни ойлау</span>
+                <span class="lang-ru">1. Критическое мышление</span>
+            </div>
+            <span class="lang-kk">ЖИ айтқанның бәріне сене бермей, "Неге?" деп сұрау.</span>
+            <span class="lang-ru">Перепроверять выводы ИИ и задавать вопрос «Почему?».</span>
+        </div>
+        <div class="card p-4 bg-slate-50 border-t-4 border-indigo-900 text-center">
+            <div class="font-bold text-indigo-950 text-base mb-1">
+                <span class="lang-kk">2. Коммуникация</span>
+                <span class="lang-ru">2. Коммуникация</span>
+            </div>
+            <span class="lang-kk">ЖИ шешімін азаматқа қарапайым тілде жеткізу.</span>
+            <span class="lang-ru">Объяснять решения алгоритмов доступным языком.</span>
+        </div>
+        <div class="card p-4 bg-slate-50 border-t-4 border-indigo-900 text-center">
+            <div class="font-bold text-indigo-950 text-base mb-1">
+                <span class="lang-kk">3. Жылдам үйрену</span>
+                <span class="lang-ru">3. Быстрое обучение</span>
+            </div>
+            <span class="lang-kk">Жаңа цифрлық құралдарды тез меңгеру.</span>
+            <span class="lang-ru">Быстро осваивать новые ИИ-инструменты.</span>
+        </div>
+        <div class="card p-4 bg-slate-50 border-t-4 border-indigo-900 text-center">
+            <div class="font-bold text-indigo-950 text-base mb-1">
+                <span class="lang-kk">4. Жауапкершілік</span>
+                <span class="lang-ru">4. Ответственность</span>
+            </div>
+            <span class="lang-kk">Соңғы шешім үшін дербес жауапты болу.</span>
+            <span class="lang-ru">Принимать на себя финальное решение.</span>
+        </div>
+        <div class="card p-4 bg-slate-50 border-t-4 border-teal-600 text-center">
+            <div class="font-bold text-teal-950 text-base mb-1">
+                <span class="lang-kk">5. Эмпатия</span>
+                <span class="lang-ru">5. Эмпатия</span>
+            </div>
+            <span class="lang-kk">Әрбір өтініштің артында адам тағдыры тұрғанын ұмытпау.</span>
+            <span class="lang-ru">Помнить, что за каждым файлом стоит человек.</span>
+        </div>
+    </div>
+</section>
+
+        <!-- ИНТЕРАКТИВНЫЙ БЛОК: КЕЙСЫ ДЛЯ САМОПРОВЕРКИ -->
+        <section class="mt-16 bg-gradient-to-b from-indigo-50 to-slate-100 border-2 border-indigo-200 rounded-3xl p-6 md:p-10 shadow-xl">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="bg-indigo-900 text-white font-bold px-4 py-1 rounded-full text-sm uppercase tracking-widest shadow-sm">
+                    <span class="lang-kk">Өз бетінше тексеру</span><span class="lang-ru">Самостоятельная проверка</span>
+                </span>
+                <h2 class="text-2xl md:text-3xl font-extrabold mt-3 text-indigo-950">
+                    🤔 <span class="lang-kk">Практикалық Интерактивті Блок</span>
+                    <span class="lang-ru">Практический Интерактивный Блок</span>
+                </h2>
+                <p class="text-base md:text-base text-indigo-800 mt-2 leading-relaxed">
+                    <span class="lang-kk">Төмендегі дағдарыстық жағдайды оқып, мемлекеттік қызметші ретінде дұрыс стратегияны таңдаңыз.</span>
+                    <span class="lang-ru">Изучите кризисный сценарий ниже и определите правильную стратегию действий.</span>
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Кейс 1 -->
+                <div class="card p-6 border border-indigo-100 bg-white">
+                    <h3 class="font-bold text-base text-indigo-950 mb-2">
+                        <span class="lang-kk">Кризистік сценарий: ЖИ бір түнде 50 көпбалалы отбасының өтінішін қабылдамай тастады</span>
+                        <span class="lang-ru">Кризисный сценарий: ИИ за ночь отклонил 50 заявок многодетных семей</span>
+                    </h3>
+                    <p class="text-base text-slate-700 mb-4">
+                        <span class="lang-kk">Азаматтар шағымдануда, БАҚ өкілдері "Мемлекеттік жүйе — тасжүрек робот" деп жазуда. Басшылық сізге мәселені 2 сағатта шешуді тапсырды.</span>
+                        <span class="lang-ru">Граждане выражают недовольство, СМИ пишут о бездушном алгоритме. Руководство дает 2 часа на разбор ситуации.</span>
+                    </p>
+                    <div class="bg-indigo-50 border-l-4 border-indigo-600 p-4 rounded-r-xl text-sm text-indigo-950 font-medium space-y-2">
+                        <div>
+                            <strong class="text-indigo-900">1. Детектив рөлі:</strong> 
+                            <span class="lang-kk">Салық базасының жаңартылуын және деректердің ЖИ-ге дұрыс интеграциялануын тексеру.</span>
+                            <span class="lang-ru">Проверить интеграцию с базами данных и правильность порогов доходов.</span>
+                        </div>
+                        <div>
+                            <strong class="text-indigo-900">2. Коммуникация рөлі:</strong> 
+                            <span class="lang-kk">Азаматтарға техникалық қателік туралы ашық хабарлап, барлық өтініштер қолмен қайта қаралатынына кепілдік беру.</span>
+                            <span class="lang-ru">Опубликовать разъяснение о технической проверке и гарантировать ручной пересмотр каждого кейса.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Футер страницы -->
+    <footer class="bg-indigo-950 text-white py-10 px-6 text-center text-sm border-t border-indigo-900">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-slate-400 mb-2">
+                &copy; 2026 <span class="lang-kk">Сандық коммуникациялар & ЖИ білім порталы. Барлық құқықтар қорғалған.</span>
+                <span class="lang-ru">Образовательный портал цифровых коммуникаций и ИИ. Все права защищены.</span>
+            </p>
+            <p class="text-slate-500 text-sm">
+                <span class="lang-kk">Қазақстан Республикасының Мемлекеттік қызметшілері мен мәслихат депутаттарына арналған.</span>
+                <span class="lang-ru">Предназначено для государственных служащих и депутатов маслихатов Республики Казахстан.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

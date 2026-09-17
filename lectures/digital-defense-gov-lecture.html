@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жасанды интеллект адамға қарсы: цифрлық гигиена | Искусственный интеллект против человека: цифровая гигиена госслужащего</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <meta name="description" content="Дипфейк-видео, клонирование голоса, ИИ-фишинг и протокол «первых 30 минут»: как госслужащему распознать атаку и защитить себя и ведомство.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Искусственный интеллект против человека: цифровая гигиена госслужащего">
+    <meta property="og:description" content="Дипфейк-видео, клонирование голоса, ИИ-фишинг и протокол «первых 30 минут»: как госслужащему распознать атаку и защитить себя и ведомство.">
+    <meta property="og:image" content="../assets/images/lector.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Искусственный интеллект против человека: цифровая гигиена госслужащего">
+    <meta name="twitter:description" content="Дипфейк-видео, клонирование голоса, ИИ-фишинг и протокол «первых 30 минут»: как госслужащему распознать атаку и защитить себя и ведомство.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/lecture.css">
+    <style>
+        .gradient-header { background: linear-gradient(135deg, #0F172A 0%, #312E81 50%, #7F1D1D 100%); }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden" data-lang="kk">
+
+    <!-- Навигационная панель -->
+    <div class="bg-indigo-950 border-b border-indigo-800 py-3 px-6 text-sm text-white sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="../index.html" class="hover:text-amber-400 font-semibold flex items-center gap-2 transition-colors">
+                <span class="lang-kk">← Дәрістер каталогына оралу</span>
+                <span class="lang-ru">← Вернуться к каталогу лекций</span>
+            </a>
+
+            <div class="flex items-center gap-4">
+                <span class="opacity-60 hidden sm:inline">
+                    <span class="lang-kk">Бөлім: Киберқауіпсіздік & Дипфейктер</span>
+                    <span class="lang-ru">Раздел: Кибербезопасность & Дипфейки</span>
+                </span>
+                <!-- Переключатель языков -->
+                <div class="inline-flex items-center bg-indigo-900/80 p-1 rounded-xl border border-indigo-700/60 text-sm">
+                    <button onclick="setLanguage('kk')" id="btn-lang-kk" class="px-3 py-1 rounded-lg transition-all text-indigo-950 bg-amber-400 font-bold shadow">
+                        ҚАЗ
+                    </button>
+                    <button onclick="setLanguage('ru')" id="btn-lang-ru" class="px-3 py-1 rounded-lg transition-all text-indigo-200 hover:text-white">
+                        RU
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Шапка страницы -->
+    <header class="gradient-header text-white py-16 px-6 text-center shadow-xl relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-block bg-amber-400 text-indigo-950 font-bold px-4 py-1 rounded-full text-sm uppercase tracking-widest mb-4">
+                <span class="lang-kk">Интерактивті дәріс & Практикум (150 минут)</span>
+                <span class="lang-ru">Интерактивная лекция & Практикум (150 минут)</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight">
+                <span class="lang-kk">Жасанды Интеллект Адамға Қарсы</span>
+                <span class="lang-ru">Искусственный Интеллект Против Человека</span>
+            </h1>
+            <p class="text-lg md:text-xl opacity-90 font-light max-w-3xl mx-auto leading-relaxed">
+                <span class="lang-kk">Дипфейк-видео, дауысты клондау, ЖИ-фишинг және «алғашқы 30 минут» хаттамасы — мемлекеттік қызметшінің цифрлық гигиенасы.</span>
+                <span class="lang-ru">Дипфейк-видео, клонирование голоса, ИИ-фишинг и протокол «первых 30 минут» — цифровая гигиена госслужащего.</span>
+            </p>
+            <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm font-medium text-slate-200">
+                <span class="bg-white/10 px-3 py-1.5 rounded-lg border border-white/20">🎯 <span class="lang-kk">ҚР Мемлекеттік қызметшілері</span><span class="lang-ru">Госслужащие РК</span></span>
+                <span class="bg-white/10 px-3 py-1.5 rounded-lg border border-white/20">🛡️ <span class="lang-kk">Нақты қазақстандық кейстер</span><span class="lang-ru">Реальные казахстанские кейсы</span></span>
+                <span class="bg-white/10 px-3 py-1.5 rounded-lg border border-white/20">⚡ <span class="lang-kk">«Алғашқы 30 минут» хаттамасы</span><span class="lang-ru">Протокол «первых 30 минут»</span></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 max-w-6xl">
+
+        <!-- БЛОК 1: Барьер входа исчез -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3">
+                <span class="lang-kk">1-БӨЛІМ: Тосқауыл жойылды</span>
+                <span class="lang-ru">ЧАСТЬ 1: Барьер входа исчез</span>
+            </h2>
+
+            <div class="card p-8 mb-8 border-l-8 border-[#1A237E] bg-gradient-to-r from-white to-slate-50">
+                <span class="text-sm font-bold text-amber-600 uppercase tracking-wider block mb-1">
+                    <span class="lang-kk">📹 Нақты оқиға</span><span class="lang-ru">📹 Реальная история</span>
+                </span>
+                <h3 class="text-xl font-bold text-indigo-950 mb-3">
+                    <span class="lang-kk">CNN журналисі өз анасын дауыс клонымен алдады</span>
+                    <span class="lang-ru">Журналист CNN обманул собственных родителей голосовым клоном</span>
+                </h3>
+                <p class="text-gray-700 text-base leading-relaxed mb-4">
+                    <span class="lang-kk">CNN журналисі ашық бейнеден алынған 10 секундтық дауыс үлгісінен өз даусының көшірмесін жасады. Бұл көшірме оның ата-анасын — баласының даусын әлемдегі кез келгеннен жақсы білетін адамдарды — алдап кетті. Бұл киностудияда жасалған эффект емес, ресми репортаж.</span>
+                    <span class="lang-ru">Журналист CNN на собственном примере создал клон своего голоса всего из 10 секунд образца, взятого из открытого видео. Этот клон обманул его собственных родителей — людей, которые знают голос сына лучше всех на свете. Это не постановочный трюк, а официальный репортаж.</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                <div class="card p-6 border-t-4 border-[#1A237E]">
+                    <div class="text-2xl mb-2">✍️</div>
+                    <h4 class="font-bold text-base text-indigo-950 mb-2">
+                        <span class="lang-kk">Генеративті мәтін</span><span class="lang-ru">Генеративный текст</span>
+                    </h4>
+                    <p class="text-base text-gray-600">
+                        <span class="lang-kk">Кез келген тілде (қазақша, орысша) қатесіз, сауатты, дербестендірілген мәтіндер жазады. «Қате бар — демек жалған» деген ескі белгі енді жұмыс істемейді.</span>
+                        <span class="lang-ru">Пишет грамотные, персонализированные тексты на любом языке без единой ошибки. Старый индикатор «есть ошибки — значит подделка» больше не работает.</span>
+                    </p>
+                </div>
+                <div class="card p-6 border-t-4 border-[#7F1D1D]">
+                    <div class="text-2xl mb-2">🎙️</div>
+                    <h4 class="font-bold text-base text-indigo-950 mb-2">
+                        <span class="lang-kk">Дауысты клондау</span><span class="lang-ru">Клонирование голоса</span>
+                    </h4>
+                    <p class="text-base text-gray-600">
+                        <span class="lang-kk">10-30 секундтық үлгіден адамның тембрін, интонациясын, тіпті сөз-паразиттерін көшіреді және кез келген жаңа фразаны «айтқызады».</span>
+                        <span class="lang-ru">По образцу в 10-30 секунд копирует тембр, интонации и даже слова-паразиты человека, «озвучивая» им любую новую фразу.</span>
+                    </p>
+                </div>
+                <div class="card p-6 border-t-4 border-purple-700">
+                    <div class="text-2xl mb-2">🎭</div>
+                    <h4 class="font-bold text-base text-indigo-950 mb-2">
+                        <span class="lang-kk">Дипфейк-видео</span><span class="lang-ru">Дипфейк-видео</span>
+                    </h4>
+                    <p class="text-base text-gray-600">
+                        <span class="lang-kk">Бір адамның бет-әлпетін басқа адамның видеосына қою немесе мүлде жоқ адамды «жасау» технологиясы (deep + fake).</span>
+                        <span class="lang-ru">Наложение лица и мимики одного человека на видео другого, либо создание полностью синтетического, не существовавшего изображения (deep + fake).</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-indigo-950 text-white rounded-2xl p-6 text-center">
+                <p class="text-base md:text-base">
+                    <span class="lang-kk">Қазақстандық журналистер мен киберқауіпсіздік мамандары эксперимент жасады: шынайы адамның репликалары бар сенімді дипфейк жинауға небәрі <strong class="text-amber-400">1 минут</strong> кетті. Апта емес, күн емес — минут.</span>
+                    <span class="lang-ru">Казахстанские журналисты и специалисты по кибербезопасности провели эксперимент: на сборку правдоподобного дипфейка с репликами реального человека ушла всего <strong class="text-amber-400">1 минута</strong>. Не неделя, не день — минута.</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- БЛОК 2: Дипфейки видео -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3">
+                <span class="lang-kk">2-БӨЛІМ: Дипфейктер — видео және фото</span>
+                <span class="lang-ru">ЧАСТЬ 2: Дипфейки — видео и фото</span>
+            </h2>
+
+            <div class="card p-8 mb-8 border-l-8 border-red-600 bg-red-50/30">
+                <span class="bg-red-100 text-red-800 text-[10px] font-bold px-2 py-1 rounded uppercase">
+                    <span class="lang-kk">ҚР Бас прокуратурасы, ресми ескерту</span><span class="lang-ru">Генпрокуратура РК, официальное предупреждение</span>
+                </span>
+                <h3 class="font-bold text-xl text-indigo-950 mt-2 mb-3">
+                    <span class="lang-kk">«Право Онлайн» видеосы — 240 000 қаралым</span>
+                    <span class="lang-ru">Ролик «Право Онлайн» — 240 000 просмотров</span>
+                </h3>
+                <p class="text-base text-gray-700 leading-relaxed mb-4">
+                    <span class="lang-kk">ҚР Бас прокуратурасы мемлекеттік орган атынан ұрланған ақшаны қайтаруға көмектесетінін уәде еткен видеоны ресми түрде жалған деп таныды. Видео жасанды интеллект технологиясымен жасалған және азаматтарды алдап, ақша ұрлауға бағытталған.</span>
+                    <span class="lang-ru">Генеральная прокуратура РК официально подтвердила: ролик, где от имени госоргана людям обещали помощь в возврате похищенных денег, создан с использованием ИИ и направлен на хищение средств граждан.</span>
+                </p>
+                <div class="bg-white p-3 rounded-lg text-sm font-semibold text-red-900 border border-red-200">
+                    <span class="lang-kk">⚠️ Бұл — жеке алдау емес, мемлекеттік органға деген сенімге жасалған жаппай шабуыл.</span>
+                    <span class="lang-ru">⚠️ Это не обман одного человека — это массовая атака на доверие к государственному органу.</span>
+                </div>
+            </div>
+
+            <p class="text-base text-gray-600 mb-8 leading-relaxed">
+                <span class="lang-kk">Мақсат әрдайым ақша емес. Сайлау қарсаңында саяси сипаттағы дипфейктер де таралды — мұндағы мақсат билік институттарына деген сенімді бұзу, дүрбелең тудыру. Мемлекеттік қызметші үшін тәуекел қаржылық қана емес, беделдік және қызметтік те болады.</span>
+                <span class="lang-ru">Цель не всегда финансовая. В преддверии выборов фиксировались политические дипфейки — их задача подорвать доверие к институтам власти, посеять панику. Для госслужащего риск не только финансовый, но и репутационный, служебный.</span>
+            </p>
+
+            <h3 class="font-bold text-lg text-indigo-950 mb-4">
+                <span class="lang-kk">Дипфейкті қалай тануға болады: 3 деңгей</span>
+                <span class="lang-ru">Как распознать дипфейк: 3 уровня</span>
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card p-6 border-t-4 border-teal-500">
+                    <h4 class="font-bold text-teal-800 mb-2">
+                        <span class="lang-kk">Базалық деңгей</span><span class="lang-ru">Базовый уровень</span>
+                    </h4>
+                    <ul class="text-base text-gray-600 space-y-1.5 list-disc pl-4">
+                        <li><span class="lang-kk">Табиғи емес жыпылықтау немесе оның болмауы</span><span class="lang-ru">Неестественное моргание или его отсутствие</span></li>
+                        <li><span class="lang-kk">Мимика дыбыстан сәл артта қалады</span><span class="lang-ru">Мимика немного отстаёт от речи</span></li>
+                        <li><span class="lang-kk">Бет пен фон жарығы сәйкес келмейді</span><span class="lang-ru">Освещение лица не совпадает с фоном</span></li>
+                        <li><span class="lang-kk">Дауыс тым монотонды немесе «роботты»</span><span class="lang-ru">Голос слишком монотонный или «роботизированный»</span></li>
+                    </ul>
+                </div>
+                <div class="card p-6 border-t-4 border-amber-500">
+                    <h4 class="font-bold text-amber-800 mb-2">
+                        <span class="lang-kk">Орташа деңгей</span><span class="lang-ru">Средний уровень</span>
+                    </h4>
+                    <ul class="text-base text-gray-600 space-y-1.5 list-disc pl-4">
+                        <li><span class="lang-kk">Тері бетіндегі көлеңке мен жарқыл сәйкессіздігі</span><span class="lang-ru">Несовпадение теней и бликов на коже</span></li>
+                        <li><span class="lang-kk">Шаш, көзілдірік шетіндегі артефактілер</span><span class="lang-ru">Артефакты на границе волос, очков</span></li>
+                        <li><span class="lang-kk">Қазақша/орысша күрделі дыбыстарда ерін синхрондалуының бұзылуы</span><span class="lang-ru">Нарушение синхронизации губ на сложных звуках казахского/русского</span></li>
+                    </ul>
+                </div>
+                <div class="card p-6 border-t-4 border-red-600">
+                    <h4 class="font-bold text-red-800 mb-2">
+                        <span class="lang-kk">Кәсіби деңгей (IT/баспасөз қызметі)</span><span class="lang-ru">Продвинутый уровень (IT/пресс-служба)</span>
+                    </h4>
+                    <ul class="text-base text-gray-600 space-y-1.5 list-disc pl-4">
+                        <li><span class="lang-kk">Кадрлар бойынша кері іздеу (reverse search)</span><span class="lang-ru">Обратный поиск по кадрам видео</span></li>
+                        <li><span class="lang-kk">Файл метадеректерін тексеру</span><span class="lang-ru">Проверка метаданных файла</span></li>
+                        <li><span class="lang-kk">Синтетикалық контентті анықтайтын мамандандырылған сервистер</span><span class="lang-ru">Специализированные сервисы проверки синтетического контента</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-red-50 border border-red-200 p-4 rounded-xl text-center">
+                <span class="text-red-800 font-extrabold text-base uppercase block mb-1">
+                    🔑 <span class="lang-kk">ҰЛТТЫҚ БАНКТІҢ ЕРЕЖЕСІ</span><span class="lang-ru">ПРАВИЛО НАЦБАНКА</span>
+                </span>
+                <p class="text-base text-red-900 font-medium">
+                    <span class="lang-kk">Ешқашан видеоны жеке басты растайтын жалғыз дереккөз ретінде қабылдамаңыз. Кез келген ақпаратты тек ресми арналар арқылы, өз бетіңізбен теріп ашқан сайттан тексеріңіз — видеодағы сілтеме арқылы емес.</span>
+                    <span class="lang-ru">Никогда не доверяйте видео как единственному подтверждению личности. Проверяйте любую информацию только через официальные каналы, набранные вручную, — а не через ссылку из самого ролика.</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- БЛОК 3: Клонирование голоса -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3">
+                <span class="lang-kk">3-БӨЛІМ: Дауысты клондау</span>
+                <span class="lang-ru">ЧАСТЬ 3: Клонирование голоса</span>
+            </h2>
+
+            <p class="text-base text-gray-600 mb-8 leading-relaxed">
+                <span class="lang-kk">Дипфейк-видеоны кідіртіп, әріптеспен бөлісуге болады. Ал дауыстық қоңырау осы сәтте, дереу шешім қабылдауды талап етеді — талдауға уақыт жоқ. Дәл осы себепті дауыстық шабуыл видеодан да қауіптірек.</span>
+                <span class="lang-ru">Дипфейк-видео можно поставить на паузу и показать коллеге. А голосовой звонок требует немедленного решения здесь и сейчас — времени на анализ физически нет. Именно поэтому голосовая атака опаснее видео.</span>
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <div class="card p-8 border-l-8 border-[#7F1D1D]">
+                    <h3 class="font-bold text-xl text-indigo-950 mb-3">
+                        <span class="lang-kk">Сценарий: «Директор дауысы»</span>
+                        <span class="lang-ru">Сценарий: «Голос директора»</span>
+                    </h3>
+                    <p class="text-base text-gray-700 leading-relaxed">
+                        <span class="lang-kk">Қызметкерге таныс дауыспен «басшысы» қоңырау шалады: интонациясы, тіпті сүйікті сөздері дәл сондай. Талап — шұғыл әрі құпия: ақша аудару, құпия сөзді беру, құжатты бекіту. Кейде нөмір де ауыстырылады, экранда таныс есім шығады.</span>
+                        <span class="lang-ru">Сотруднику звонит «руководитель» знакомым голосом, с теми же интонациями и словечками. Требование срочное и конфиденциальное: перевести деньги, передать пароль, одобрить документ. Часто номер подменён — на экране высвечивается знакомое имя.</span>
+                    </p>
+                </div>
+                <div class="card p-8 border-l-8 border-amber-500 bg-amber-50/30">
+                    <h3 class="font-bold text-xl text-indigo-950 mb-3">
+                        <span class="lang-kk">3 қауіп белгісі — «қызыл түйме»</span>
+                        <span class="lang-ru">3 фактора давления — «красная кнопка»</span>
+                    </h3>
+                    <p class="text-base text-gray-700 leading-relaxed mb-3">
+                        <span class="lang-kk">Осы үш белгі бір мезгілде кездессе — бұл шабуылдың кепілді белгісі, дауыс қаншалықты таныс болса да:</span>
+                        <span class="lang-ru">Если эти три фактора присутствуют одновременно — это почти гарантированный признак атаки, вне зависимости от того, насколько знаком голос:</span>
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-sm font-bold">
+                        <span class="bg-red-100 text-red-800 px-3 py-1.5 rounded-full"><span class="lang-kk">⏱ Шұғылдық</span><span class="lang-ru">⏱ Срочность</span></span>
+                        <span class="bg-red-100 text-red-800 px-3 py-1.5 rounded-full"><span class="lang-kk">🤫 Құпиялылық</span><span class="lang-ru">🤫 Секретность</span></span>
+                        <span class="bg-red-100 text-red-800 px-3 py-1.5 rounded-full"><span class="lang-kk">👑 Билікке сілтеме</span><span class="lang-ru">👑 Апелляция к авторитету</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-8 border-l-8 border-[#1A237E]">
+                <span class="bg-indigo-100 text-indigo-900 text-[10px] font-bold px-2 py-1 rounded uppercase">
+                    <span class="lang-kk">Қазан 2024, Facebook, ресми растама</span><span class="lang-ru">Декабрь 2024, Facebook, официальное подтверждение</span>
+                </span>
+                <h3 class="font-bold text-xl text-indigo-950 mt-2 mb-3">
+                    <span class="lang-kk">Министр Аида Балаева: «Менің дауысыммен алдайды»</span>
+                    <span class="lang-ru">Министр Аида Балаева: «Мошенники клонировали мой голос»</span>
+                </h3>
+                <p class="text-base text-gray-700 leading-relaxed mb-4">
+                    <span class="lang-kk">ҚР Мәдениет және ақпарат министрі Аида Балаева өз Facebook бетінде расымен растады: алаяқтар оның атынан, ЖИ көмегімен синтезделген дауыстық хабарламалармен таныс және бейтаныс адамдардан ақша сұрап жүр. Дәл осындай схема бойынша бұрын Премьер-Министр Олжас Бектеновтың, ОСК төрағасы Нұрлан Әбдіровтың және Сыбайлас жемқорлыққа қарсы қызмет басшылығының жалған аккаунттары жасалған болатын.</span>
+                    <span class="lang-ru">Министр культуры и информации РК Аида Балаева публично подтвердила на своей странице в Facebook: мошенники рассылают от её имени голосовые сообщения, синтезированные ИИ, с просьбой о деньгах. По такой же схеме ранее создавались фальшивые аккаунты премьер-министра Олжаса Бектенова, главы ЦИК Нурлана Абдирова и руководства Антикоррупционной службы.</span>
+                </p>
+                <div class="bg-indigo-50 p-3 rounded-lg text-sm font-semibold text-indigo-900 border border-indigo-200">
+                    <span class="lang-kk">Бұл — «алыстағы Батыс» емес, ҚР қызметтегі министрдің өз тәжірибесі.</span>
+                    <span class="lang-ru">Это не абстрактный пример «где-то на Западе» — это опыт действующего министра правительства РК.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 4: ИИ-фишинг -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3">
+                <span class="lang-kk">4-БӨЛІМ: ЖИ-фишинг және әлеуметтік инженерия</span>
+                <span class="lang-ru">ЧАСТЬ 4: ИИ-фишинг и социальная инженерия</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="card p-6 border-t-4 border-slate-400">
+                    <h4 class="font-bold text-lg text-slate-800 mb-3">
+                        <span class="lang-kk">Ескі белгі енді жұмыс істемейді</span><span class="lang-ru">Старый индикатор больше не работает</span>
+                    </h4>
+                    <p class="text-base text-gray-600">
+                        <span class="lang-kk">Бұрын фишинг хатты қате аудармасынан, оғаш тілінен таныдық. Генеративті ЖИ бұл белгіні толығымен жойды: мәтіндер сауатты, дербестендірілген, нақты ұйым стиліне бейімделген.</span>
+                        <span class="lang-ru">Раньше фишинговое письмо узнавали по ошибкам и корявому переводу. Генеративный ИИ убрал этот индикатор полностью: тексты грамотные, персонализированные, подогнанные под стиль конкретной организации.</span>
+                    </p>
+                </div>
+                <div class="card p-6 border-t-4 border-red-500">
+                    <h4 class="font-bold text-lg text-red-800 mb-3">
+                        <span class="lang-kk">2026 жылғы трендтер</span><span class="lang-ru">Тренды 2026 года</span>
+                    </h4>
+                    <ul class="text-base text-gray-600 space-y-1.5 list-disc pl-4">
+                        <li><span class="lang-kk">Мемлекеттік қызметтерді еліктейтін хаттар (айыппұл, берешек)</span><span class="lang-ru">Письма, имитирующие госсервисы (штраф, задолженность)</span></li>
+                        <li><span class="lang-kk">«Фишинг қызмет ретінде» — көлеңкелі форумдарда дайын жиынтықтар сатылады</span><span class="lang-ru">«Фишинг как услуга» — готовые комплекты продают на теневых форумах</span></li>
+                        <li><span class="lang-kk">Қысымнан «сенімге кіру» стратегиясына көшу — алдымен ұзақ әңгіме, содан кейін сұраныс</span><span class="lang-ru">Сдвиг от давления к «втиранию доверия» — сначала долгая переписка, потом просьба</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-4 justify-center text-base">
+                <div class="bg-slate-100 px-5 py-3 rounded-xl">
+                    <strong class="text-indigo-950"><span class="lang-kk">Смишинг</span><span class="lang-ru">Смишинг</span></strong> —
+                    <span class="lang-kk">SMS арқылы фишинг</span><span class="lang-ru">фишинг через SMS</span>
+                </div>
+                <div class="bg-slate-100 px-5 py-3 rounded-xl">
+                    <strong class="text-indigo-950"><span class="lang-kk">Вишинг</span><span class="lang-ru">Вишинг</span></strong> —
+                    <span class="lang-kk">телефон қоңыраулары арқылы фишинг</span><span class="lang-ru">фишинг через телефонные звонки</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 5: Почему госслужащий - приоритетная мишень -->
+        <section class="mb-16">
+            <div class="card p-8 border-l-8 border-purple-700">
+                <h2 class="text-2xl font-bold text-purple-800 mb-6 flex items-center">
+                    <span class="mr-3">🎯</span>
+                    <span class="lang-kk">Неге дәл мемлекеттік қызметші — басым нысана?</span>
+                    <span class="lang-ru">Почему госслужащий — приоритетная мишень?</span>
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-slate-50 p-4 rounded-xl">
+                        <div class="font-bold text-indigo-900 mb-1">
+                            <span class="lang-kk">1. Қолжетімділік</span><span class="lang-ru">1. Доступ</span>
+                        </div>
+                        <p class="text-base text-gray-600">
+                            <span class="lang-kk">Азаматтардың дербес деректеріне, бюджеттік процестерге, ішкі жүйелерге қолжетімділік. Бір қызметкерді бұзу — үлкен пайда.</span>
+                            <span class="lang-ru">Доступ к персональным данным граждан, бюджетным процессам, внутренним системам. Взлом одного сотрудника даёт несоизмеримо больше.</span>
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl">
+                        <div class="font-bold text-indigo-900 mb-1">
+                            <span class="lang-kk">2. Сенім</span><span class="lang-ru">2. Доверие</span>
+                        </div>
+                        <p class="text-base text-gray-600">
+                            <span class="lang-kk">Азамат мемлекеттік органнан келген ақпаратқа әдепкі бойынша сенеді. Бұл сенім азаматтардың өзіне қарсы қаруға айналдырылуы мүмкін.</span>
+                            <span class="lang-ru">Гражданин по умолчанию доверяет информации от госоргана. Это доверие можно превратить в оружие против самих же граждан.</span>
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl">
+                        <div class="font-bold text-indigo-900 mb-1">
+                            <span class="lang-kk">3. Жариялылық</span><span class="lang-ru">3. Публичность</span>
+                        </div>
+                        <p class="text-base text-gray-600">
+                            <span class="lang-kk">Сөйлеген сөздер, сұхбаттар, әлеуметтік желі беттері — дипфейк үшін дайын «шикізат». Лауазым жоғары болған сайын — материал көп, тәуекел жоғары.</span>
+                            <span class="lang-ru">Выступления, интервью, соцсети — готовое «сырьё» для дипфейка. Чем публичнее должность, тем больше материала и выше риск.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-red-50 border border-red-200 p-5 rounded-xl">
+                        <h4 class="font-bold text-red-900 mb-2 text-base">
+                            <span class="lang-kk">1-тип тәуекел: Сізді алдайды</span><span class="lang-ru">Тип риска 1: Обманывают вас</span>
+                        </h4>
+                        <p class="text-base text-red-800">
+                            <span class="lang-kk">«Басшыдан» қоңырау, «жоғары органнан» хат — құрбан сіз немесе сіздің ведомствоңыз.</span>
+                            <span class="lang-ru">Звонок «от руководителя», письмо «от вышестоящего органа» — жертва вы или ваше ведомство.</span>
+                        </p>
+                    </div>
+                    <div class="bg-amber-50 border border-amber-200 p-5 rounded-xl">
+                        <h4 class="font-bold text-amber-900 mb-2 text-base">
+                            <span class="lang-kk">2-тип тәуекел: Сіздің атыңыздан алдайды</span><span class="lang-ru">Тип риска 2: Обманывают от вашего имени</span>
+                        </h4>
+                        <p class="text-base text-amber-800">
+                            <span class="lang-kk">«Әкімнің үндеуі» жалған видео, ведомство «қызметкерінің» жалған аккаунты — соққы азаматтарға және мекеме беделіне тиеді.</span>
+                            <span class="lang-ru">Поддельное «обращение акима», фальшивый аккаунт «сотрудника» — удар приходится по гражданам и репутации органа.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-purple-950 text-white p-4 rounded-xl text-center text-sm md:text-base">
+                    <span class="lang-kk">Ұлттық Банк өкілдері: мұндай дипфейктердің мақсаты — жеке адамдарды алдау ғана емес, мемлекеттік органдарға деген сенімнің өзін бұзу.</span>
+                    <span class="lang-ru">Представители Нацбанка РК: цель подобных дипфейков — не только обман людей, но и подрыв доверия к государственным органам как таковым.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 6: Как распознать -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3">
+                <span class="lang-kk">5-БӨЛІМ: Қалай тануға болады — базалықтан жоғарыға дейін</span>
+                <span class="lang-ru">ЧАСТЬ 5: Как распознать — от базового до продвинутого</span>
+            </h2>
+
+            <div class="space-y-4">
+                <div class="card p-5 border-l-4 border-teal-500">
+                    <span class="text-sm font-bold text-teal-700 uppercase"><span class="lang-kk">1-деңгей — Барлығына міндетті</span><span class="lang-ru">Уровень 1 — обязателен для всех</span></span>
+                    <ul class="text-base text-gray-700 mt-2 space-y-2 list-disc pl-5">
+                        <li><span class="lang-kk">Трубканы қойып, өзіңіз контактіде сақталған нөмірге қайта қоңырау шалыңыз — сізге қоңырау шалған немесе айтылған нөмірге емес.</span><span class="lang-ru">Положите трубку и перезвоните сами, по номеру, сохранённому в контактах, — не по тому, с которого позвонили или который продиктовали.</span></li>
+                        <li><span class="lang-kk">Тек екеуің білетін жеке фактіні сұраңыз («кодтық сөз»).</span><span class="lang-ru">Задайте вопрос, ответ на который знаете только вы двое лично («кодовое слово»).</span></li>
+                        <li><span class="lang-kk">Ешқашан аударымды, қолжетімділікті немесе дербес деректерді тек дауыс/видео негізінде растамаңыз — екінші тәуелсіз арна арқылы тексеру міндетті.</span><span class="lang-ru">Никогда не подтверждайте перевод, доступ или передачу данных только на основании голоса/видео — обязательна проверка по второму независимому каналу.</span></li>
+                    </ul>
+                </div>
+                <div class="card p-5 border-l-4 border-amber-500 bg-amber-50/30">
+                    <span class="text-sm font-bold text-amber-700 uppercase"><span class="lang-kk">2-деңгей — Аз дайындықпен</span><span class="lang-ru">Уровень 2 — с небольшой тренировкой</span></span>
+                    <ul class="text-base text-gray-700 mt-2 space-y-2 list-disc pl-5">
+                        <li><span class="lang-kk">Жауап беруді жеделдетпей, керісінше баяулатыңыз: сұранысты «есеп үшін» ресми түрде жазбаша жіберуін сұраңыз. Алаяқ бұған дайын болмай, қысымды күшейтеді — бұл да белгі.</span><span class="lang-ru">Замедлите, а не ускорьте реакцию: попросите прислать запрос официально, письменно, «для отчётности». Мошенник обычно не готов к этому и усиливает давление — это тоже диагностический признак.</span></li>
+                        <li><span class="lang-kk">Видео байланыс болса — бейтаныс іс-әрекет сұраңыз: басты бүйірге бұру, қолды бетке жақындату.</span><span class="lang-ru">При видеосвязи попросите нестандартное действие: повернуть голову профилем, поднести руку к лицу.</span></li>
+                        <li><span class="lang-kk">Сілтемені сыртқы түріне қарап емес, нақты домен атауы бойынша тексеріңіз, порталдың мекенжайын өз қолыңызбен теріңіз.</span><span class="lang-ru">Проверяйте ссылки по фактическому домену и вводите адрес портала вручную самостоятельно.</span></li>
+                    </ul>
+                </div>
+                <div class="card p-5 border-l-4 border-red-600 bg-red-50/20">
+                    <span class="text-sm font-bold text-red-700 uppercase"><span class="lang-kk">3-деңгей — IT-бөлім мен баспасөз қызметіне</span><span class="lang-ru">Уровень 3 — для IT-отдела и пресс-службы</span></span>
+                    <ul class="text-base text-gray-700 mt-2 space-y-2 list-disc pl-5">
+                        <li><span class="lang-kk">Синтетикалық аудио/видеоны анықтайтын мамандандырылған сервистер.</span><span class="lang-ru">Специализированные сервисы проверки синтетического аудио/видео.</span></li>
+                        <li><span class="lang-kk">Критикалық операцияларға (ақша аудару, қолжетімділікті өзгерту) арналған ішкі верификация хаттамасы — «маңызды адамдарға» ерекшелік жасамай, барлығына бірдей.</span><span class="lang-ru">Внутренний протокол верификации критичных операций — без исключений «для важных людей».</span></li>
+                        <li><span class="lang-kk">Ведомство мен басшылықтың атын әлеуметтік желілерде тұрақты мониторингілеу.</span><span class="lang-ru">Постоянный мониторинг упоминаний ведомства и руководства в соцсетях.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 7: Протокол первых 30 минут -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3">
+                <span class="lang-kk">6-БӨЛІМ: «Алғашқы 30 минут ережесі»</span>
+                <span class="lang-ru">ЧАСТЬ 6: «Правило первых 30 минут»</span>
+            </h2>
+            <p class="text-base text-gray-600 mb-8 leading-relaxed">
+                <span class="lang-kk">Сіз дипфейкке немесе фишингке тап болдым деп күдіктенсеңіз, осы 5 қадамды сақтаңыз. Мұны бүгін-ақ өз бөліміңізде енгізуге болады.</span>
+                <span class="lang-ru">Если вы подозреваете, что столкнулись с дипфейком или фишингом, действуйте по этим 5 шагам. Их можно внедрить в своём отделе уже сегодня.</span>
+            </p>
+
+            <div class="space-y-4">
+                <div class="card p-5 border-l-4 border-indigo-900 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <span class="text-sm font-bold text-indigo-900 uppercase"><span class="lang-kk">1-Қадам</span><span class="lang-ru">Шаг 1</span></span>
+                        <h4 class="font-bold text-base text-gray-900"><span class="lang-kk">Байланысты тоқтату (нөлдік сенім)</span><span class="lang-ru">Остановка коммуникации (нулевое доверие)</span></h4>
+                        <p class="text-base text-gray-600">
+                            <span class="lang-kk">Сілтемеге өтпеңіз, тіркемені ашпаңыз, алаяқпен «әшкерелеу» үшін сөйлеспеңіз. Қоңырау болса — жай ғана трубканы қойыңыз.</span>
+                            <span class="lang-ru">Не переходите по ссылкам, не открывайте вложения, не пытайтесь «разоблачить» мошенника диалогом. Если звонок — просто положите трубку.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="card p-5 border-l-4 border-amber-400 bg-amber-50/30 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <span class="text-sm font-bold text-amber-700 uppercase"><span class="lang-kk">2-Қадам</span><span class="lang-ru">Шаг 2</span></span>
+                        <h4 class="font-bold text-base text-gray-900"><span class="lang-kk">Тіркеу</span><span class="lang-ru">Фиксация</span></h4>
+                        <p class="text-base text-gray-600">
+                            <span class="lang-kk">Күдікті хаттың, қоңырау шалушы нөмірдің скриншотын алыңыз. Хаттың өзін әріптестерге жібермеңіз — тек скриншотты.</span>
+                            <span class="lang-ru">Сделайте скриншот подозрительного письма/номера. Не пересылайте само письмо коллегам — только скриншоты.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="card p-5 border-l-4 border-red-500 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <span class="text-sm font-bold text-red-700 uppercase"><span class="lang-kk">3-Қадам</span><span class="lang-ru">Шаг 3</span></span>
+                        <h4 class="font-bold text-base text-gray-900"><span class="lang-kk">Оқшаулау (егер сілтемеге бассаңыз)</span><span class="lang-ru">Изоляция (если всё же нажали ссылку)</span></h4>
+                        <p class="text-base text-gray-600">
+                            <span class="lang-kk">Қателескеніңізді түсінсеңіз — дереу компьютерді/телефонды интернеттен ажыратыңыз (кабельді суырыңыз немесе Wi-Fi өшіріңіз).</span>
+                            <span class="lang-ru">Если поняли, что ошиблись, — немедленно отключите устройство от интернета (выдерните кабель или отключите Wi-Fi).</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="card p-5 border-l-4 border-teal-500 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <span class="text-sm font-bold text-teal-700 uppercase"><span class="lang-kk">4-Қадам</span><span class="lang-ru">Шаг 4</span></span>
+                        <h4 class="font-bold text-base text-gray-900"><span class="lang-kk">Тәуелсіз арна арқылы тексеру</span><span class="lang-ru">Проверка по независимому каналу</span></h4>
+                        <p class="text-base text-gray-600">
+                            <span class="lang-kk">Сұраныс келген адаммен немесе ведомствомен басқа арна арқылы байланысыңыз — өзіңіз білетін нөмірге қоңырау шалыңыз.</span>
+                            <span class="lang-ru">Свяжитесь с отправителем по другому каналу — позвоните на известный вам номер.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="card p-5 border-l-4 border-purple-600 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <span class="text-sm font-bold text-purple-700 uppercase"><span class="lang-kk">5-Қадам</span><span class="lang-ru">Шаг 5</span></span>
+                        <h4 class="font-bold text-base text-gray-900"><span class="lang-kk">Эскалация</span><span class="lang-ru">Эскалация</span></h4>
+                        <p class="text-base text-gray-600">
+                            <span class="lang-kk">Алғашқы 10 минутта скриншотты ақпараттық қауіпсіздік бөліміне жіберіңіз. Дипфейкті көрсеңіз — сілтемені баспасөз қызметіне жіберіңіз. Жеке аккаунттан жоққа шығарма жарияламаңыз.</span>
+                            <span class="lang-ru">В первые 10 минут отправьте скриншоты в IT-безопасность. Увидели дипфейк — сразу передайте ссылку пресс-службе. Никогда не публикуйте опровержение с личного аккаунта.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 8: Разбор кейсов -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3">
+                <span class="lang-kk">7-БӨЛІМ: Кейстерді талдау</span>
+                <span class="lang-ru">ЧАСТЬ 7: Разбор кейсов</span>
+            </h2>
+
+            <div class="space-y-6">
+                <div class="card p-6 border border-slate-200">
+                    <span class="text-[10px] font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded uppercase"><span class="lang-kk">Кейс 1</span><span class="lang-ru">Кейс 1</span></span>
+                    <p class="text-base text-gray-800 mt-3 mb-3 leading-relaxed">
+                        <span class="lang-kk">Жұма күні кешке сізге «басқарма бастығы» қоңырау шалып, жаңа реквизиттер бойынша аударымды шұғыл әрі құпия түрде келісуді сұрайды — «дүйсенбіге дейін, әйтпесе келісім бұзылады».</span>
+                        <span class="lang-ru">Поздно вечером в пятницу звонит «начальник управления» с просьбой срочно и конфиденциально согласовать перевод по новым реквизитам — «до понедельника, иначе сорвём договор».</span>
+                    </p>
+                    <div class="bg-teal-50 border border-teal-200 p-3 rounded-lg text-sm text-teal-900 font-semibold">
+                        <span class="lang-kk">✓ Шешім: Дауыс даналыққа қарамастан, 3 белгінің барлығы бар (шұғыл + құпия + билік). Трубканы қойып, сақталған нөмірге өзіңіз қоңырау шалыңыз. Растаусыз аударым жоқ.</span>
+                        <span class="lang-ru">✓ Решение: Присутствуют все 3 признака (срочно + секретно + авторитет). Кладём трубку, перезваниваем сами по сохранённому номеру. Никакого перевода без подтверждения по второму каналу.</span>
+                    </div>
+                </div>
+
+                <div class="card p-6 border border-slate-200">
+                    <span class="text-[10px] font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded uppercase"><span class="lang-kk">Кейс 2</span><span class="lang-ru">Кейс 2</span></span>
+                    <p class="text-base text-gray-800 mt-3 mb-3 leading-relaxed">
+                        <span class="lang-kk">Мессенджерге «облыс әкімінің» жаңа біржолғы төлем туралы хабарлайтын видеосы келеді, ол сілтеме бойынша карта деректерін енгізуді сұрайды.</span>
+                        <span class="lang-ru">В мессенджер приходит видео, где «аким области» объявляет о новой выплате и просит перейти по ссылке и ввести данные карты.</span>
+                    </p>
+                    <div class="bg-teal-50 border border-teal-200 p-3 rounded-lg text-sm text-teal-900 font-semibold">
+                        <span class="lang-kk">✓ Шешім: Ешбір мемлекеттік орган мессенджердегі сілтеме арқылы карта деректерін сұрамайды. Ақпаратты тек ресми сайттан, өз қолыңызбен теріп тексеріңіз.</span>
+                        <span class="lang-ru">✓ Решение: Госорганы никогда не запрашивают данные карты через ссылку в мессенджере. Проверяйте информацию только на официальном сайте, набранном вручную.</span>
+                    </div>
+                </div>
+
+                <div class="card p-6 border border-slate-200">
+                    <span class="text-[10px] font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded uppercase"><span class="lang-kk">Кейс 3</span><span class="lang-ru">Кейс 3</span></span>
+                    <p class="text-base text-gray-800 mt-3 mb-3 leading-relaxed">
+                        <span class="lang-kk">Ведомствоның ішкі құжат айналымы стиліндегі, сауатты, есіміңіз бойынша дербестендірілген хат келеді — «жаңартылған порталда» тіркелуді сұрайды.</span>
+                        <span class="lang-ru">Приходит грамотное письмо в стиле внутреннего документооборота, с персональным обращением по имени — просьба авторизоваться на «обновлённом портале».</span>
+                    </p>
+                    <div class="bg-teal-50 border border-teal-200 p-3 rounded-lg text-sm text-teal-900 font-semibold">
+                        <span class="lang-kk">✓ Шешім: «Хатта қате бар ма» деген ескі белгі енді жұмыс істемейді. Портал мекенжайын әрдайым өз қолыңызбен теріңіз, сілтеме арқылы ешқашан өтпеңіз.</span>
+                        <span class="lang-ru">✓ Решение: Старый индикатор «ищи ошибки» больше не работает. Всегда вводите адрес портала вручную, никогда не переходите по присланной ссылке.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-indigo-950 text-white py-12 px-6 text-center border-t border-indigo-900">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-bold mb-3">
+                <span class="lang-kk">Арнаға емес, хаттамаға сеніңіз</span>
+                <span class="lang-ru">Доверяйте протоколу, а не каналу связи</span>
+            </h2>
+            <p class="text-indigo-300 text-base mb-6">
+                <span class="lang-kk">Дауыс қаншалықты таныс, видео қаншалықты сенімді, хат қаншалықты сауатты болса да — маңыздысы бір ғана нәрсе: жағдай екінші тәуелсіз арна арқылы тексерілді ме?</span>
+                <span class="lang-ru">Не важно, насколько знаком голос, убедительно видео или грамотно письмо — важно только одно: прошла ли ситуация проверку по второму независимому каналу.</span>
+            </p>
+            <a href="../index.html" class="inline-block bg-amber-400 text-indigo-950 font-bold px-8 py-4 rounded-full text-base uppercase tracking-wider hover:bg-yellow-300 transition-all shadow-lg">
+                <span class="lang-kk">Басты бетке оралу</span><span class="lang-ru">Вернуться на главную</span>
+            </a>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

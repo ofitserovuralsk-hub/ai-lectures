@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЖИ негіздері: Мемлекеттік қызметшілерге арналған практикум</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <meta name="description" content="ИИ мен әдеттегі бағдарламалардың айырмашылығы, 4 негізгі тапсырма түрі, жобаның өмірлік циклі, Риддер кейсі және қауіпсіздік ережелері.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ЖИ негіздері: Мемлекеттік қызметшілерге арналған практикум">
+    <meta property="og:description" content="ИИ мен әдеттегі бағдарламалардың айырмашылығы, 4 негізгі тапсырма түрі, жобаның өмірлік циклі, Риддер кейсі және қауіпсіздік ережелері.">
+    <meta property="og:image" content="../assets/images/lector.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ЖИ негіздері: Мемлекеттік қызметшілерге арналған практикум">
+    <meta name="twitter:description" content="ИИ мен әдеттегі бағдарламалардың айырмашылығы, 4 негізгі тапсырма түрі, жобаның өмірлік циклі, Риддер кейсі және қауіпсіздік ережелері.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/lecture.css">
+    <style>
+        .gradient-header { background: linear-gradient(135deg, #1A237E 0%, #0D47A1 50%, #1565C0 100%); }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden" data-lang="kk">
+
+    <!-- Навигационная панель -->
+    <div class="bg-indigo-950 border-b border-indigo-800 py-3 px-6 text-sm text-white sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="../index.html" class="hover:text-amber-400 font-semibold flex items-center gap-2 transition-colors">
+                <span class="lang-kk">← Дәрістер каталогына оралу</span>
+                <span class="lang-ru">← Вернуться к каталогу лекций</span>
+            </a>
+            
+            <div class="flex items-center gap-4">
+                <span class="opacity-60 hidden sm:inline">
+                    <span class="lang-kk">Бөлім: Мемлекеттік сектор & ЖИ Базасы</span>
+                    <span class="lang-ru">Раздел: Госсектор & База ИИ</span>
+                </span>
+                <!-- Переключатель языков -->
+                <div class="inline-flex items-center bg-indigo-900/80 p-1 rounded-xl border border-indigo-700/60 text-sm">
+                    <button onclick="setLanguage('kk')" id="btn-lang-kk" class="px-3 py-1 rounded-lg transition-all text-indigo-950 bg-amber-400 font-bold shadow">
+                        ҚАЗ
+                    </button>
+                    <button onclick="setLanguage('ru')" id="btn-lang-ru" class="px-3 py-1 rounded-lg transition-all text-indigo-200 hover:text-white">
+                        RU
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Шапка страницы -->
+    <header class="gradient-header text-white py-16 px-6 text-center shadow-xl relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-block bg-yellow-400 text-indigo-950 font-bold px-4 py-1 rounded-full text-sm uppercase tracking-widest mb-4">
+                <span class="lang-kk">Интерактивті лекция & Практикум (90 минут)</span>
+                <span class="lang-ru">Интерактивная лекция & Практикум (90 минут)</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">
+                <span class="lang-kk">Жасанды Интеллект Негіздері</span>
+                <span class="lang-ru">Основы Искусственного Интеллекта</span>
+            </h1>
+            <p class="text-lg md:text-xl opacity-90 font-light max-w-3xl mx-auto leading-relaxed">
+                <span class="lang-kk">Қазақстан Республикасының мемлекеттік қызметшілеріне арналған қарапайым түсіндірмелер, алгоритмдер, қауіптер және нақты кейстер.</span>
+                <span class="lang-ru">Простые объяснения, алгоритмы, риски и реальные кейсы для государственных служащих Республики Казахстан.</span>
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 max-w-6xl">
+
+        <!-- 1-БӨЛІМ -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3">
+                <span class="lang-kk">1-БӨЛІМ: Жасанды Интеллект деген не? Қарапайым тілмен</span>
+                <span class="lang-ru">ЧАСТЬ 1: Что такое ИИ? Простые объяснения</span>
+            </h2>
+
+            <!-- Google Photos история -->
+            <div class="card p-8 mb-8 border-l-8 border-[#1A237E] bg-gradient-to-r from-white to-slate-50">
+                <span class="text-sm font-bold text-amber-600 uppercase tracking-wider block mb-1">
+                    <span class="lang-kk">📸 Нақты оқиға</span><span class="lang-ru">📸 Реальная история</span>
+                </span>
+                <h3 class="text-xl font-bold text-indigo-950 mb-3">
+                    <span class="lang-kk">Google Photos менің анамды қалай таныды?</span>
+                    <span class="lang-ru">Как Google Photos узнал мою маму</span>
+                </h3>
+                <p class="text-gray-700 text-base leading-relaxed mb-4">
+                    <span class="lang-kk">Қолданушы 10,000 фотосуретті бұлтқа жүктеді. Бір аптадан кейін бағдарлама: <em>«Анаңызбен альбом жасағыңыз келе ме?»</em> деп ұсынды. Оған ешкім анасының кім екенін айтқан жоқ! Бағдарлама жүзді көрді, салыстырды, ұқсастықтарды топтастырды. Бұл — адам сияқты көретін, үйренетін және шешім қабылдайтын <strong>Жасанды Интеллект</strong>.</span>
+                    <span class="lang-ru">Мой друг загрузил 10,000 фотографий в облако Google Photos. Через неделю программа предложила: <em>«Хотите создать альбом с вашей мамой?»</em> Он никогда не объяснял программе, кто его мама. ИИ сам увидел лицо, сравнил его с другими, нашел похожие и сгруппировал. Это и есть <strong>Искусственный Интеллект</strong> — программа, которая видит, учится и решает задачи, как человек.</span>
+                </p>
+            </div>
+
+            <!-- Обычное ПО vs ИИ -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <div class="card p-6 border-t-4 border-slate-400">
+                    <h4 class="font-bold text-lg text-slate-800 mb-3">⚙️ <span class="lang-kk">Әдеттегі бағдарламалау</span><span class="lang-ru">Обычное программирование</span></h4>
+                    <p class="text-base text-gray-600 mb-3">
+                        <span class="lang-kk">Бағдарламашы барлық ережелерді қолмен жазады (ЕГЕР ... ОНДА ...):</span>
+                        <span class="lang-ru">Программист вручную пишет сотни жестких правил (ЕСЛИ ... ТО ...):</span>
+                    </p>
+                    <div class="bg-slate-100 p-3 rounded text-sm font-mono text-slate-700 mb-3">
+                        <span class="lang-kk">ДЕРЕКТЕР + ЕРЕЖЕЛЕР ➔ ЖАУАПТАР</span>
+                        <span class="lang-ru">ДАННЫЕ + ПРАВИЛА ➔ ОТВЕТЫ</span>
+                    </div>
+                    <ul class="text-base text-gray-500 space-y-1 list-disc pl-4">
+                        <li><span class="lang-kk">Мыңдаған жағдайды алдын ала болжау мүмкін емес</span><span class="lang-ru">Невозможно предусмотреть тысячи возможных случаев</span></li>
+                        <li><span class="lang-kk">Заң өзгерсе — кодты қайта жазу керек</span><span class="lang-ru">Изменился закон — нужно переписывать код</span></li>
+                    </ul>
+                </div>
+
+                <div class="card p-6 border-t-4 border-[#00BFA5]">
+                    <h4 class="font-bold text-lg text-indigo-950 mb-3">🧠 <span class="lang-kk">Жасанды Интеллект (Машиналық оқыту)</span><span class="lang-ru">Искусственный Интеллект (ML)</span></h4>
+                    <p class="text-base text-gray-600 mb-3">
+                        <span class="lang-kk">ИИ-ге 10,000 дайын мысал бересіз, ол ережелерді өзі табады:</span>
+                        <span class="lang-ru">Вы даете ИИ тысячи примеров, и он сам выявляет правила:</span>
+                    </p>
+                    <div class="bg-teal-50 p-3 rounded text-sm font-mono text-teal-900 border border-teal-200 mb-3">
+                        <span class="lang-kk">ДЕРЕКТЕР + ЖАУАПТАР ➔ ЕРЕЖЕЛЕР (ИИ өзі табады)</span>
+                        <span class="lang-ru">ДАННЫЕ + ОТВЕТЫ ➔ ПРАВИЛА (ИИ находит сам)</span>
+                    </div>
+                    <ul class="text-base text-gray-600 space-y-1 list-disc pl-4">
+                        <li><span class="lang-kk">Заң өзгерсе — тек жаңа мысалдар беріп қайта оқытамыз</span><span class="lang-ru">Закон изменился — просто даем новые примеры</span></li>
+                        <li><span class="lang-kk">Адам жазбаған жаңа заңдылықтарды табады</span><span class="lang-ru">Находит скрытые паттерны автоматически</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3 Ключевых компонента -->
+            <div class="card p-8 border-l-8 border-[#FFD600]">
+                <h3 class="font-bold text-xl text-indigo-950 mb-4">
+                    <span class="lang-kk">🛠️ ЖИ жұмыс істеуі үшін қажетті 3 нәрсе</span>
+                    <span class="lang-ru">🛠️ 3 ключевых компонента ИИ</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 p-4 rounded-xl">
+                        <div class="font-bold text-indigo-900 mb-1">
+                            <span class="lang-kk">1. Деректер (Data)</span>
+                            <span class="lang-ru">1. Данные (Data)</span>
+                        </div>
+                        <p class="text-base text-gray-600">
+                            <span class="lang-kk">ИИ үйренетін мысалдар. Неғұрлым көп болса, соғұрлым ИИ ақылды. (eGov базасында млн-даған құжат бар!)</span>
+                            <span class="lang-ru">Примеры, на которых ИИ учится. Чем больше данных, тем точнее ИИ. В eGov содержатся миллионы обращений и документов.</span>
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl">
+                        <div class="font-bold text-indigo-900 mb-1">
+                            <span class="lang-kk">2. Алгоритм</span>
+                            <span class="lang-ru">2. Алгоритм</span>
+                        </div>
+                        <p class="text-base text-gray-600">
+                            <span class="lang-kk">Оқыту әдісі: Шешімдер ағашы, Кездейсоқ орман (Random Forest) немесе Нейрожелі (Neural Network).</span>
+                            <span class="lang-ru">Метод обучения: Дерево решений, Случайный лес (Random Forest) или Нейросеть.</span>
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl">
+                        <div class="font-bold text-indigo-900 mb-1">
+                            <span class="lang-kk">3. Есептеу қуаты</span>
+                            <span class="lang-ru">3. Вычислительная мощность</span>
+                        </div>
+                        <p class="text-base text-gray-600">
+                            <span class="lang-kk">Адам 1 жылда өңдейтін 1 млн өтінімді ИИ қуатты серверде 1 сағатта талдайды.</span>
+                            <span class="lang-ru">Мощный сервер обрабатывает 1 млн заявок за 1 час вместо 1 года работы человека.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Практическое задание 1 -->
+            <div class="mt-8 bg-indigo-950 text-white rounded-2xl p-6">
+                <h4 class="font-bold text-lg text-yellow-400 mb-2">
+                    <span class="lang-kk">⚡ 1-ПРАКТИКАЛЫҚ ТАПСЫРМА: «ЖИ-ді танып біліңіз»</span>
+                    <span class="lang-ru">⚡ ПРАКТИЧЕСКОЕ ЗАДАНИЕ 1: «Узнайте ИИ»</span>
+                </h4>
+                <p class="text-base text-indigo-200 mb-4">
+                    <span class="lang-kk">Жүйенің ИИ негізінде оқытылатынын немесе әдеттегі бағдарлама екенін анықтаңыз:</span>
+                    <span class="lang-ru">Определите, где используется ИИ (обучение на данных), а где обычная программа:</span>
+                </p>
+                <div class="space-y-3 text-sm">
+                    <div class="bg-indigo-900/80 p-3 rounded-lg flex justify-between items-center gap-2">
+                        <span>
+                            <span class="lang-kk">1. Gmail спам-фильтрі (Спам хаттарды үлгілер бойынша таниды)</span>
+                            <span class="lang-ru">1. Gmail спам-фильтр (Фильтрует письма на основе примеров спама)</span>
+                        </span>
+                        <span class="bg-teal-500 text-white px-2.5 py-1 rounded font-bold whitespace-nowrap">
+                            <span class="lang-kk">✓ ЖИ (ML)</span><span class="lang-ru">✓ ИИ (ML)</span>
+                        </span>
+                    </div>
+                    <div class="bg-indigo-900/80 p-3 rounded-lg flex justify-between items-center gap-2">
+                        <span>
+                            <span class="lang-kk">2. Қарапайым калькулятор (2 + 2 = 4)</span>
+                            <span class="lang-ru">2. Простой калькулятор (2 + 2 = 4)</span>
+                        </span>
+                        <span class="bg-slate-700 text-slate-300 px-2.5 py-1 rounded whitespace-nowrap">
+                            <span class="lang-kk">❌ Әдеттегі ПО</span><span class="lang-ru">❌ Обычное ПО</span>
+                        </span>
+                    </div>
+                    <div class="bg-indigo-900/80 p-3 rounded-lg flex justify-between items-center gap-2">
+                        <span>
+                            <span class="lang-kk">3. Мемлекеттік жүйе бұрынғы 10,000 кейс негізінде алаяқтық өтінімдерді табады</span>
+                            <span class="lang-ru">3. Госсистема выявляет мошеннические заявки на основе 10,000 примеров</span>
+                        </span>
+                        <span class="bg-teal-500 text-white px-2.5 py-1 rounded font-bold whitespace-nowrap">
+                            <span class="lang-kk">✓ ЖИ (ML)</span><span class="lang-ru">✓ ИИ (ML)</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2-БӨЛІМ -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3">
+                <span class="lang-kk">2-БӨЛІМ: Мемлекеттік сектордағы ИИ-дің 4 негізгі тапсырмасы</span>
+                <span class="lang-ru">ЧАСТЬ 2: Четыре основных типа задач ИИ в госсекторе</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="card p-6 border-t-4 border-[#1A237E]">
+                    <div class="text-2xl mb-2">🏷️</div>
+                    <h3 class="font-bold text-base text-indigo-950 mb-2">
+                        <span class="lang-kk">1. Жіктеу</span><span class="lang-ru">1. Классификация</span>
+                    </h3>
+                    <p class="text-base text-gray-600">
+                        <span class="lang-kk">«Бұл қай санатқа жатады?» Өтініштерді бөлу: Жолдар, Сумен қамту, Білім беру.</span>
+                        <span class="lang-ru">«К какому классу это относится?» Сортировка обращений: Дороги, Водоснабжение, Образование.</span>
+                    </p>
+                </div>
+
+                <div class="card p-6 border-t-4 border-[#00BFA5]">
+                    <div class="text-2xl mb-2">🔮</div>
+                    <h3 class="font-bold text-base text-indigo-950 mb-2">
+                        <span class="lang-kk">2. Болжау</span><span class="lang-ru">2. Предсказание</span>
+                    </h3>
+                    <p class="text-base text-gray-600">
+                        <span class="lang-kk">«Болашақта не болады?» ХҚКО-ға дүйсенбіде қанша азамат келетінін алдын ала болжау.</span>
+                        <span class="lang-ru">«Что произойдет в будущем?» Прогнозирование нагрузки на ЦОН и объема выплат.</span>
+                    </p>
+                </div>
+
+                <div class="card p-6 border-t-4 border-[#FFD600]">
+                    <div class="text-2xl mb-2">🚨</div>
+                    <h3 class="font-bold text-base text-indigo-950 mb-2">
+                        <span class="lang-kk">3. Ауытқуларды табу</span><span class="lang-ru">3. Выявление аномалий</span>
+                    </h3>
+                    <p class="text-base text-gray-600">
+                        <span class="lang-kk">«Бұл қалыпты емес!» Серверге жасалған атакаларды немесе алаяқтықты табу.</span>
+                        <span class="lang-ru">«Это не нормально!» Выявление аномального трафика или мошеннических операций.</span>
+                    </p>
+                </div>
+
+                <div class="card p-6 border-t-4 border-purple-600">
+                    <div class="text-2xl mb-2">👁️</div>
+                    <h3 class="font-bold text-base text-indigo-950 mb-2">
+                        <span class="lang-kk">4. Бейнелерді тану</span><span class="lang-ru">4. Распознавание образов</span>
+                    </h3>
+                    <p class="text-base text-gray-600">
+                        <span class="lang-kk">«Мен не көріп/естіп тұрмын?» Төлқұжаттағы бет-әлпетті, құжат текстін (OCR) оқу.</span>
+                        <span class="lang-ru">«Что я вижу/слышу?» Распознавание лиц на паспорте, сканирование документов (OCR).</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Диаграмма -->
+            <div class="card p-8">
+                <h3 class="font-bold text-lg text-indigo-950 mb-4 text-center">
+                    <span class="lang-kk">Мемлекеттік органдарда ИИ тапсырмаларының үлесі</span>
+                    <span class="lang-ru">Распределение типов задач ИИ в госорганах</span>
+                </h3>
+                <div class="chart-container">
+                    <canvas id="taskTypesChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3-БӨЛІМ -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3">
+                <span class="lang-kk">3-БӨЛІМ: ЖИ жобасының өмірлік циклі (7 қадам)</span>
+                <span class="lang-ru">ЧАСТЬ 3: Жизненный цикл проекта ИИ (7 шагов)</span>
+            </h2>
+
+            <div class="space-y-4">
+                <div class="card p-5 border-l-4 border-indigo-900 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <span class="text-sm font-bold text-indigo-900 uppercase">
+                            <span class="lang-kk">1-Қадам</span><span class="lang-ru">Шаг 1</span>
+                        </span>
+                        <h4 class="font-bold text-base text-gray-900">
+                            <span class="lang-kk">Тапсырманы анықтау</span><span class="lang-ru">Определение задачи</span>
+                        </h4>
+                        <p class="text-base text-gray-600">
+                            <span class="lang-kk">Проблема: «1000 өтінімді тексеруге 2 апта кетеді» ➔ Мақсат: «ЖИ арқылы 1 күнде тексеру»</span>
+                            <span class="lang-ru">Проблема: «Проверка 1000 заявок занимает 2 недели» ➔ Цель: «Проверить за 1 день с помощью ИИ»</span>
+                        </p>
+                    </div>
+                    <span class="bg-indigo-50 text-indigo-900 text-sm font-semibold px-3 py-1 rounded-full whitespace-nowrap">
+                        <span class="lang-kk">Уақыты: 1 күн</span><span class="lang-ru">Время: 1 день</span>
+                    </span>
+                </div>
+
+                <div class="card p-5 border-l-4 border-amber-400 bg-amber-50/30 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <span class="text-sm font-bold text-amber-700 uppercase">
+                            <span class="lang-kk">2-Қадам (Ең уақытты алатын кезең!)</span><span class="lang-ru">Шаг 2 (Самый долгий этап!)</span>
+                        </span>
+                        <h4 class="font-bold text-base text-gray-900">
+                            <span class="lang-kk">Деректерді жинау және тазалау</span><span class="lang-ru">Сбор и очистка данных</span>
+                        </h4>
+                        <p class="text-base text-gray-600">
+                            <span class="lang-kk">Жоба уақытының 50-60%-ын алады! 5,000 белгіленген өтінім үлгісін жинау және тексеру.</span>
+                            <span class="lang-ru">Занимает 50-60% времени всего проекта! Сбор и разметка 5000 примеров заявок.</span>
+                        </p>
+                    </div>
+                    <span class="bg-amber-100 text-amber-900 text-sm font-semibold px-3 py-1 rounded-full whitespace-nowrap">
+                        <span class="lang-kk">Ресурс: 50-60%</span><span class="lang-ru">Ресурс: 50-60%</span>
+                    </span>
+                </div>
+
+                <div class="card p-5 border-l-4 border-teal-500 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <span class="text-sm font-bold text-teal-700 uppercase">
+                            <span class="lang-kk">3-4-Қадам</span><span class="lang-ru">Шаг 3-4</span>
+                        </span>
+                        <h4 class="font-bold text-base text-gray-900">
+                            <span class="lang-kk">Алгоритм таңдау және ЖИ-ді оқыту</span><span class="lang-ru">Выбор алгоритма и обучение ИИ</span>
+                        </h4>
+                        <p class="text-base text-gray-600">
+                            <span class="lang-kk">Алгоритмді таңдау (Random Forest т.б.) және модельді мысалдарда бірнеше сағат бойы оқыту.</span>
+                            <span class="lang-ru">Выбор алгоритма (Random Forest и др.) и обучение системы на примерах за несколько часов.</span>
+                        </p>
+                    </div>
+                    <span class="bg-teal-50 text-teal-900 text-sm font-semibold px-3 py-1 rounded-full whitespace-nowrap">
+                        <span class="lang-kk">Уақыты: 2 сағат</span><span class="lang-ru">Время: Несколько часов</span>
+                    </span>
+                </div>
+
+                <div class="card p-5 border-l-4 border-blue-600 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <span class="text-sm font-bold text-blue-700 uppercase">
+                            <span class="lang-kk">5-6-Қадам</span><span class="lang-ru">Шаг 5-6</span>
+                        </span>
+                        <h4 class="font-bold text-base text-gray-900">
+                            <span class="lang-kk">Сапаны тексеру және Жүйені енгізу</span><span class="lang-ru">Проверка качества и Внедрение</span>
+                        </h4>
+                        <p class="text-base text-gray-600">
+                            <span class="lang-kk">Жаңа 1000 өтінімде дәлдікті тексеру (>95%). Нақты жұмысқа іске қосу.</span>
+                            <span class="lang-ru">Проверка точности на 1000 новых заявках (>95%). Запуск системы в боевой режим.</span>
+                        </p>
+                    </div>
+                    <span class="bg-blue-50 text-blue-900 text-sm font-semibold px-3 py-1 rounded-full whitespace-nowrap">
+                        <span class="lang-kk">Дәлдік: > 95%</span><span class="lang-ru">Точность: > 95%</span>
+                    </span>
+                </div>
+
+                <div class="card p-5 border-l-4 border-purple-600 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <span class="text-sm font-bold text-purple-700 uppercase">
+                            <span class="lang-kk">7-Қадам</span><span class="lang-ru">Шаг 7</span>
+                        </span>
+                        <h4 class="font-bold text-base text-gray-900">
+                            <span class="lang-kk">Тұрақты мониторинг және жаңарту</span><span class="lang-ru">Постоянный мониторинг и обновление</span>
+                        </h4>
+                        <p class="text-base text-gray-600">
+                            <span class="lang-kk">Заңдар өзгергенде немесе жаңа алаяқтық схемалар пайда болғанда ЖИ-ді үнемі қайта оқыту.</span>
+                            <span class="lang-ru">Мониторинг точности и переобучение ИИ при изменении законов или появлении новых трендов.</span>
+                        </p>
+                    </div>
+                    <span class="bg-purple-50 text-purple-900 text-sm font-semibold px-3 py-1 rounded-full whitespace-nowrap">
+                        <span class="lang-kk">Тұрақты</span><span class="lang-ru">Навсегда</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4-БӨЛІМ -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3">
+                <span class="lang-kk">4-БӨЛІМ: Қазақстандағы нақты ЖИ кейстері</span>
+                <span class="lang-ru">ЧАСТЬ 4: Реальные ИИ-кейсы в Казахстане</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Риддер -->
+                <div class="card p-8 border-l-8 border-[#00BFA5]">
+                    <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2 py-1 rounded uppercase">
+                        <span class="lang-kk">Риддер қ., 2025 ж.</span><span class="lang-ru">г. Риддер, 2025 г.</span>
+                    </span>
+                    <h3 class="font-bold text-xl text-indigo-950 mt-2 mb-3">
+                        <span class="lang-kk">Тәуекел тобындағы отбасыларды анықтау</span>
+                        <span class="lang-ru">Выявление проблемных семей</span>
+                    </h3>
+                    <p class="text-base text-gray-600 leading-relaxed mb-4">
+                        <span class="lang-kk">Әлеуметтік қызметкерлер бұрын үйлерді кездейсоқ аралайтын. ЖИ енгізілген соң: жәрдемақы, мектепке бару, полиция шақырулары талданып, «тәуекел индексі» есептелді. 177 отбасы дәл анықталып, 30 отбасына дер кезінде көмек берілді.</span>
+                        <span class="lang-ru">Социальные работники раньше ездили в семьи наугад. ИИ проанализировал выплаты, посещаемость школ и обращения в полицию. Из 200 семей точно определены 177 с высоким риском, 30 семей получили экстренную помощь.</span>
+                    </p>
+                    <div class="bg-teal-50 p-3 rounded-lg text-sm font-semibold text-teal-900 border border-teal-200">
+                        <span class="lang-kk">✓ Нәтиже: Уақыт пен ресурстар 4 есе тиімді жұмсалды.</span>
+                        <span class="lang-ru">✓ Результат: Вместо выезда в 200 семей наугад — точный выезд в 50 нужных.</span>
+                    </div>
+                </div>
+
+                <!-- Антифрод -->
+                <div class="card p-8 border-l-8 border-[#FFD600]">
+                    <span class="bg-yellow-100 text-yellow-900 text-[10px] font-bold px-2 py-1 rounded uppercase">
+                        <span class="lang-kk">eGov / Әлеуметтік сектор</span><span class="lang-ru">eGov / Соцсектор</span>
+                    </span>
+                    <h3 class="font-bold text-xl text-indigo-950 mt-2 mb-3">
+                        <span class="lang-kk">Алаяқтық өтінімдерді анықтау жүйесі</span>
+                        <span class="lang-ru">Система выявления мошеннических заявок</span>
+                    </h3>
+                    <p class="text-base text-gray-600 leading-relaxed mb-4">
+                        <span class="lang-kk">1000 өтінімді қолмен тексеруге 5 маманның 2 аптасы кететін. ЖИ енгізілген соң: 1000 өтінім 1 күнде өңделіп, жыл сайын 2-3 млрд теңге бюджет қаражаты алаяқтардан сақталды.</span>
+                        <span class="lang-ru">Проверка 1000 заявок вручную занимала 2 недели у 5 человек. ИИ обрабатывает 1000 заявок за 1 день с точностью 94%. Экономия бюджета: 2-3 млрд тенге в год.</span>
+                    </p>
+                    <div class="bg-amber-50 p-3 rounded-lg text-sm font-semibold text-amber-900 border border-amber-200">
+                        <span class="lang-kk">✓ Экономия: Жыл сайын 2-3 млрд ₸ мемлекет бюджеті сақталды.</span>
+                        <span class="lang-ru">✓ Экономия: Выявлено мошенничество на 2-3 млрд тенге в год.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5-БӨЛІМ -->
+        <section class="mb-16">
+            <div class="card p-8 border-l-8 border-red-600">
+                <h2 class="text-2xl font-bold text-red-600 mb-4 flex items-center">
+                    <span class="mr-3">⚠️</span>
+                    <span class="lang-kk">Қауіптер және ЖИ қателіктері</span>
+                    <span class="lang-ru">Опасности и ошибки ИИ</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-700 mb-6">
+                    <div>
+                        <div class="font-bold text-gray-900 mb-1">
+                            <span class="lang-kk">1. Дискриминация (Amazon кейсі)</span>
+                            <span class="lang-ru">1. Дискриминация (Кейс Amazon)</span>
+                        </div>
+                        <p>
+                            <span class="lang-kk">ИИ бұрынғы деректердегі ер адамдардың көптігін көргендіктен, әйелдердің резюмесін қабылдамай қойған. ЖИ бұрынғы қателіктерді қайталауы мүмкін.</span>
+                            <span class="lang-ru">В Amazon ИИ для найма отбраковывал женские резюме, так как учился на старых данных, где преобладали мужчины. ИИ может повторить ошибки прошлого.</span>
+                        </p>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900 mb-1">
+                            <span class="lang-kk">2. «Қайта оқыту» (Overfitting)</span>
+                            <span class="lang-ru">2. «Переобучение» (Overfitting)</span>
+                        </div>
+                        <p>
+                            <span class="lang-kk">ИИ мысалдарды жаттап алады, бірақ жаңа жағдай тап болса жаңылысады. Оқулықты жаттап алып, басқа сұраққа жауап бере алмайтын оқушы сияқты.</span>
+                            <span class="lang-ru">ИИ зубрит обучающие примеры наизусть, но теряется при незначительных изменениях условий. Как ученик, вызубривший параграф, но не понявший суть.</span>
+                        </p>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900 mb-1">
+                            <span class="lang-kk">3. Құпиялылық және деректер</span>
+                            <span class="lang-ru">3. Конфиденциальность и данные</span>
+                        </div>
+                        <p>
+                            <span class="lang-kk">ИИН мен қызметтік құжаттарды ашық ЖИ-ге (ChatGPT) жүктеуге БОЛМАЙДЫ. Деректерді анонимдеу қажет!</span>
+                            <span class="lang-ru">Нельзя загружать ИИН и служебные документы ДСП в открытые нейросети. Обезличивайте данные перед отправкой.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-red-50 border border-red-200 p-4 rounded-xl text-center">
+                    <span class="text-red-800 font-extrabold text-base uppercase block mb-1">
+                        🔑 <span class="lang-kk">БАСТЫ АЛТЫН ЕРЕЖЕ</span><span class="lang-ru">ГЛАВНОЕ ЗОЛОТОЕ ПРАВИЛО</span>
+                    </span>
+                    <p class="text-base text-red-900 font-medium">
+                        <span class="lang-kk">ЖИ ТЕК ҰСЫНЫС БЕРЕДІ. СОҢҒЫ ШЕШІМДІ ӘРДАЙЫМ АДАМ (МЕМЛЕКЕТТІК ҚЫЗМЕТШІ) ҚАБЫЛДАЙДЫ!</span>
+                        <span class="lang-ru">ИИ — ЭТО ПОМОЩНИК, А НЕ СУДЬЯ! ИИ ДАЕТ РЕКОМЕНДАЦИЮ, НО ОКОНЧАТЕЛЬНОЕ РЕШЕНИЕ ВСЕГДА ПРИНИМАЕТ ЧЕЛОВЕК!</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-indigo-950 text-white py-12 px-6 text-center border-t border-indigo-900">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-bold mb-3">
+                <span class="lang-kk">Болашақ — Адам мен ЖИ-дің бірлескен жұмысында</span>
+                <span class="lang-ru">Будущее — за синергией Человека и ИИ</span>
+            </h2>
+            <p class="text-indigo-300 text-base mb-6">
+                <span class="lang-kk">Мемлекеттік қызметтегі рутинаны ЖИ-ге тапсырып, уақытты азаматтармен тікелей жұмыс істеуге арнаңыз.</span>
+                <span class="lang-ru">Освободите себя от рутины и посвятите время реальной помощи гражданам.</span>
+            </p>
+            <a href="../index.html" class="inline-block bg-amber-400 text-indigo-950 font-bold px-8 py-4 rounded-full text-base uppercase tracking-wider hover:bg-yellow-300 transition-all shadow-lg">
+                <span class="lang-kk">Басты бетке оралу</span><span class="lang-ru">Вернуться на главную</span>
+            </a>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function wrapLabel(label, limit = 16) {
+            if (Array.isArray(label)) return label;
+            if (label.length <= limit) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+
+            words.forEach(word => {
+                if ((currentLine + word).length <= limit) {
+                    currentLine += (currentLine === '' ? '' : ' ') + word;
+                } else {
+                    lines.push(currentLine);
+                    currentLine = word;
+                }
+            });
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    return Array.isArray(label) ? label.join(' ') : label;
+                }
+            }
+        };
+
+        const ctxTask = document.getElementById('taskTypesChart').getContext('2d');
+        let taskChart = new Chart(ctxTask, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    wrapLabel('Жіктеу / Классификация'),
+                    wrapLabel('Болжау / Предсказание'),
+                    wrapLabel('Ауытқулар / Аномалии'),
+                    wrapLabel('Бейнелер / Распознавание')
+                ],
+                datasets: [{
+                    data: [40, 25, 20, 15],
+                    backgroundColor: ['#1A237E', '#00BFA5', '#FFD600', '#7C3AED']
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: { tooltip: tooltipConfig, legend: { position: 'bottom' } }
+            }
+        });
+
+        window.addEventListener('languageChanged', (e) => {
+            const isRu = e.detail.lang === 'ru';
+            taskChart.data.labels = isRu ? [
+                wrapLabel('Классификация (Сортировка)'),
+                wrapLabel('Предсказание будущего'),
+                wrapLabel('Выявление аномалий'),
+                wrapLabel('Распознавание образов')
+            ] : [
+                wrapLabel('Жіктеу (Сұрыптау)'),
+                wrapLabel('Болашақты болжау'),
+                wrapLabel('Ауытқуларды табу'),
+                wrapLabel('Бейнелерді тану')
+            ];
+            taskChart.update();
+        });
+    </script>
+</body>
+</html>

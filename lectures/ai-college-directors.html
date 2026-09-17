@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">ЖИ колледж басқаруында мен оқу процесінде: Практикум</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <meta name="description" content="ТиПО колледж директорларына арналған нұсқаулық: Адаптивтілік дағдысы, Р-К-З-Ф-О промптингі, ДЗ тексеруді трансформациялау және ВАУ-кейстер.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Колледжді басқаруда және оқу процесінде ЖИ-ді қолдану">
+    <meta property="og:description" content="ТиПО колледж директорларына арналған нұсқаулық: Адаптивтілік дағдысы, Р-К-З-Ф-О промптингі, ДЗ тексеруді трансформациялау және ВАУ-кейстер.">
+    <meta property="og:image" content="../assets/images/lector.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Колледжді басқаруда және оқу процесінде ЖИ-ді қолдану">
+    <meta name="twitter:description" content="ТиПО колледж директорларына арналған нұсқаулық: Адаптивтілік дағдысы, Р-К-З-Ф-О промптингі, ДЗ тексеруді трансформациялау және ВАУ-кейстер.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/lecture.css">
+    <style>
+        .gradient-header { background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 40%, #312E81 100%); }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden" data-lang="kk">
+
+    <!-- Навигационная панель -->
+    <div class="bg-indigo-950 border-b border-indigo-800 py-3 px-6 text-sm text-white sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="../index.html" class="hover:text-amber-400 font-semibold flex items-center gap-2 transition-colors">
+                <span class="lang-kk">← Дәрістер каталогына оралу</span>
+                <span class="lang-ru">← Вернуться к каталогу лекций</span>
+            </a>
+            
+            <div class="flex items-center gap-4">
+                <span class="opacity-60 hidden sm:inline">
+                    <span class="lang-kk">Бөлім: ТиПО Колледждері & ЖИ Трансформациясы</span>
+                    <span class="lang-ru">Раздел: Колледжи ТиПО & ИИ-Трансформация</span>
+                </span>
+                <!-- Переключатель языков -->
+                <div class="inline-flex items-center bg-indigo-900/80 p-1 rounded-xl border border-indigo-700/60 text-sm">
+                    <button onclick="setLanguage('kk')" id="btn-lang-kk" class="px-3 py-1 rounded-lg transition-all text-indigo-950 bg-amber-400 font-bold shadow">
+                        ҚАЗ
+                    </button>
+                    <button onclick="setLanguage('ru')" id="btn-lang-ru" class="px-3 py-1 rounded-lg transition-all text-indigo-200 hover:text-white">
+                        RU
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Шапка страницы -->
+    <header class="gradient-header text-white py-16 px-6 text-center shadow-xl relative overflow-hidden">
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="inline-block bg-amber-400 text-indigo-950 font-bold px-4 py-1 rounded-full text-sm uppercase tracking-widest mb-4 shadow">
+                <span class="lang-kk">Интерактивті лекция & Практикум (120 минут)</span>
+                <span class="lang-ru">Интерактивная лекция & Практикум (120 минут)</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight">
+                <span class="lang-kk">Колледжді Басқаруда және Оқу Процесінде ЖИ-ді Практикалық Қолдану</span>
+                <span class="lang-ru">Практическое Применение ИИ в Управлении Колледжем и Обучении</span>
+            </h1>
+            <p class="text-base md:text-xl opacity-90 font-light max-w-3xl mx-auto leading-relaxed text-indigo-100">
+                <span class="lang-kk">ТиПО колледж директорлары мен педагогтеріне арналған толық сценарий, промпттар кітапханасы, бағалауды трансформациялау және басқарушылық кейстер.</span>
+                <span class="lang-ru">Развернутый сценарий, библиотека копируемых промптов, трансформация оценки знаний и антикризисные кейсы для директоров и педагогов ТиПО.</span>
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 max-w-6xl">
+
+        <!-- 1-БӨЛІМ -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3 flex items-center gap-3">
+                <span class="bg-indigo-900 text-white text-base font-extrabold w-8 h-8 rounded-full flex items-center justify-center">1</span>
+                <span class="lang-kk">ЖИ Философиясы, Адаптивтілік және Промптинг Пән-Өнері</span>
+                <span class="lang-ru">Философия ИИ, Новая Адаптивность и Искусство Промптинга</span>
+            </h2>
+
+            <!-- Смена восприятия -->
+            <div class="card p-8 mb-8 border-l-8 border-amber-400 bg-gradient-to-r from-amber-50/40 to-white">
+                <span class="text-sm font-bold text-amber-700 uppercase tracking-wider block mb-1">
+                    <span class="lang-kk">💡 Интерактивті бастама</span><span class="lang-ru">💡 Интерактивный старт</span>
+                </span>
+                <h3 class="text-xl font-bold text-indigo-950 mb-3">
+                    <span class="lang-kk">«Іздеу жүйесінен» (Google) «Цифрлық қызметкер» моделіне өту</span>
+                    <span class="lang-ru">От модели «Поисковика» к модели «Цифрового сотрудника»</span>
+                </h3>
+                <p class="text-slate-700 text-base leading-relaxed mb-4">
+                    <span class="lang-kk">Адамдардың 90%-ы ЖИ-ді «улучшенный Google» ретінде пайдаланады: қысқа сұрақ қойып, анықтама алады. Біздің басты мақсатымыз — ментальды сдвиг жасау. Біз нейрожеліге сұрақ қоюды тоқтатып, оған толыққанды <strong>техникалық тапсырма (ТЗ) беруді</strong> үйренеміз.</span>
+                    <span class="lang-ru">В 90% случаев человек воспринимает ИИ как «улучшенный Google»: задал короткий вопрос — получил справку. Наша цель — совершить ментальный сдвиг: перейти от модели поисковика к модели <strong>«цифрового сотрудника»</strong>, которому ставят полноценное техническое задание.</span>
+                </p>
+                <div class="bg-indigo-950 text-white p-4 rounded-xl text-sm flex flex-col md:flex-row justify-between items-center gap-3">
+                    <div>
+                        <span class="text-amber-400 font-bold block mb-0.5">
+                            <span class="lang-kk">Бенджамин Блумның «2 Сигма Проблемасы» (1984 ж.)</span>
+                            <span class="lang-ru">Проблема двух сигм Бенджамина Блума (1984 г.)</span>
+                        </span>
+                        <span class="text-slate-300">
+                            <span class="lang-kk">Жеке тьюторы (наставнигі) бар студент 98% қатарластарынан жоғары нәтиже көрсетеді. ЖИ — бұл әр студент пен директорға тегін, 24/7 қолжетімді жеке тьютор!</span>
+                            <span class="lang-ru">Студент с персональным тьютором показывает результат выше 98% сокурсников. ИИ — первый в истории бесплатный, доступный 24/7 персональный тьютор!</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ВАЖНЕЙШИЙ АКЦЕНТ: ЭРУДИЦИЯ VS АДАПТИВНОСТЬ -->
+            <div class="card p-8 mb-8 border-l-8 border-[#1A237E]">
+                <div class="inline-block bg-indigo-100 text-indigo-900 font-bold text-sm px-3 py-1 rounded-md mb-2">
+                    <span class="lang-kk">Басты концепция</span><span class="lang-ru">Ключевая концепция</span>
+                </div>
+                <h3 class="text-xl font-bold text-indigo-950 mb-4">
+                    <span class="lang-kk">Жаңа негізгі дағды: Эрудицияның орнына АДАПТИВТІЛІК</span>
+                    <span class="lang-ru">Новый ключевой навык: АДАПТИВНОСТЬ вместо эрудиции</span>
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <div class="text-red-600 font-bold text-base mb-2 flex items-center gap-2">
+                            <span>❌</span>
+                            <span class="lang-kk">Ескі парадигма: Эрудиция</span>
+                            <span class="lang-ru">Устаревшая парадигма: Эрудиция</span>
+                        </div>
+                        <p class="text-base text-slate-600 leading-relaxed">
+                            <span class="lang-kk">Раньше ақылдың басты көрсеткіші жатталған фактілер, формулалар мен баптардың көлемі болды. Студентті 4-5 жыл бойы тек стандартты келісімшарт жасауға немесе стандартты есеп беруге үйрету — бүгінде уақытты ысырап ету. ИИ типовой договорды 12 секундта қатесіз жазады.</span>
+                            <span class="lang-ru">Раньше показатель ума — объем заученных фактов, дат и формул. Учить студента 5 лет ради заполнения типовых бланков — экономическое преступление. ИИ делает типовой документ за 12 секунд без ошибок.</span>
+                        </p>
+                    </div>
+
+                    <div class="bg-teal-50 p-5 rounded-xl border border-teal-200">
+                        <div class="text-teal-800 font-bold text-base mb-2 flex items-center gap-2">
+                            <span>✅</span>
+                            <span class="lang-kk">Жаңа парадигма: Адаптивтілік</span>
+                            <span class="lang-ru">Новая парадигма: Адаптивность</span>
+                        </div>
+                        <p class="text-base text-slate-700 leading-relaxed">
+                            <span class="lang-kk">Барлық ақпарат бір кликте қолжетімді. Енді басты ретте <strong>АДАПТИВТІЛІК</strong> тұр — ақпаратты лезде тауып, сыни тұрғыдан салыстырып, қайта үйрену және жаңа логикалық байланыстар құру дағдысы. Философия, логика және математика сияқты фундаменталды ғылымдарға оралу жүріп жатыр!</span>
+                            <span class="lang-ru">Информация доступна в один клик. На первое место вышла <strong>АДАПТИВНОСТЬ</strong> — способность мгновенно переучиваться, критически сопоставлять данные и выстраивать логику. Происходит глобальный возврат к фундаментальным наукам (философия, логика, математика).</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 text-sm text-amber-900">
+                    <strong>
+                        <span class="lang-kk">Экономикадағы ең әлсіз буын (2% заңы):</span>
+                        <span class="lang-ru">Слабое звено экономики (Закон 2%):</span>
+                    </strong> 
+                    <span class="lang-kk">Соңғы 100 жылда әлемдік өнімділік жылына тек 2%-ға өсіп келеді. Себебі ең әлсіз буын — технологиялар емес, консервативті институттардың (колледждердің) жаңа жағдайға бейімделу (адаптация) жылдамдығы!</span>
+                    <span class="lang-ru">Производительность растет всего на 2% в год, потому что узкое горлышко — не алгоритмы, а способность консервативных институтов (колледжей) перестраивать реальные процессы!</span>
+                </div>
+            </div>
+
+            <!-- Формула Промпта Р-К-З-Ф-О -->
+            <div class="card p-8 border-l-8 border-[#00BFA5]">
+                <h3 class="text-xl font-bold text-indigo-950 mb-4">
+                    <span class="lang-kk">🎯 Промптингтің Әмбебап Формуласы: «Р-К-З-Ф-О»</span>
+                    <span class="lang-ru">🎯 Универсальный Фреймворк Промпта: «Р-К-З-Ф-О»</span>
+                </h3>
+                <p class="text-base text-slate-600 mb-6">
+                    <span class="lang-kk">Нейрожелі сапалы сараптамалық нәтиже беруі үшін сұраныс 5 элементтен тұруы тиіс:</span>
+                    <span class="lang-ru">Чтобы чат-бот выдавал результат экспертного уровня, используйте формулу из 5 элементов:</span>
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 mb-6 text-center">
+                    <div class="bg-slate-100 p-3 rounded-xl">
+                        <div class="font-extrabold text-indigo-900 text-lg">Р</div>
+                        <div class="text-sm font-bold text-slate-700">
+                            <span class="lang-kk">Роль</span><span class="lang-ru">Роль</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500 mt-1">
+                            <span class="lang-kk">Кім болуы керек?</span><span class="lang-ru">Кем должен стать ИИ?</span>
+                        </div>
+                    </div>
+                    <div class="bg-slate-100 p-3 rounded-xl">
+                        <div class="font-extrabold text-indigo-900 text-lg">К</div>
+                        <div class="text-sm font-bold text-slate-700">
+                            <span class="lang-kk">Контекст</span><span class="lang-ru">Контекст</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500 mt-1">
+                            <span class="lang-kk">Жағдай мен аудитория</span><span class="lang-ru">Специфика ситуации</span>
+                        </div>
+                    </div>
+                    <div class="bg-slate-100 p-3 rounded-xl">
+                        <div class="font-extrabold text-indigo-900 text-lg">З</div>
+                        <div class="text-sm font-bold text-slate-700">
+                            <span class="lang-kk">Задача</span><span class="lang-ru">Задача</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500 mt-1">
+                            <span class="lang-kk">Не істеу керек?</span><span class="lang-ru">Что сделать?</span>
+                        </div>
+                    </div>
+                    <div class="bg-slate-100 p-3 rounded-xl">
+                        <div class="font-extrabold text-indigo-900 text-lg">Ф</div>
+                        <div class="text-sm font-bold text-slate-700">
+                            <span class="lang-kk">Формат</span><span class="lang-ru">Формат</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500 mt-1">
+                            <span class="lang-kk">Кесте, тізім, чек-лист</span><span class="lang-ru">Вид ответа</span>
+                        </div>
+                    </div>
+                    <div class="bg-slate-100 p-3 rounded-xl">
+                        <div class="font-extrabold text-indigo-900 text-lg">О</div>
+                        <div class="text-sm font-bold text-slate-700">
+                            <span class="lang-kk">Ограничения</span><span class="lang-ru">Ограничения</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500 mt-1">
+                            <span class="lang-kk">Нені айналып өту керек?</span><span class="lang-ru">Чего избегать?</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Пример промпта -->
+                <div class="bg-slate-900 text-slate-200 p-4 rounded-xl text-sm font-mono">
+                    <span class="text-amber-400 font-bold block mb-2">
+                        <span class="lang-kk">📌 Р-К-З-Ф-О бойынша нақты промпт мысалы:</span>
+                        <span class="lang-ru">📌 Пример точного промпта по Р-К-З-Ф-О:</span>
+                    </span>
+                    <div class="lang-kk">«[Р] Сен — политехникалық колледждің оқу ісі жөніндегі тәжірибелі директорының орынбасарысың. [К] Бізге "2-курста сабақ босатуды азайту" тақырыбында педкеңес өткізу қажет. Колледжде 800 студент бар, мамандықтар техникалық. [З] 1.5 сағатқа арналған педкеңестің регламентін әзірле. [Ф] Кесте түрінде рәсімде: Уақыты | Сұрақ | Жауапты | Нәтиже. [О] Формализм мен канцеляризмдерден аулақ бол.»</div>
+                    <div class="lang-ru">«[Р] Ты — опытный зам. директора по учебной работе политехнического колледжа. [К] Нам необходимо провести педсовет на тему "Снижение пропусков на 2 курсе". В колледже 800 студентов, специальности технические. [З] Разработай регламент педсовета на 1.5 часа. [Ф] Оформи в виде таблицы: Время | Вопрос | Ответственный | Результат. [О] Избегай формализма и канцеляризмов.»</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2-БӨЛІМ -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3 flex items-center gap-3">
+                <span class="bg-indigo-900 text-white text-base font-extrabold w-8 h-8 rounded-full flex items-center justify-center">2</span>
+                <span class="lang-kk">Басқарудағы ЖИ: «ҚАЛАЙ»-дан «НЕ ЖӘНЕ НЕ ҮШІН»-ге сдвиг жасау</span>
+                <span class="lang-ru">ИИ в Управлении: Сдвиг с вопроса «КАК» на «ЧТО и ЗАЧЕМ»</span>
+            </h2>
+
+            <div class="card p-8 border-l-8 border-indigo-900 mb-8">
+                <h3 class="text-xl font-bold text-indigo-950 mb-3">
+                    <span class="lang-kk">Басқарушылық ойлаудың фундаменталды трансформациясы</span>
+                    <span class="lang-ru">Фундаментальный сдвиг мышления руководителя</span>
+                </h3>
+                <p class="text-base text-slate-700 leading-relaxed mb-6">
+                    <span class="lang-kk">Бұрын уақыттың 80%-ы <strong>«ҚАЛАЙ жасау керек?»</strong> (код жазу, Excel-де формула құру, есеп дайындау) сұрағына кететін. Бүгін «ҚАЛАЙ» сұрағын ЖИ өз мойнына алды. Руководитель мен педагогке ең бастысы — <strong>«НЕ істеу керек?»</strong> және <strong>«НЕ ҮШІН бұл қажет?»</strong> сұрақтарына жауап беру қалады.</span>
+                    <span class="lang-ru">Раньше 80% времени уходило на вопрос <strong>«КАК сделать?»</strong> (как написать код, формулу Excel, отчет). Сегодня вопрос «КАК» берет на себя ИИ. Руководителю остается главное — ответить на вопросы <strong>«ЧТО сделать?»</strong> и <strong>«ЗАЧЕМ это нужно?»</strong>.</span>
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100">
+                        <div class="font-bold text-indigo-950 mb-1">⚙️ <span class="lang-kk">Орындаушылық деңгей (ИИ)</span><span class="lang-ru">Исполнительский уровень (ИИ)</span></div>
+                        <div class="text-slate-600">
+                            <span class="lang-kk">«ҚАЛАЙ»: Рутинаны орындау, аналитика, текст құрастыру, код жазу.</span>
+                            <span class="lang-ru">«КАК»: Рутинное исполнение, аналитика, тексты, код, таблицы.</span>
+                        </div>
+                    </div>
+                    <div class="bg-amber-50 p-4 rounded-xl border border-amber-200">
+                        <div class="font-bold text-amber-950 mb-1">👑 <span class="lang-kk">Стратегиялық деңгей (Директор)</span><span class="lang-ru">Стратегический уровень (Директор)</span></div>
+                        <div class="text-amber-900">
+                            <span class="lang-kk">«НЕ ЖӘНЕ НЕ ҮШІН»: Тапсырманы қою, мағыналар архитектурасы, шешім қабылдау.</span>
+                            <span class="lang-ru">«ЧТО и ЗАЧЕМ»: Постановка задач, архитектура смыслов, принятие решений.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3-БӨЛІМ: ОБУЧЕНИЕ И ПРОВЕРКА ДЗ -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3 flex items-center gap-3">
+                <span class="bg-amber-400 text-indigo-950 text-base font-extrabold w-8 h-8 rounded-full flex items-center justify-center">3</span>
+                <span class="lang-kk">🔥 БАСТЫ ТАҚЫРЫП: Студенттер ЖИ қолданғанда сабақты қалай жүргізу және ДЗ-ны қалай тексеру керек?</span>
+                <span class="lang-ru">🔥 ГЛАВНАЯ ТЕМА: Как вести занятия и проверять ДЗ в эпоху ИИ?</span>
+            </h2>
+
+            <!-- Главный страх преподавателей -->
+            <div class="card p-8 mb-8 border-l-8 border-red-600 bg-gradient-to-r from-red-50/30 to-white">
+                <span class="text-sm font-bold text-red-600 uppercase tracking-wider block mb-1">
+                    <span class="lang-kk">⚠️ Педагогтердің басты қорқынышы</span><span class="lang-ru">⚠️ Главный страх преподавателей</span>
+                </span>
+                <h3 class="text-xl font-bold text-indigo-950 mb-3">
+                    <span class="lang-kk">«Студенттер өздігінен ештеңе жаттамайды, ИИ-дан көшіріп алып, отупеют етеді ма?»</span>
+                    <span class="lang-ru">«Студенты ничего не запоминают и тупо переписывают с ИИ. Они отупеют!»</span>
+                </h3>
+
+                <div class="space-y-4 text-sm text-slate-700 leading-relaxed">
+                    <p>
+                        <span class="lang-kk"><strong>Телевизор мен машина аналогтары:</strong> Телевизор пайда болғанда «адамдар кітап оқымай отупеют етеді» деді, көліктер шыққанда «адамдар жүруден калады» деді. Бүгінде тұрмыста ауыр зат көтерудің қажеттілігі жоқ. Бірақ неге миллиондаған адамдар аптасына 3 рет <strong>спортзалға барып, штанга көтереді?</strong></span>
+                        <span class="lang-ru">При появлении ТВ говорили «все отупеют», при появлении авто — «забудут как ходить». Сегодня нет бытовой необходимости поднимать тяжести. Но почему миллионы людей добровольно идут в <strong>спортзал и поднимают штангу?</strong></span>
+                    </p>
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-amber-400 shadow-sm font-semibold text-slate-800">
+                        <span class="lang-kk">💡 Өйткені оларда «НЕ ҮШІН?» деген сапалы жауап бар (денсаулық, төзімділік, сапалы өмір). ЖИ — бұл интеллектке арналған ЛИФТ. Егер студентте мотивация болмаса, ол ЖИ-сіз де TikTok пен готовый ГДЗ арқылы отупеют етеді. Педагогтің міндеті — «ауыр затты қолмен тасуға» мәжбүрлеу емес, лифтті пайдалануды және ішкі «НЕ ҮШІН» мотивациясын қалыптастыру!</span>
+                        <span class="lang-ru">💡 Потому что у них есть осознанный ответ «ЗАЧЕМ?» (здоровье, выносливость). ИИ — это «лифт для интеллекта». Если у студента нет мотивации, он отупеет и без ИИ — через TikTok и списывание. Задача педагога — научить пользоваться лифтом и сформировать осознанное «ЗАЧЕМ»!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Радикальное изменение контроля знаний -->
+            <div class="card p-8 mb-8 border-l-8 border-[#00BFA5]">
+                <h3 class="text-xl font-bold text-indigo-950 mb-4">
+                    <span class="lang-kk">🔄 Білімді Бағалау Форматын Түбегейлі Өзгерту</span>
+                    <span class="lang-ru">🔄 Радикальное Изменение Модели Контроля Знаний</span>
+                </h3>
+                <p class="text-base text-slate-600 mb-6">
+                    <span class="lang-kk">ИИ-дан генерирацияланған тексті іздеп әуре болмаңыз (детекторлар 80% жағдайда қателеседі). Тапсырманың өзін сдвиг жасаңыз:</span>
+                    <span class="lang-ru">Не пытайтесь бороться с результатом и использовать «Детекторы ИИ» (они математически ненадежны). Меняйте формат заданий:</span>
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <!-- Ескі формат / Старый формат -->
+                    <div class="bg-red-50 p-5 rounded-xl border border-red-200">
+                        <div class="text-red-700 font-bold text-sm uppercase mb-2">
+                            <span class="lang-kk">❌ Ескі формат (ИИ арқылы 5 секундта жасалады):</span>
+                            <span class="lang-ru">❌ Старый формат (Делается ИИ за 5 секунд):</span>
+                        </div>
+                        <div class="text-sm text-slate-700 font-medium mb-2">
+                            <span class="lang-kk">«ЧПУ станоктары туралы 10 беттік реферат жазып кел.»</span>
+                            <span class="lang-ru">«Напиши реферат на 10 страниц о станках с ЧПУ.»</span>
+                        </div>
+                        <p class="text-sm text-slate-500">
+                            <span class="lang-kk">Студент рефератты генерирациялайды, басып шығарады және тіпті оқымай өткізеді.</span>
+                            <span class="lang-ru">Студент сгенерирует реферат за секунды, распечатает и сдаст, даже не читая.</span>
+                        </p>
+                    </div>
+
+                    <!-- Жаңа формат / Новый формат -->
+                    <div class="bg-teal-50 p-5 rounded-xl border border-teal-200">
+                        <div class="text-teal-800 font-bold text-sm uppercase mb-2">
+                            <span class="lang-kk">✅ Жаңа формат (Шынайы дағды мен адапция):</span>
+                            <span class="lang-ru">✅ Новый формат (Реальный навык и адаптация):</span>
+                        </div>
+                        <div class="text-sm text-teal-950 font-semibold mb-2">
+                            <span class="lang-kk">«Нейрожелі арқылы реферат генерирацияла. Сосын ондағы 3 фактикалық қателікті/галлюцинацияны тап және аудиторияда ауызша қорға!»</span>
+                            <span class="lang-ru">«Сгенерируй с помощью ИИ реферат. Найди в нем 3 фактические ошибки/галлюцинации и защити разбор устно перед группой!»</span>
+                        </div>
+                        <p class="text-sm text-slate-600">
+                            <span class="lang-kk">Фокус текст жазудан ауызша қорғауға, қатені талдауға және мастерскойда практикалық демонстрацияға ауысады.</span>
+                            <span class="lang-ru">Фокус смещается с процесса написания на устную защиту, критический анализ ошибок и практическую демонстрацию.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4 Новые роли ИИ на уроке -->
+                <h4 class="font-bold text-base text-indigo-950 mb-3">
+                    <span class="lang-kk">4 Сабақтағы ЖИ-дің Жаңа Ролі:</span>
+                    <span class="lang-ru">4 Новые Роли ИИ в Аудитории:</span>
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <div class="font-bold text-indigo-900 mb-1">
+                            <span class="lang-kk">1. Сократовский тьютор</span>
+                            <span class="lang-ru">1. Сократовский тьютор</span>
+                        </div>
+                        <div class="text-slate-600 text-sm">
+                            <span class="lang-kk">Дайын жауап бермейді, наводящий сұрақтар арқылы студентті шешімге өзі жеткізеді.</span>
+                            <span class="lang-ru">Не дает готовых ответов, а ведет студента направляющими вопросами к решению.</span>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <div class="font-bold text-indigo-900 mb-1">
+                            <span class="lang-kk">2. Қатал оппонент</span>
+                            <span class="lang-ru">2. Строгий оппонент</span>
+                        </div>
+                        <div class="text-slate-600 text-sm">
+                            <span class="lang-kk">Студент жобасынан әлсіз тұстарды табады, аргументті қорғауға үйретеді.</span>
+                            <span class="lang-ru">Ищет слабые места в проектах студентов, учит защищать свою позицию.</span>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <div class="font-bold text-indigo-900 mb-1">
+                            <span class="lang-kk">3. Дифференциалды ассистент</span>
+                            <span class="lang-ru">3. Дифференцированный ассистент</span>
+                        </div>
+                        <div class="text-slate-600 text-sm">
+                            <span class="lang-kk">Күрделі тақырыпты 3 түрлі деңгейге (әлсіз / орташа / күшті студент) бейімдеп түсіндіреді.</span>
+                            <span class="lang-ru">Адаптирует сложную тему под 3 уровня (слабый / средний / сильный студент).</span>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <div class="font-bold text-indigo-900 mb-1">
+                            <span class="lang-kk">4. Кәсіп симуляторы</span>
+                            <span class="lang-ru">4. Симулятор профессии</span>
+                        </div>
+                        <div class="text-slate-600 text-sm">
+                            <span class="lang-kk">Талапшыл тапсырыс беруші немесе зауыт бас инженеры ролін ойнайды.</span>
+                            <span class="lang-ru">Исполняет роль требовательного заказчика или главного инженера завода.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4-БӨЛІМ: ВСЕ ПРАКТИЧЕСКИЕ КЕЙСЫ И ПРОМПТЫ -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3 flex items-center gap-3">
+                <span class="bg-indigo-900 text-white text-base font-extrabold w-8 h-8 rounded-full flex items-center justify-center">4</span>
+                <span class="lang-kk">Барлық Практикалық ВАУ-Кейстер мен Дайын Промпттар Кітапханасы</span>
+                <span class="lang-ru">Библиотека Всех Практических ВАУ-Кейсов и Готовых Промптов</span>
+            </h2>
+
+            <div class="space-y-8">
+
+                <!-- Кейс 1 -->
+                <div class="card p-6 border-t-4 border-indigo-900">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="bg-indigo-100 text-indigo-900 text-[10px] font-bold px-2.5 py-1 rounded uppercase">
+                            <span class="lang-kk">ВАУ-Кейс 1: Басқару & НПА</span>
+                            <span class="lang-ru">ВАУ-Кейс 1: Управление & НПА</span>
+                        </span>
+                        <span class="text-sm text-slate-400">
+                            <span class="lang-kk">ҚР Заңнамасы (ҚР «Білім туралы» Заңы, № 385 Бұйрық)</span>
+                            <span class="lang-ru">Законодательство РК (Закон «Об образовании», Приказ № 385)</span>
+                        </span>
+                    </div>
+                    <h3 class="font-bold text-lg text-indigo-950 mb-2">
+                        <span class="lang-kk">«Антикризистік медиатор» (Ата-аналардың эмоциялық шағымдарын шешу)</span>
+                        <span class="lang-ru">«Антикризисный медиатор» (Разбор острых жалоб родителей)</span>
+                    </h3>
+                    <p class="text-base text-slate-600 mb-4">
+                        <span class="lang-kk">Орал қаласы дәнекерлеу ісі мамандығы студентінің ата-анасынан келген шағымға заңды әрі чуткий ресми жауап дайындау.</span>
+                        <span class="lang-ru">Подготовка официального, но чуткого ответа на эмоциональную жалобу родителя студента специальности «Сварочное дело» в г. Уральск.</span>
+                    </p>
+                    
+                    <div class="bg-slate-900 text-slate-100 p-4 rounded-xl text-sm font-mono whitespace-pre-wrap select-all overflow-x-auto">
+                        <div class="lang-kk">Сен — Қазақстан Республикасының білім беру саласындағы тәжірибелі заңгері және дағдарысқа қарсы PR-маманысың.
+
+КОНТЕКСТ:
+"Дәнекерлеу ісі" мамандығының 2-курс студентінің ата-анасы өндірістік оқыту шебері "дәнекерлеу маскаларын мәжбүрлеп сатып алғызады және шеберхананы жөндеуге ақша жинайды, практикаға жібермеймін деп қорқытады" деп эмоциялық шағым жазды.
+
+ШЫНДЫҚ:
+Ақша жинау жүргізілмейді. Колледж әлеуметтік серіктеспен шарт жасасқан, ЖҚҚ (маскалар) ҚҚЕ нормалары бойынша тегін беріледі. Студент ҚҚЕ нұсқаулығынан жүйелі түрде босатқандықтан жіберілмеген (№ 385 бұйрық).
+
+ТАПСЫРМА:
+Директордың атынан ата-анаға ресми, бірақ барынша мұқият және сенімді жауап жобасын жаз.
+
+ТАЛАПТАР:
+1. Тон: құрметті, ұстамды, кәсіби.
+2. ҚР "Білім туралы" Заңына және өндірістік оқытудан өту ережелеріне сілтеме жаса.
+3. Бөлім меңгерушісі мен шебердің қатысуымен жеке кездесу үшін нақты күн мен уақытты ұсын.
+4. Көлемі — 350 сөзге дейін.</div>
+                        <div class="lang-ru">Ты — опытный юрист в сфере образования Республики Казахстан и антикризисный PR-специалист.
+
+КОНТЕКСТ:
+Родитель студента 2 курса специальности "Сварочное дело" написал эмоциональную жалобу, утверждая, что мастер производственного обучения "принудительно заставляет покупать сварочные маски и собирает деньги на ремонт мастерской, угрожая недопуском к практике".
+
+РЕАЛЬНОСТЬ:
+Сбор денег не проводится. Колледж заключил договор с социальным партнером, СИЗ (маски) выдаются бесплатно по нормам ТБ. Студент не допущен из-за систематических пропусков инструктажа по ТБ (Приказ № 385).
+
+ЗАДАЧА: Напиши проект официального, но максимально чуткого и убедительного ответа директору на имя родителя.
+
+ТРЕБОВАНИЯ:
+1. Тон: уважительный, сдержанный, профессиональный.
+2. Сошлися на Закон РК "Об образовании" и правила прохождения производственного обучения.
+3. Предложи конкретную дату и время для личной встречи с заведующим отделением и мастером.
+4. Объем — до 350 слов.</div>
+                    </div>
+                </div>
+
+                <!-- Кейс 2 -->
+                <div class="card p-6 border-t-4 border-amber-400">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="bg-amber-100 text-amber-900 text-[10px] font-bold px-2.5 py-1 rounded uppercase">
+                            <span class="lang-kk">ВАУ-Кейс 2: Мемлекеттік сатып алу</span>
+                            <span class="lang-ru">ВАУ-Кейс 2: Госзакупки</span>
+                        </span>
+                        <span class="text-sm text-slate-400">goszakup.gov.kz</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-indigo-950 mb-2">
+                        <span class="lang-kk">«Мемлекеттік сатып алу инженеры» (Техникалық ерекшелік 1 минутта)</span>
+                        <span class="lang-ru">«Инженер госзакупок» (Техническая спецификация за 1 минуту)</span>
+                    </h3>
+                    <p class="text-base text-slate-600 mb-4">
+                        <span class="lang-kk">Дәнекерлеушілерді оқытуға арналған 5 виртуальды VR/AR симуляторын заңды түрде сатып алуға техспецификация дайындау.</span>
+                        <span class="lang-ru">Составление подробной техспецификации для тендера на закупку 5 VR/AR тренажеров-симуляторов сварки.</span>
+                    </p>
+                    
+                    <div class="bg-slate-900 text-slate-100 p-4 rounded-xl text-sm font-mono whitespace-pre-wrap select-all overflow-x-auto">
+                        <div class="lang-kk">Сен — ҚР ТжКБ жүйесіндегі мемлекеттік сатып алу жөніндегі мамансың.
+
+ТАПСЫРМА:
+Электрогазодәнекерлеушілерді оқытуға арналған 5 виртуальды тренажер-симуляторды (колледж шеберханасы үшін) сатып алуға тендер өткізуге толық техникалық ерекшелікті құрастыр.
+
+ҚҰЖАТҚА ЕНГІЗ:
+1. Мақсаты және ең төменгі техникалық сипаттамалары (MMA, MIG/MAG процестерін имитациялау, жанарғы қозғалысының датчиктері, VR/AR визуализациясы бар маска).
+2. Бағдарламалық қамтамасыз етуге қойылатын талаптар (интерфейстің қазақ және орыс тілдерінде болуы, қателерді есепке алу және ТЖБ балдарын қалыптастыру модулі).
+3. Жиынтықталуы, қауіпсіздік пен электр қоректендіруге қойылатын талаптар (220V).
+4. Кепілдік қызмет көрсету шарттары (кемінде 24 ай) және Тапсырыс берушінің базасында колледж оқытушылары үшін 8 сағаттық оқыту семинарын өткізу міндетті талабы.
+
+Конкурстық құжаттамаға дайын қосымша түрінде рәсімде.</div>
+                        <div class="lang-ru">Ты — специалист по государственным закупкам в системе технического и профессионального образования РК.
+
+ЗАДАЧА:
+Составь подробную техническую спецификацию для проведения тендера на закупку 5 виртуальных тренажеров-симуляторов для обучения электрогазосварщиков (для мастерской колледжа).
+
+ВКЛЮЧИ В ДОКУМЕНТ:
+1. Назначение и минимальные технические характеристики (эмуляция процессов MMA, MIG/MAG, датчики движения горелки, маска с VR/AR визуализацией).
+2. Требования к ПО (наличие русского и казахского языков интерфейса, модуль учета ошибок и формирования баллов СОР).
+3. Комплектация, требования к безопасности и электропитанию (220V).
+4. Условия гарантийного обслуживания (не менее 24 месяцев) и ОБЯЗАТЕЛЬНОЕ требование о проведении 8-часового обучающего семинара для преподавателей колледжа на базе заказчика.
+
+Оформи в виде готового приложения к конкурсной документации.</div>
+                    </div>
+                </div>
+
+                <!-- Кейс 3 -->
+                <div class="card p-6 border-t-4 border-teal-500">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="bg-teal-100 text-teal-900 text-[10px] font-bold px-2.5 py-1 rounded uppercase">
+                            <span class="lang-kk">ВАУ-Кейс 3: НПА Аналитикасы</span>
+                            <span class="lang-ru">ВАУ-Кейс 3: Аналитика НПА</span>
+                        </span>
+                        <span class="text-sm text-slate-400">Приказ № 385 / № 125</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-indigo-950 mb-2">
+                        <span class="lang-kk">Нормативтік-құқықтық актілердің экспресс-аналитигі (Executive Summary)</span>
+                        <span class="lang-ru">Экспресс-аналитик нормативно-правовых актов (Executive Summary)</span>
+                    </h3>
+                    <p class="text-base text-slate-600 mb-4">
+                        <span class="lang-kk">Жаңа бұйрықтан колледж директорына арналған тапсырмалар матрицасы мен персональды тәуекелдерді бөліп алу.</span>
+                        <span class="lang-ru">Экспресс-выжимка из нового Приказа с матрицей поручений заместителям и рисками для руководителя.</span>
+                    </p>
+                    
+                    <div class="bg-slate-900 text-slate-100 p-4 rounded-xl text-sm font-mono whitespace-pre-wrap select-all overflow-x-auto">
+                        <div class="lang-kk">Сен — ҚР ТжКБ ұйымы басшысының бас құқықтық кеңесшісісің.
+Міне, жаңа регламент мәтіні (ҚР Оқу-ағарту министрінің Бұйрығы).
+
+Мен үшін директор ретінде экспресс-выжимка жаса (Executive Summary):
+1. Біздің колледждің жұмысын тікелей өзгертетін басты өзгерістер.
+2. Тапсырмалар матрицасы: Мен ОІЖ орынбасарына, ӨОЖ орынбасарына, Бас бухгалтерге және заңгерге нақты не тапсыруым керек.
+3. Критикалық тәуекелдер: Жаңа бұйрықта қандай бұзушылықтар үшін басшының дербес жауапкершілігі немесе лицензиядан айыру көзделген?
+
+Форматы: Қысқа чек-лист. Артық сөзсіз.</div>
+                        <div class="lang-ru">Ты — главный правовой советник руководителя организации ТиПО РК.
+Вот текст нового регламента (Приказ Министра просвещения РК).
+
+Сделай для меня как для директора экспресс-выжимку (Executive Summary):
+1. Главные изменения, которые напрямую меняют работу нашего колледжа.
+2. Матрица поручений: Что конкретно я должен поручить Зам. директора по УР, Зам. директора по УПР, Главному бухгалтеру и юристу.
+3. Критические риски: За какие нарушения предусмотрена персональная ответственность руководителя или лишение лицензии?
+
+Формат: Краткий чек-лист. Без "воды".</div>
+                    </div>
+                </div>
+
+                <!-- Кейс 4 -->
+                <div class="card p-6 border-t-4 border-purple-600">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="bg-purple-100 text-purple-900 text-[10px] font-bold px-2.5 py-1 rounded uppercase">
+                            <span class="lang-kk">ВАУ-Кейс 4: Деректер Аналитикасы</span>
+                            <span class="lang-ru">ВАУ-Кейс 4: Аналитика Данных</span>
+                        </span>
+                        <span class="text-sm text-slate-400">
+                            <span class="lang-kk">CSV Массив + Талдау</span>
+                            <span class="lang-ru">CSV Массив + Анализ</span>
+                        </span>
+                    </div>
+                    <h3 class="font-bold text-lg text-indigo-950 mb-2">
+                        <span class="lang-kk">Үлгерімді талдау және практикаға шықпау тәуекелін анықтау</span>
+                        <span class="lang-ru">Анализ успеваемости и выявление риска невыхода на практику</span>
+                    </h3>
+                    <p class="text-base text-slate-600 mb-4">
+                        <span class="lang-kk">Колледж студенттерінің CSV деректерін чатқа вставить етіп, ТБ қарызы бар және тәуекел тобындағыларды заматта анықтау.</span>
+                        <span class="lang-ru">Автоматическая обработка CSV-массива успеваемости с выявлением студентов группы риска и задолжников по ТБ.</span>
+                    </p>
+                    
+                    <div class="bg-slate-900 text-slate-100 p-4 rounded-xl text-sm font-mono whitespace-pre-wrap select-all overflow-x-auto mb-3">ДЕРЕКТЕР МАССИВІ / МАССИВ ДАННЫХ:
+ФИО_Студента,Группа,Специальность,Посещаемость_%,СОР_Средний_балл,СОЧ_Балл,Статус_Практики,Задолженность_ТБ
+Ахметов А.Б.,Э-21,Электроснабжение,94,88,90,Допущен,Нет
+Беккалиев Д.К.,Э-21,Электроснабжение,62,55,48,Под угрозой,Есть
+Жаксылыков М.Т.,Э-21,Электроснабжение,88,72,75,Допущен,Нет
+Иванов С.В.,СВ-31,Сварочное дело,95,92,95,Допущен,Нет
+Нурланов Б.А.,СВ-31,Сварочное дело,45,40,35,Не допущен,Есть
+Утегенов Р.М.,ТМ-11,Технология машиностроения,58,50,52,Под угрозой,Есть</div>
+
+                    <div class="bg-slate-900 text-slate-100 p-4 rounded-xl text-sm font-mono whitespace-pre-wrap select-all overflow-x-auto">
+                        <div class="lang-kk">Сен — колледждің оқу бөлімінің деректер аналитигісің. Берілген CSV-массивті талда.
+1. Өндірістік практиканың үзілу қаупі жоғары студенттерді анықта (қатысуы < 65% + ҚҚЕ бойынша қарызы бар).
+2. Әр мамандық бойынша ТЖБ орташа балын есепте.
+3. Бөлім меңгерушісінің атына жағдайды түзету бойынша 3 нақты қадаммен қызметтік жазба жобасын жаз.</div>
+                        <div class="lang-ru">Ты — аналитик данных учебного отдела колледжа. Проанализируй предоставленный CSV-массив.
+1. Выяви студентов с критическим риском срыва производственной практики (посещаемость < 65% + задолженность по ТБ).
+2. Рассчитай средний балл СОЧ по каждой специальности.
+3. Напиши проект служебной записки заведующему отделением с 3 конкретными шагами по исправлению ситуации.</div>
+                    </div>
+                </div>
+
+                <!-- Кейс 5 -->
+                <div class="card p-6 border-t-4 border-blue-600">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="bg-blue-100 text-blue-900 text-[10px] font-bold px-2.5 py-1 rounded uppercase">
+                            <span class="lang-kk">ВАУ-Кейс 5: PR & Спикерлік</span>
+                            <span class="lang-ru">ВАУ-Кейс 5: PR & Спикерство</span>
+                        </span>
+                        <span class="text-sm text-slate-400">NotebookLM / Gemini Canvas</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-indigo-950 mb-2">
+                        <span class="lang-kk">Облыс Әкімдігіндегі Баяндама мен Презентацияны Генерациялау</span>
+                        <span class="lang-ru">Генерация структуры доклада и презентации для Акимата</span>
+                    </h3>
+                    <p class="text-base text-slate-600 mb-4">
+                        <span class="lang-kk">БҚО Уральск трансформаторлық зауыты, Агрореммаш және KPO b.v. серіктестігі бойынша баяндама негізінде слайдтар құру.</span>
+                        <span class="lang-ru">Подготовка тезисов доклада и структуры 5 слайдов презентации по дуальному обучению с заводами УТЗ, Агрореммаш и KPO b.v.</span>
+                    </p>
+                    
+                    <div class="bg-slate-900 text-slate-100 p-4 rounded-xl text-sm font-mono whitespace-pre-wrap select-all overflow-x-auto">
+                        <div class="lang-kk">Жүктелген құжат негізінде БҚО Әкімдігінің отырысында колледж директорының сөйлейтін сөзінің тезистік жоспарын қалыптастыр (регламент — 5 минут) және цифрларға, өңірлік серіктестерге (Орал трансформатор зауыты, "Агрореммаш" зауыты, KPO b.v.) басымдық бере отырып, презентацияға арналған 5 слайд ұсын.</div>
+                        <div class="lang-ru">На основе загруженного документа сформируй тезисный план выступления директора колледжа на заседании Акимата ЗКО (регламент — 5 минут) и предложи 5 слайдов для презентации с акцентом на цифры и региональных партнеров (Уральский трансформаторный завод, Завод "Агрореммаш", KPO b.v.).</div>
+                    </div>
+                </div>
+
+                <!-- Кейс 6 -->
+                <div class="card p-6 border-t-4 border-red-500">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="bg-red-100 text-red-900 text-[10px] font-bold px-2.5 py-1 rounded uppercase">
+                            <span class="lang-kk">ВАУ-Кейс 6: Voice Mode Тренажер</span>
+                            <span class="lang-ru">ВАУ-Кейс 6: Voice Mode Тренажер</span>
+                        </span>
+                        <span class="text-sm text-slate-400">
+                            <span class="lang-kk">Бизнеспен келіссөздер</span>
+                            <span class="lang-ru">Переговоры с бизнесом</span>
+                        </span>
+                    </div>
+                    <h3 class="font-bold text-lg text-indigo-950 mb-2">
+                        <span class="lang-kk">Бизнеспен Қатал Келіссөздер Тренажеры (Зауыт Директоры)</span>
+                        <span class="lang-ru">Тренажер жестких переговоров с бизнесом (Директор завода)</span>
+                    </h3>
+                    <p class="text-base text-slate-600 mb-4">
+                        <span class="lang-kk">Голосовой режим арқылы Орал қаласындағы скептик машиностроитель зауытының бас директорымен дуальды оқыту бойынша сөйлесу.</span>
+                        <span class="lang-ru">Голосовая ролевая игра с ИИ в роли скептически настроенного гендиректора завода в Уральске по вопросам практики.</span>
+                    </p>
+                    
+                    <div class="bg-slate-900 text-slate-100 p-4 rounded-xl text-sm font-mono whitespace-pre-wrap select-all overflow-x-auto">
+                        <div class="lang-kk">Сен — Орал қаласындағы ірі машина жасау зауытының скептикалық бағытталған Бас директорысың.
+СЕНІҢ УАЖЫҢ: Студенттер әлсіз, ештеңе білмейді, тек құрал-жабдықты бұзады деп есептейсің. 15 студентті ақылы практикаға алғың келмейді.
+МЕН — Орал жоғары техникалық колледжінің Директорымын. Менің мақсатым — сені дуальды оқыту туралы шартқа қол қоюға көз жеткізу.
+
+ОЙЫН ЕРЕЖЕЛЕРІ:
+1. Әңгімені бірінші болып кескілескен және скептикалық ескертуден баста.
+2. Маған тек БІР репликамен жауап бер.
+3. Менің дәлелдеріме қатал жауап бер, зауытың үшін нақты пайданы талап ет (салықтар, кадрлар, үнемдеу).
+4. Мен 3 күшті дәлел келтіргенде, позицияңды біртіндеп жұмсартып, компромисс ұсын.
+5. Соңында маған келіссөздеріме егжей-тегжейлі баға бер.</div>
+                        <div class="lang-ru">Ты — скептически настроенный Генеральный директор крупного машиностроительного завода в городе Уральске.
+ТВОЯ ПОЗИЦИЯ: Считаешь, что студенты слабые, ничего не умеют, только ломают оборудование. Ты не хочешь брать 15 студентов на оплачиваемую практику.
+Я — Директор Высшего технического колледжа Уральска. Моя цель — убедить тебя подписать договор о дуальном обучении.
+
+ПРАВИЛА ИГРЫ:
+1. Начни разговор первым с резкого и скептического возражения.
+2. Отвечай мне строго по ОДНОЙ реплике.
+3. Жёстко парируй аргументы, требуй конкретных выгод для завода (налоги, кадры, экономия).
+4. Когда я приведу 3 сильных аргумента, смягчи позицию и предложи компромисс.
+5. В конце дай мне развернутую оценку моих переговоров.</div>
+                    </div>
+                </div>
+
+                <!-- Кейс 7, 8, 9 -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="card p-5 border-t-4 border-emerald-500">
+                        <span class="bg-emerald-100 text-emerald-900 text-[10px] font-bold px-2 py-0.5 rounded uppercase block w-max mb-2">
+                            <span class="lang-kk">Кейс 7: Тест Генераторы</span>
+                            <span class="lang-ru">Кейс 7: Генератор Тестов</span>
+                        </span>
+                        <h4 class="font-bold text-base text-indigo-950 mb-2">
+                            <span class="lang-kk">Google Forms-қа арналған тест</span>
+                            <span class="lang-ru">Тест для импорта в Google Forms</span>
+                        </h4>
+                        <div class="bg-slate-900 text-slate-100 p-3 rounded-lg text-sm font-mono whitespace-pre-wrap select-all overflow-x-auto">
+                            <div class="lang-kk">"1000В дейінгі электр қондырғыларындағы ҚҚЕ" тақырыбы бойынша 5 сұрақтан тұратын қорытынды тест жаса. Тек кесте түрінде шығар: Сұрақ | А нұсқасы | В нұсқасы | С нұсқасы | Дұрыс жауап | ҚҚЕ сілтемесі бар түсініктеме.</div>
+                            <div class="lang-ru">Создай итоговый тест из 5 вопросов по "ТБ в электроустановках до 1000В". Выведи строго в виде таблицы: Вопрос | Вариант A | Вариант B | Вариант C | Правильный ответ | Пояснение со ссылкой на ТБ.</div>
+                        </div>
+                    </div>
+
+                    <div class="card p-5 border-t-4 border-cyan-500">
+                        <span class="bg-cyan-100 text-cyan-900 text-[10px] font-bold px-2 py-0.5 rounded uppercase block w-max mb-2">
+                            <span class="lang-kk">Кейс 8: Сократовский Тьютор</span>
+                            <span class="lang-ru">Кейс 8: Сократовский Тьютор</span>
+                        </span>
+                        <h4 class="font-bold text-base text-indigo-950 mb-2">
+                            <span class="lang-kk">Ом заңын су аналогиясымен түсіндіру</span>
+                            <span class="lang-ru">Закон Ома через аналогию с водой</span>
+                        </h4>
+                        <div class="bg-slate-900 text-slate-100 p-3 rounded-lg text-sm font-mono whitespace-pre-wrap select-all overflow-x-auto">
+                            <div class="lang-kk">Сен — электротехника бойынша Сократша оқытушысың. Мен — 1-курс студентімін, Ом заңын түсінбеймін. Дайын жауап БЕРМЕ. Формуланы ӨЗІМ шығаруым үшін құбырлардағы су аналогиясы арқылы 1 бағыттаушы сұрақтан қой.</div>
+                            <div class="lang-ru">Ты — Сократовский учитель по электротехнике. Я — студент 1 курса, не понимаю Закон Ома. НЕ ДАВАЙ готовых ответов. Задавай по 1 наводящему вопросу через аналогию с водой в трубах, чтобы я САМ вывел формулу.</div>
+                        </div>
+                    </div>
+
+                    <div class="card p-5 border-t-4 border-fuchsia-500">
+                        <span class="bg-fuchsia-100 text-fuchsia-900 text-[10px] font-bold px-2 py-0.5 rounded uppercase block w-max mb-2">
+                            <span class="lang-kk">Кейс 9: Собеседование</span>
+                            <span class="lang-ru">Кейс 9: Собеседование</span>
+                        </span>
+                        <h4 class="font-bold text-base text-indigo-950 mb-2">
+                            <span class="lang-kk">УТЗ зауытына сұхбат симуляторы</span>
+                            <span class="lang-ru">Симулятор интервью на УТЗ</span>
+                        </h4>
+                        <div class="bg-slate-900 text-slate-100 p-3 rounded-lg text-sm font-mono whitespace-pre-wrap select-all overflow-x-auto">
+                            <div class="lang-kk">Сен — Орал трансформатор зауытының Бас инженерысың. Менімен 5 сұрақтан тұратын сұхбат өткіз (схема, ҚҚЕ, болот). Қатал бағала, қорытынды бойынша вердикт бер: Қабылданды / Қабылданбады және қателерді талдау.</div>
+                            <div class="lang-ru">Ты — Главный инженер Уральского трансформаторного завода. Проведи со мной интервью из 5 вопросов (схема, ТБ, сталь). Оценивай строго, по итогу дай вердикт: Принят / Не принят и разбор ошибок.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5-БӨЛІМ: ЭТИКА И ДОРОЖНАЯ КАРТА -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3 flex items-center gap-3">
+                <span class="bg-indigo-900 text-white text-base font-extrabold w-8 h-8 rounded-full flex items-center justify-center">5</span>
+                <span class="lang-kk">Академиялық адалдық, Этика және Директордың Жол Картасы</span>
+                <span class="lang-ru">Академическая честность, Этика и Дорожная карта Директора</span>
+            </h2>
+
+            <div class="card p-8 border-l-8 border-amber-400 mb-8">
+                <h3 class="text-xl font-bold text-indigo-950 mb-4">
+                    <span class="lang-kk">📍 Колледж Директорына арналған Жол Картасы («Дүйсенбіде не істеу керек?»)</span>
+                    <span class="lang-ru">📍 Дорожная карта для Директора Колледжа («Что сделать в понедельник»)</span>
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <div class="font-bold text-indigo-900 text-base mb-1">
+                            <span class="lang-kk">1-ҚАДАМ: Заңдастыру және Ереже</span>
+                            <span class="lang-ru">ШАГ 1: Легализация и Регламент</span>
+                        </div>
+                        <p class="text-slate-600">
+                            <span class="lang-kk">Педсоветте «Оқу процесінде ЖИ-ді этикалық қолдану Ережесін» қабылдау. Тыйым салмай, дипломда ЖИ-ге сілтеме жасау тәртібін бекіту.</span>
+                            <span class="lang-ru">Принять на Педсовете «Положение об этичном использовании ИИ». Не запрещать, а прописать правила ссылки на ИИ при выполнении работ.</span>
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <div class="font-bold text-indigo-900 text-base mb-1">
+                            <span class="lang-kk">2-ҚАДАМ: «Өзгерістер агенттерін» құру</span>
+                            <span class="lang-ru">ШАГ 2: Формирование «Агентов изменений»</span>
+                        </div>
+                        <p class="text-slate-600">
+                            <span class="lang-kk">IT, спецдисциплина және жалпы пән мұғалімдері арасынан 3-4 белсенді педагогті анықтап, жұмыс тобын құру.</span>
+                            <span class="lang-ru">Определить 3–4 инициативных преподавателей (из IT, спецдисциплин) и сформировать рабочую группу.</span>
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <div class="font-bold text-indigo-900 text-base mb-1">
+                            <span class="lang-kk">3-ҚАДАМ: Педагогтерге арналған Практикум</span>
+                            <span class="lang-ru">ШАГ 3: Внутренний практикум для педагогов</span>
+                        </div>
+                        <p class="text-slate-600">
+                            <span class="lang-kk">Ұжымға «Оқытушы аптасына 5 сағат уақытты қалай үнемдей алады» тақырыбында 2 сағаттық практикалық интенсив өткізу.</span>
+                            <span class="lang-ru">Провести 2-часовой интенсив для коллектива: «Как преподавателю сэкономить 5 часов в неделю с помощью ИИ».</span>
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <div class="font-bold text-indigo-900 text-base mb-1">
+                            <span class="lang-kk">4-ҚАДАМ: Ішкі «Промпттар Банкі»</span>
+                            <span class="lang-ru">ШАГ 4: Внутренний «Банк промптов»</span>
+                        </div>
+                        <p class="text-slate-600">
+                            <span class="lang-kk">Колледж мамандықтары бойынша (дәнекерлеу, энергетика, бухгалтерия) тексерілген промпттардың ортақ бұлтты базасын ашу.</span>
+                            <span class="lang-ru">Завести общий облачный документ с проверенными промптами под конкретные специальности колледжа.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-indigo-950 text-white py-12 px-6 text-center border-t border-indigo-900">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-bold mb-3">
+                <span class="lang-kk">ЖИ колледж директорын алмастырмайды, бірақ ЖИ-ді меңгерген директор ескіше жұмыс істейтін директорды алмастырады!</span>
+                <span class="lang-ru">ИИ не заменит директора колледжа, но директор с ИИ неизбежно заменит того, кто работает по-старинке!</span>
+            </h2>
+            <p class="text-indigo-300 text-base mb-6">
+                <span class="lang-kk">Батыс Қазақстан облысы мен Орал қаласының ТиПО колледждерін цифрлық трансформацияның флагманына айналдырайық.</span>
+                <span class="lang-ru">Сделаем колледжи ТиПО Уральска и ЗКО флагманами цифровой трансформации.</span>
+            </p>
+            <a href="../index.html" class="inline-block bg-amber-400 text-indigo-950 font-bold px-8 py-4 rounded-full text-base uppercase tracking-wider hover:bg-yellow-300 transition-all shadow-lg">
+                <span class="lang-kk">Басты бетке оралу</span><span class="lang-ru">Вернуться на главную</span>
+            </a>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        window.addEventListener('languageChanged', (e) => {
+            const titleEl = document.getElementById('page-title');
+            if (!titleEl) return;
+            titleEl.innerText = e.detail.lang === 'kk'
+                ? "ЖИ колледж басқаруында мен оқу процесінде: Практикум"
+                : "Практическое применение ИИ в управлении колледжем и обучении: Практикум";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* Общие стили для всех страниц лекций. Уникальные для лекции вещи
+   (градиент шапки, .timeline-badge) остаются в <style> самого файла. */
+
+:root {
+    --primary: #1A237E;
+    --accent: #FFD600;
+    --tech: #00BFA5;
+    --danger: #D50000;
+    --bg: #F8FAFC;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg);
+    color: #1E293B;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card {
+    background: white;
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    height: 300px;
+}
+
+.prompt-code {
+    background-color: #0F172A;
+    color: #E2E8F0;
+    border-left: 4px solid var(--accent);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body[data-lang="kk"] .lang-ru { display: none !important; }
+body[data-lang="ru"] .lang-kk { display: none !important; }

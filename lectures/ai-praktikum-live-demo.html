@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практикум ИИ: 13 готовых промптов для повседневной работы госслужащего</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <meta name="description" content="13 готовых промптов и наборов данных, которые госслужащий может применить в своей работе уже сегодня: бюджет, обращения e-Otinish, НПА, протоколы совещаний. Скачать PDF бесплатно.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Практикум ИИ: 13 готовых промптов для повседневной работы госслужащего">
+    <meta property="og:description" content="13 готовых промптов и наборов данных для реальной работы: бюджет, обращения граждан, НПА, протоколы совещаний. Скопировал — применил — получил результат.">
+    <meta property="og:image" content="../assets/images/lector.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Практикум ИИ: 13 готовых промптов для повседневной работы госслужащего">
+    <meta name="twitter:description" content="13 готовых промптов и наборов данных для реальной работы: бюджет, обращения граждан, НПА, протоколы совещаний.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/lecture.css">
+    <style>
+        .gradient-header { background: linear-gradient(135deg, #7C2D12 0%, #B45309 55%, #D97706 100%); }
+        .module-nav a { transition: all .2s; }
+        .module-nav a:hover { transform: translateY(-2px); }
+        .raw-data { background:#0F172A0d; }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden" data-lang="kk">
+
+    <!-- Навигационная панель -->
+    <div class="bg-indigo-950 border-b border-indigo-800 py-3 px-6 text-sm text-white sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="../index.html" class="hover:text-amber-400 font-semibold flex items-center gap-2 transition-colors">
+                <span class="lang-kk">← Дәрістер каталогына оралу</span>
+                <span class="lang-ru">← Вернуться к каталогу лекций</span>
+            </a>
+
+            <div class="flex items-center gap-4">
+                <span class="opacity-60 hidden sm:inline">
+                    <span class="lang-kk">Бөлім: Практикум & Дайын промпттар</span>
+                    <span class="lang-ru">Раздел: Практикум & Готовые промпты</span>
+                </span>
+                <!-- Переключатель языков -->
+                <div class="inline-flex items-center bg-indigo-900/80 p-1 rounded-xl border border-indigo-700/60 text-sm">
+                    <button onclick="setLanguage('kk')" id="btn-lang-kk" class="px-3 py-1 rounded-lg transition-all text-indigo-950 bg-amber-400 font-bold shadow">
+                        ҚАЗ
+                    </button>
+                    <button onclick="setLanguage('ru')" id="btn-lang-ru" class="px-3 py-1 rounded-lg transition-all text-indigo-200 hover:text-white">
+                        RU
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Шапка страницы -->
+    <header class="gradient-header text-white py-16 px-6 text-center shadow-xl relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-block bg-yellow-400 text-indigo-950 font-bold px-4 py-1 rounded-full text-sm uppercase tracking-widest mb-4">
+                <span class="lang-kk">🔥 Бүгіннен бастап жұмысыңызда қолданыңыз</span>
+                <span class="lang-ru">🔥 Используйте в своей работе уже сегодня</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">
+                <span class="lang-kk">Практикум ИИ: Жұмысыңызға дайын 13 промпт</span>
+                <span class="lang-ru">Практикум ИИ: 13 готовых промптов для вашей работы</span>
+            </h1>
+            <p class="text-lg md:text-xl opacity-90 font-light max-w-3xl mx-auto leading-relaxed mb-6">
+                <span class="lang-kk">Кез келген мемлекеттік қызметші өз жұмысында тікелей қолдана алатын 13 дайын промпт және деректер жиынтығы — ЖИ маманынсыз және бағдарламашысыз. Мысалды көшіріп, деректерді өзіңізге ауыстырыңыз — нәтиже бірнеше минутта.</span>
+                <span class="lang-ru">13 готовых промптов и наборов данных, которые любой госслужащий может применить в своей работе напрямую — без ИИ-специалистов и программистов. Скопируйте пример, замените данные на свои — результат за пару минут.</span>
+            </p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="../assets/files/ai-praktikum-live-demo.pdf" download
+                   class="inline-flex items-center gap-2 bg-white text-amber-800 font-bold px-6 py-3 rounded-full text-base uppercase tracking-wide hover:bg-amber-50 transition-all shadow-lg">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/></svg>
+                    <span class="lang-kk">PDF жүктеп алу (13 промпт)</span>
+                    <span class="lang-ru">Скачать PDF (13 промптов)</span>
+                </a>
+                <a href="#module-1" class="inline-flex items-center gap-2 bg-black/20 border border-white/30 text-white font-semibold px-6 py-3 rounded-full text-base hover:bg-black/30 transition-all">
+                    <span class="lang-kk">Промпттарды қарау ↓</span>
+                    <span class="lang-ru">Смотреть промпты ↓</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 max-w-6xl">
+
+        <!-- Почему это полезно -->
+        <section class="mb-14">
+            <div class="card p-8 border-l-8 border-amber-500 bg-gradient-to-r from-white to-amber-50/40">
+                <h2 class="text-xl md:text-2xl font-bold text-indigo-950 mb-4">
+                    <span class="lang-kk">Бұл практикум неге пайдалы?</span>
+                    <span class="lang-ru">Зачем нужен этот практикум?</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-700">
+                    <div>
+                        <div class="font-bold text-indigo-900 mb-1 text-base">
+                            <span class="lang-kk">✅ Дайын, бүгіннен қолдануға болады</span>
+                            <span class="lang-ru">✅ Готово к использованию сегодня</span>
+                        </div>
+                        <p>
+                            <span class="lang-kk">Арнайы дайындықсыз, ЖИ маманынсыз: промптты көшіріңіз, деректерді өз тапсырмаңызға ауыстырыңыз және нәтижені бірнеше минутта алыңыз.</span>
+                            <span class="lang-ru">Не нужна специальная подготовка или ИИ-специалист: скопируйте промпт, замените данные на свою задачу и получите результат за пару минут.</span>
+                        </p>
+                    </div>
+                    <div>
+                        <div class="font-bold text-indigo-900 mb-1 text-base">
+                            <span class="lang-kk">🎯 Мемсектор реалийлері</span>
+                            <span class="lang-ru">🎯 Реалии госсектора</span>
+                        </div>
+                        <p>
+                            <span class="lang-kk">Бюджет, e-Otinish, НПА, хаттамалар, аппарат — ойдан шығарылған емес, нақты акимат/министрлік жұмысына негізделген мысалдар.</span>
+                            <span class="lang-ru">Бюджет, e-Otinish, НПА, протоколы, аппарат — примеры построены на реальной логике работы акимата и министерства, а не абстрактные задачи.</span>
+                        </p>
+                    </div>
+                    <div>
+                        <div class="font-bold text-indigo-900 mb-1 text-base">
+                            <span class="lang-kk">⏱ Уақытты үнемдеу</span>
+                            <span class="lang-ru">⏱ Экономия времени</span>
+                        </div>
+                        <p>
+                            <span class="lang-kk">Бұрын сағаттап кететін жұмыс (деректерді сарамдау, хаттар мен хаттамалар жазу) енді бірнеше минутқа қысқарады.</span>
+                            <span class="lang-ru">То, на что раньше уходили часы (свод данных, письма, протоколы), теперь занимает минуты — просто адаптируйте пример под свою задачу.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Быстрая навигация по модулям -->
+        <section class="mb-14">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 module-nav">
+                <a href="#module-1" class="card p-5 border-t-4 border-[#1A237E] block">
+                    <div class="text-2xl mb-1">📊</div>
+                    <div class="text-[10px] font-bold text-slate-400 uppercase mb-1">
+                        <span class="lang-kk">Модуль 1 · Промпт 1-2</span><span class="lang-ru">Модуль 1 · Промпты 1-2</span>
+                    </div>
+                    <div class="font-bold text-base text-indigo-950">
+                        <span class="lang-kk">Аналитика және Big Data</span>
+                        <span class="lang-ru">Аналитика и большие данные</span>
+                    </div>
+                </a>
+                <a href="#module-2" class="card p-5 border-t-4 border-[#00BFA5] block">
+                    <div class="text-2xl mb-1">✉️</div>
+                    <div class="text-[10px] font-bold text-slate-400 uppercase mb-1">
+                        <span class="lang-kk">Модуль 2 · Промпт 3-5</span><span class="lang-ru">Модуль 2 · Промпты 3-5</span>
+                    </div>
+                    <div class="font-bold text-base text-indigo-950">
+                        <span class="lang-kk">e-Otinish және өтініштер</span>
+                        <span class="lang-ru">e-Otinish и обращения</span>
+                    </div>
+                </a>
+                <a href="#module-3" class="card p-5 border-t-4 border-purple-600 block">
+                    <div class="text-2xl mb-1">📄</div>
+                    <div class="text-[10px] font-bold text-slate-400 uppercase mb-1">
+                        <span class="lang-kk">Модуль 3 · Промпт 6-9</span><span class="lang-ru">Модуль 3 · Промпты 6-9</span>
+                    </div>
+                    <div class="font-bold text-base text-indigo-950">
+                        <span class="lang-kk">Құжаттар мен НПА</span>
+                        <span class="lang-ru">Документы и НПА</span>
+                    </div>
+                </a>
+                <a href="#module-4" class="card p-5 border-t-4 border-[#FFD600] block">
+                    <div class="text-2xl mb-1">🗂️</div>
+                    <div class="text-[10px] font-bold text-slate-400 uppercase mb-1">
+                        <span class="lang-kk">Модуль 4 · Промпт 10-13</span><span class="lang-ru">Модуль 4 · Промпты 10-13</span>
+                    </div>
+                    <div class="font-bold text-base text-indigo-950">
+                        <span class="lang-kk">Рутинаны оңтайландыру</span>
+                        <span class="lang-ru">Оптимизация рутины</span>
+                    </div>
+                </a>
+            </div>
+            <p class="text-sm text-slate-400 text-center mt-4 max-w-2xl mx-auto">
+                <span class="lang-kk">Ескерту: төмендегі мысалдардың деректері мен промпттары түпнұсқа бойынша орыс тілінде берілген — көшіріп, тікелей ЖИ-ге қоюға дайын. Деректерді өз тапсырмаңызға ауыстырыңыз.</span>
+                <span class="lang-ru">Примечание: данные и промпты внутри примеров приведены на русском языке — как в оригинале, полностью готовы к копированию в ИИ. Замените данные на свои для реальной задачи.</span>
+            </p>
+        </section>
+
+        <!-- МОДУЛЬ 1 -->
+        <section class="mb-16" id="module-1">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3">
+                <span class="lang-kk">Модуль 1: Аналитика және үлкен деректермен жұмыс</span>
+                <span class="lang-ru">Модуль 1: Аналитика и работа с большими данными</span>
+            </h2>
+
+            <div class="card p-6 mb-6 border-l-8 border-[#1A237E]">
+                <span class="inline-block bg-teal-100 text-teal-800 text-[10px] font-bold px-2 py-1 rounded uppercase mb-2">ИНСТРУМЕНТ: ChatGPT (Data Analysis)</span>
+                <h3 class="font-bold text-lg text-indigo-950 mb-2">Промпт 1. Экспресс-анализ бюджета и жалоб населения (20 районов)</h3>
+                <p class="text-base text-gray-600 mb-3 leading-relaxed"><strong>Когда пригодится:</strong> нужно быстро понять, в каких районах проваливается освоение бюджета и связано ли это с ростом жалоб населения — вместо ручной сверки таблиц получаете готовую аналитическую записку.</p>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wide mb-1">
+                    <span class="lang-kk">📋 Мысал: бастапқы деректер</span><span class="lang-ru">📋 Пример исходных данных</span>
+                </div>
+                <div class="raw-data bg-slate-50 border border-slate-100 p-3 rounded-lg text-sm font-mono text-slate-700 mb-3 overflow-x-auto whitespace-pre">Район_Микрорайон;Бюджет_млн;Освоено_млн;%_Освоения;Жалобы_Тепло;Жалобы_Вода;Жалобы_Дороги;Жалобы_Мусор;Жалобы_Освещ;Всего_жалоб;Ремонт_%;Подрядчик;Статус
+Алматинский_Самал;450.0;442.5;98.3%;2;1;5;3;1;12;95%;ТОО ИнфраСтрой-А;Сдан в срок
+Алматинский_Акбулак;320.0;315.0;98.4%;1;0;3;2;1;7;97%;ТОО АстанаДорСервис;Сдан в срок
+Байконурский_Городок;380.0;150.2;39.5%;54;38;29;15;12;148;32%;ТОО КазСпецСтрой2020;Срыв сроков / Иск
+Байконурский_Промзона1;210.0;85.0;40.5%;18;22;41;19;8;108;28%;ТОО КазСпецСтрой2020;Срыв сроков
+Есильский_Нурсая;610.0;595.0;97.5%;0;2;4;1;1;8;98%;ТОО МонолитГрупп;Сдан в срок
+Есильский_ЖанаКоныс;480.0;470.0;97.9%;3;1;2;2;0;8;96%;ТОО ЕсильСтрой;Сдан в срок
+Нуринский_Жагалау;290.0;255.2;88.0%;8;5;4;3;1;21;88%;ТОО НураИнжиниринг;Завершение
+Нуринский_Комсомольский;340.0;298.0;87.6%;6;4;7;2;3;22;85%;ТОО НураИнжиниринг;Завершение
+Сарыаркинский_Коктал1;520.0;210.0;40.4%;95;68;72;38;22;295;15%;ТОО СтройГлавПодряд;Претензия / Аварийный
+Сарыаркинский_Коктал2;490.0;195.0;39.8%;82;59;65;41;18;265;18%;ТОО СтройГлавПодряд;Претензия / Неосвоение
+Сарыаркинский_СтарыйГород;630.0;280.0;44.4%;110;84;89;52;31;366;22%;ТОО ПромСтройАльянс;Срыв сроков
+Алатауский_Алгабас;410.0;390.0;95.1%;4;2;8;3;2;19;92%;ТОО АлматыЖолдары;Завершение
+Алатауский_Шанырак2;530.0;220.0;41.5%;78;61;84;45;27;295;25%;ТОО КазСпецСтрой2020;Срыв сроков
+Медеуский_Думан;390.0;382.0;97.9%;2;1;3;2;1;9;96%;ТОО КазЕвроСтрой;Сдан в срок
+Медеуский_ВКаменка;460.0;448.0;97.4%;3;2;5;1;0;11;94%;ТОО КазЕвроСтрой;Сдан в срок
+Бостандыкский_Орбита;580.0;571.0;98.4%;1;1;2;1;1;6;99%;ТОО АлатауКомфорт;Сдан в срок
+Турксибский_НижПятилетка;370.0;148.0;40.0%;62;49;71;33;19;234;20%;ТОО СтройГлавПодряд;Срыв сроков
+Турксибский_Аэропорт;310.0;295.0;95.2%;3;2;4;2;1;12;91%;ТОО ДорСпецСтрой;Завершение
+Наурызбайский_Калкаман;430.0;215.0;50.0%;45;38;52;21;14;170;45%;ТОО КазСпецСтрой2020;Отставание
+Наурызбайский_Шугыла;510.0;495.0;97.1%;2;3;5;2;1;13;95%;ТОО КазЕвроСтрой;Сдан в срок</div>
+                <div class="prompt-card relative">
+                    <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-3">
+                        <span class="text-amber-400 font-bold block mb-1">ПРОМПТ:</span>
+                        Ты — главный аналитик Акимата. Проанализируй данный массив данных по 20 районам. Найди корреляцию между процентом освоения бюджета, выполнением ремонта и количеством жалоб населения. Выяви ТОП-3 проблемных подрядчика, сорвавших график, и конкретные районы с риском социального взрыва. Составь итоговую аналитическую записку и готовую справку-доклад для Акима с рекомендациями по расторжению договоров и перераспределению средств.
+                    </div>
+                    <button onclick="copyPrompt(this)" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                        <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card p-6 mb-6 border-l-8 border-[#1A237E]">
+                <span class="inline-block bg-teal-100 text-teal-800 text-[10px] font-bold px-2 py-1 rounded uppercase mb-2">ИНСТРУМЕНТ: Claude 3.5 Sonnet / ChatGPT</span>
+                <h3 class="font-bold text-lg text-indigo-950 mb-2">Промпт 2. Аудит сорванных дедлайнов и «эффекта домино» (Дорожная карта, 18 задач)</h3>
+                <p class="text-base text-gray-600 mb-3 leading-relaxed"><strong>Когда пригодится:</strong> у вас план из десятков взаимосвязанных задач по разным подразделениям, и нужно быстро понять, кто сорвал сроки и как это заблокировало остальных — без ручного сведения статусов.</p>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wide mb-1">
+                    <span class="lang-kk">📋 Мысал: бастапқы деректер</span><span class="lang-ru">📋 Пример исходных данных</span>
+                </div>
+                <div class="raw-data bg-slate-50 border border-slate-100 p-3 rounded-lg text-sm font-mono text-slate-700 mb-3 overflow-x-auto whitespace-pre">ДОРОЖНАЯ КАРТА: Цифровая экосистема и модернизация инфраструктуры Акимата на 2026 год
+Текущая дата аудита: 27 июня 2026 года
+
+Раздел 1: Инфраструктура и ИТ
+1.1 Закуп и монтаж серверного оборудования СХД для ЦОД. Срок: 15.02.2026. Ответственный: Деп_ИТ. Статус: Выполнено (12.02.2026).
+1.2 Пуско-наладка каналов связи и защиты КИИ. Срок: 01.03.2026. Ответственный: Управление_КИБ. Статус: Выполнено (28.02.2026).
+1.3 Миграция баз данных Е-Өтініш на новые мощности. Срок: 15.04.2026. Ответственный: Деп_Цифровизации. Статус: Выполнено с задержкой (20.04.2026, +5 дней).
+
+Раздел 2: Нормативно-правовое обеспечение
+2.1 Согласование Единого регламента межведомственного информационного обмена. Срок: 15.05.2026. Ответственный: Юр_Деп. Статус: На согласовании (просрочено на 43 дня, блокирует задачи 3.2 и 4.1).
+2.2 Утверждение стандартов цифровой гигиены и безопасности сотрудников. Срок: 01.06.2026. Ответственный: Юр_Деп. Статус: Не начато (просрочено на 26 дней).
+
+Раздел 3: Интеграция и разработка
+3.1 Интеграция с ИС "Е-Өтініш" и базой данных ФЛ/ЮЛ. Срок: 01.05.2026. Ответственный: Деп_Цифровизации. Статус: Выполнено (30.04.2026).
+3.2 Внедрение модуля ИИ-аналитики первичных обращений. Срок: 01.06.2026. Ответственный: Деп_Цифровизации. Статус: В работе (40%, задержка из-за отсутствия регламента Юр_Депа).
+3.3 Разработка мобильного кабинета инспектора ЖКХ. Срок: 15.06.2026. Ответственный: Деп_Цифровизации. Статус: Тестирование (просрочено на 12 дней).
+
+Раздел 4: Обучение и внедрение на местах
+4.1 Обучение 450 операторов Ситуационного центра и акиматов. Срок: 10.06.2026. Ответственный: Деп_Кадров. Статус: Приостановлено (заблокировано, ждёт задачи 2.1 и 3.2).
+4.2 Проведение аттестации по цифровой грамотности. Срок: 20.06.2026. Ответственный: Деп_Кадров. Статус: Не начато (просрочено на 7 дней).
+
+Раздел 5: Реконструкция и ЖКХ
+5.1 Завершение ремонта тепломагистрали №4 (мкр. Коктал). Срок: 01.05.2026. Ответственный: Управление_Энергетики. Статус: Выполнено (10.05.2026).
+5.2 Модернизация насосных станций (мкр. Самал). Срок: 01.06.2026. Ответственный: Управление_Энергетики. Статус: В работе (30%, сорваны поставки ТОО СтройГлавПодряд).
+5.3 Подписание актов готовности котельной к отопительному сезону. Срок: 15.06.2026. Ответственный: Управление_Энергетики. Статус: Не начато (срыв дедлайна).</div>
+                <div class="prompt-card relative">
+                    <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-3">
+                        <span class="text-amber-400 font-bold block mb-1">ПРОМПТ:</span>
+                        Ты — жесткий аудитор Аппарата Премьер-Министра. На календаре 27 июня 2026 года. Проведи сквозной аудит этой Дорожной карты. Выяви все просроченные задачи, определи «эффект домино» (как просрочка одного департамента заблокировала работу других) и укажи конкретные подразделения-виновники. Сформируй официальное предписание об устранении нарушений с дисциплинарными взысканиями руководителям департаментов.
+                    </div>
+                    <button onclick="copyPrompt(this)" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                        <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- МОДУЛЬ 2 -->
+        <section class="mb-16" id="module-2">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3">
+                <span class="lang-kk">Модуль 2: Коммуникациялар, e-Otinish және өтініштермен жұмыс</span>
+                <span class="lang-ru">Модуль 2: Коммуникации, e-Otinish и работа с обращениями</span>
+            </h2>
+
+            <div class="card p-6 mb-6 border-l-8 border-[#00BFA5]">
+                <span class="inline-block bg-teal-100 text-teal-800 text-[10px] font-bold px-2 py-1 rounded uppercase mb-2">ИНСТРУМЕНТ: Claude 3.5 Sonnet</span>
+                <h3 class="font-bold text-lg text-indigo-950 mb-2">Промпт 3. Трансформация гневной жалобы в официальный ответ</h3>
+                <p class="text-base text-gray-600 mb-3 leading-relaxed"><strong>Когда пригодится:</strong> пришло эмоциональное обращение гражданина, а вам нужно быстро подготовить вежливый официальный ответ с фактурой — без канцелярита и лишнего негатива.</p>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wide mb-1">
+                    <span class="lang-kk">📋 Мысал: бастапқы деректер</span><span class="lang-ru">📋 Пример исходных данных</span>
+                </div>
+                <div class="raw-data bg-slate-50 border border-slate-100 p-3 rounded-lg text-sm font-mono text-slate-700 mb-3 overflow-x-auto whitespace-pre">ВХОДЯЩЕЕ ОБРАЩЕНИЕ (e-Otinish № EO-2026-99412 от 16.09.2026)
+Заявитель: Бектурсынов Аскар Кажимуканович, мкр. Самал-2, дом 14, кв. 88.
+
+«Здравствуйте! Сколько можно издеваться над жителями нашего дома?! Вчера, 15 сентября, в 7 утра у нас без предупреждения отключили И горячую, И холодную воду! Объявлений не было, в КСК говорят "звоните в Акимат", а на горячей линии 109 оператор №14 ответила по-хамски и бросила трубку! У меня в квартире трое маленьких детей, младшему 9 месяцев, как мне их мыть и готовить еду?! Водовозы ваш Акимат так и не прислал, людям пришлось покупать воду в магазинах за свой счет!
+
+И это еще не все! Прямо напротив нашего дома и школы №42 перерыли дорогу три недели назад, разрыли котлован 3 метра глубиной, бросили без ограждений и освещения! Вчера вечером ребенок соседей чуть не упал туда в темноте! Фонари не горят с начала месяца! Если сегодня до 18:00 воду не включат и не закроют котлован, я лично собираю подписи и отправляю коллективную жалобу в Администрацию Президента, Антикоррупционную службу и выкладываю все видеозаписи в TikTok и СМИ!»</div>
+                <div class="prompt-card relative">
+                    <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-3">
+                        <span class="text-amber-400 font-bold block mb-1">ПРОМПТ:</span>
+                        Ты — руководитель пресс-службы и отдела контроля обращений Акимата. Составь официальный, но чуткий и человечный ответ на эту жалобу без канцелярита.
+
+Фактура для ответа:
+1. Порыв магистрали D-500 мм. Бригада ГКП "Су Арнасы" работает, подача воды — сегодня к 16:30.
+2. Водовоз направлен во двор дома №14 (прибытие в 11:00).
+3. Котлован: подрядчик ТОО "ИнфраСтрой" оштрафован, до 14:00 установят ограждения и свет, засыпка — до 19 сентября.
+4. Хамство оператора 109: назначена служебная проверка, оператор отстранена.
+                    </div>
+                    <button onclick="copyPrompt(this)" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                        <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card p-6 mb-6 border-l-8 border-[#00BFA5]">
+                <span class="inline-block bg-teal-100 text-teal-800 text-[10px] font-bold px-2 py-1 rounded uppercase mb-2">ИНСТРУМЕНТ: ChatGPT</span>
+                <h3 class="font-bold text-lg text-indigo-950 mb-2">Промпт 4. Автоматический ИИ-диспетчер (сортировка 25 писем e-Otinish)</h3>
+                <p class="text-base text-gray-600 mb-3 leading-relaxed"><strong>Когда пригодится:</strong> на вас свалилась пачка разнородных обращений граждан — нужно быстро расписать их по профильным управлениям с указанием срочности, не читая и не сортируя каждое вручную.</p>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wide mb-1">
+                    <span class="lang-kk">📋 Мысал: бастапқы деректер</span><span class="lang-ru">📋 Пример исходных данных</span>
+                </div>
+                <div class="raw-data bg-slate-50 border border-slate-100 p-3 rounded-lg text-sm font-mono text-slate-700 mb-3 overflow-x-auto whitespace-pre">1. [EO-8912] Пр. Абая - ул. Ауэзова 3-й день не работает светофор, пробки и аварии.
+2. [EO-8913] Многодетная мать (4 детей), задержка выплаты АСП более месяца.
+3. [EO-8914] Автобус №12 (778 AB 02): водитель курил, грубил, отключил Onay.
+4. [EO-8915] Школа №5: протекает крыша спортзала, плесень, уроки отменены.
+5. [EO-8916] Во дворе Достык 45 стихийная свалка стройМусора, КСК «Рассвет» молчит.
+6. [EO-8917] Заявление на земельный участок под ИЖС в поселке Заречный.
+7. [EO-8918] Поликлиника №8: нет записи к эндокринологу, нет бесплатного инсулина.
+8. [EO-8919] Возле д/с «Балапан» нет пешеходного перехода и «лежачего полицейского».
+9. [EO-8920] Открытие продуктового магазина в мкр: требования и льготы для ИП.
+10. [EO-8921] Майлина 12: холодные батареи, температура в квартире +14°C.
+11. [EO-8922] Ул. Жандосова: бродячие собаки кидаются на детей, нужен отлов.
+12. [EO-8923] Задержка выплаты пособия по инвалидности за текущий месяц.
+13. [EO-8924] ТЦ «Плаза» перекрыл тротуар летней площадкой, люди идут по дороге.
+14. [EO-8925] Колледж требует с учащихся плату за пересдачу экзаменов.
+15. [EO-8926] В парке выпилили 10 здоровых деревьев, кто выдавал разрешение?
+16. [EO-8927] СРОЧНО! Открыт люк прямо напротив входа в поликлинику №3.
+17. [EO-8928] Не работает уличный фонарь Сатпаева 22, в темноте ходить опасно.
+18. [EO-8929] На каком основании повысили тариф на маршрут №105 с 90 до 120 ₸?
+19. [EO-8930] Подал документы на курсы безработных, со мной никто не связался.
+20. [EO-8931] В детской больнице №2 не работает лифт, подъем пешком на 4 этаж.
+21. [EO-8932] Ул. Тлендиева: глубокие ямы на дороге, машины ломают ходовую.
+22. [EO-8933] Сосед захватил часть двора и поставил гараж без документов.
+23. [EO-8934] Просим организовать секцию шахмат и футбола в сельском округе.
+24. [EO-8935] В аптеках резко выросли цены на жизненно важные лекарства.
+25. [EO-8936] Автобус №45 не соблюдает график, интервал вечером 50 минут.</div>
+                <div class="prompt-card relative">
+                    <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-3">
+                        <span class="text-amber-400 font-bold block mb-1">ПРОМПТ:</span>
+                        Ты — автоматический ИИ-диспетчер Ситуационного центра Акимата. Проанализируй этот список из 25 обращений граждан e-Otinish. Распредели их строго по профильным управлениям (ЖКХ, Соцзащита, Транспорт, Образование, Здравоохранение, Земля/Градостроительство, Предпринимательство, Экология).
+
+Выведи результат в виде таблицы: "№ обращения | Краткое содержание | Ответственное управление | Срочность (ВЫСОКИЙ / СРЕДНИЙ / НИЗКИЙ) | Дедлайн ответа".
+
+Выдели значком [СРОЧНО!] обращения с критическим риском для жизни и здоровья людей (люк, инсулин, холод в доме, открытый котлован).
+                    </div>
+                    <button onclick="copyPrompt(this)" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                        <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card p-6 mb-6 border-l-8 border-[#00BFA5]">
+                <span class="inline-block bg-teal-100 text-teal-800 text-[10px] font-bold px-2 py-1 rounded uppercase mb-2">ИНСТРУМЕНТ: ChatGPT / Claude</span>
+                <h3 class="font-bold text-lg text-indigo-950 mb-2">Промпт 5. Письмо-запрос и бриф межведомственного взаимодействия</h3>
+                <p class="text-base text-gray-600 mb-3 leading-relaxed"><strong>Когда пригодится:</strong> нужно превратить устный бриф или итог совещания в твёрдое официальное письмо-запрос смежному ведомству, на которое сложно отписаться формально.</p>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wide mb-1">
+                    <span class="lang-kk">📋 Мысал: бастапқы деректер</span><span class="lang-ru">📋 Пример исходных данных</span>
+                </div>
+                <div class="raw-data bg-slate-50 border border-slate-100 p-3 rounded-lg text-sm font-mono text-slate-700 mb-3 overflow-x-auto whitespace-pre">Бриф совещания: Задержки поставок коммунального угля для котельной ТЭЦ-3. По плану на 15 сентября запасы должны составлять 45 000 тонн, по факту — 12 000 тонн (готовность 26%). Поставщик АО «Каражира» ссылается на дефицит полувагонов АО «КТЖ-Грузовые перевозки». Отопительный сезон начинается 15 октября. Ссылка на Постановление Правительства РК №482 от 12.06.2024 по нормам нормативных запасов.</div>
+                <div class="prompt-card relative">
+                    <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-3">
+                        <span class="text-amber-400 font-bold block mb-1">ПРОМПТ:</span>
+                        Ты — главный инспектор Аппарата Акима. На основе этого брифа составь официальное жесткое письмо-запрос в Министерство транспорта и АО «НК «КТЖ» с требованием предоставить графики подач вагонов в 3-дневный срок под угрозой вынесения вопроса на Комиссию по ЧС.
+                    </div>
+                    <button onclick="copyPrompt(this)" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                        <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- МОДУЛЬ 3 -->
+        <section class="mb-16" id="module-3">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3">
+                <span class="lang-kk">Модуль 3: Құжаттармен, НПА және нормобақылаумен жұмыс</span>
+                <span class="lang-ru">Модуль 3: Работа с документами, НПА и нормоконтроль</span>
+            </h2>
+
+            <div class="card p-6 mb-6 border-l-8 border-purple-600">
+                <span class="inline-block bg-purple-100 text-purple-800 text-[10px] font-bold px-2 py-1 rounded uppercase mb-2">ИНСТРУМЕНТ: Google NotebookLM / Claude</span>
+                <h3 class="font-bold text-lg text-indigo-950 mb-2">Промпт 6. Выжимка и экспресс-анализ стратегического документа</h3>
+                <p class="text-base text-gray-600 mb-3 leading-relaxed"><strong>Когда пригодится:</strong> вам дали объёмную концепцию или стратегию, а через час нужно доложить её суть — вместо чтения всех страниц вручную получаете таблицу индикаторов и разбор рисков.</p>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wide mb-1">
+                    <span class="lang-kk">📋 Мысал: бастапқы деректер</span><span class="lang-ru">📋 Пример исходных данных</span>
+                </div>
+                <div class="raw-data bg-slate-50 border border-slate-100 p-3 rounded-lg text-sm font-mono text-slate-700 mb-3 overflow-x-auto whitespace-pre">ФРАГМЕНТ КОНЦЕПЦИИ РАЗВИТИЯ ИИ И ЦИФРОВИЗАЦИИ ГОСУПРАВЛЕНИЯ РК НА 2026–2030 ГОДЫ
+
+1. Проблематика: Госаппарат обработал >12 млн обращений в «Е-Өтініш». 42% времени уходит на рутину. Средний срок ответа — 8.4 дней.
+
+2. Цели и индикаторы:
+И-1.1: Доля автомаршрутизации писем ИИ в Е-Өтініш: 85% к 2028 г., 95% к 2029 г.
+И-1.2: Сокращение срока рассмотрения обращений с 8.4 до 2.0 рабочих дней к концу 2029 г.
+И-1.3: Рост индекса удовлетворенности CSAT с 62% до 88%.
+И-2.1: Обучение 100% госслужащих корпуса «Б» навыкам ИИ до 31.12.2028.
+
+3. Риски: Риск 1 (утечка ДСП и персональных данных при использовании публичных LLM) — КРИТИЧЕСКИЙ. Мера: развертывание локального контура LLM On-Premise.</div>
+                <div class="prompt-card relative">
+                    <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-3">
+                        <span class="text-amber-400 font-bold block mb-1">ПРОМПТ:</span>
+                        Ты — главный инспектор Администрации Президента. Проанализируй фрагмент Концепции. 1) Составь сводную таблицу всех target-индикаторов 2028–2029 гг. с метриками. 2) Проведи аудит раздела «Риски»: оцени адекватность развертывания LLM On-Premise и укажи, какие узкие места (дефицит GPU, кадры) не учли авторы. 3) Сформулируй 3 острых вопроса разработчикам для заседания Правительства.
+                    </div>
+                    <button onclick="copyPrompt(this)" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                        <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card p-6 mb-6 border-l-8 border-purple-600">
+                <span class="inline-block bg-purple-100 text-purple-800 text-[10px] font-bold px-2 py-1 rounded uppercase mb-2">ИНСТРУМЕНТ: Claude 3.5 Sonnet</span>
+                <h3 class="font-bold text-lg text-indigo-950 mb-2">Промпт 7. Мгновенное сравнение двух редакций приказа</h3>
+                <p class="text-base text-gray-600 mb-3 leading-relaxed"><strong>Когда пригодится:</strong> нужно быстро понять, что именно изменилось между старой и новой редакцией правил или приказа — без построчной сверки вручную.</p>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wide mb-1">
+                    <span class="lang-kk">📋 Мысал: бастапқы деректер</span><span class="lang-ru">📋 Пример исходных данных</span>
+                </div>
+                <div class="raw-data bg-slate-50 border border-slate-100 p-3 rounded-lg text-sm font-mono text-slate-700 mb-3 overflow-x-auto whitespace-pre">СТАРАЯ РЕДАКЦИЯ (от 12.01.2022 № 14-П)
+Статья 8. Подача заявки: нарочно на бумажном носителе в канцелярию Управления: заявление, отчетность, справка из банка, выписка из налоговой.
+Сроки: с 1 февраля по 15 октября текущего года.
+Рассмотрение: рабочей комиссией в течение 30 рабочих дней.
+
+НОВАЯ РЕДАКЦИЯ (проект 2026 года)
+Статья 8. Подача заявки: исключительно в электронном виде через портал «Е-Субсидирование» с ЭЦП. Бумажные справки ЗАПРЕЩЕНЫ.
+Сроки: круглогодично до 5 числа каждого месяца.
+Рассмотрение: автоматически системами в течение не более 3 рабочих дней.</div>
+                <div class="prompt-card relative">
+                    <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-3">
+                        <span class="text-amber-400 font-bold block mb-1">ПРОМПТ:</span>
+                        Ты — главный юрист госоргана. Сравни Старую и Новую редакции Правил. Составь отчет: 1) Изменения в формате подачи. 2) От каких бумажных справок полностью отказались. 3) Как изменились дедлайны рассмотрения (в днях и процентах ускорения).
+                    </div>
+                    <button onclick="copyPrompt(this)" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                        <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card p-6 mb-6 border-l-8 border-purple-600">
+                <span class="inline-block bg-purple-100 text-purple-800 text-[10px] font-bold px-2 py-1 rounded uppercase mb-2">ИНСТРУМЕНТ: ChatGPT / Claude</span>
+                <h3 class="font-bold text-lg text-indigo-950 mb-2">Промпт 8. Нормоконтроль и устранение юридических дефектов НПА</h3>
+                <p class="text-base text-gray-600 mb-3 leading-relaxed"><strong>Когда пригодится:</strong> перед подписанием проекта приказа нужно быстро проверить его на юридические, структурные и нумерационные ошибки — до того, как их найдёт кто-то другой.</p>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wide mb-1">
+                    <span class="lang-kk">📋 Мысал: бастапқы деректер</span><span class="lang-ru">📋 Пример исходных данных</span>
+                </div>
+                <div class="raw-data bg-slate-50 border border-slate-100 p-3 rounded-lg text-sm font-mono text-slate-700 mb-3 overflow-x-auto whitespace-pre">ПРИКАЗ № 142-Ө от «12» августа 2026 г. город Уральск
+
+В соответствии с Законом РК «О порядке рассмотрения обращений» (ОШИБКА 1: закон утратил силу, действует АППК РК!) ПРИКАЗЫВАЮ:
+
+1. Утвердить прилагаемый Регламент.
+3. (ОШИБКА 2: пункт 2 полностью отсутствует в тексте!) Назначить Асенову А.А. главным специалистом.
+4.1. Заявитель обязан предоставить ксерокопию удостоверения личности.
+4.1. (ОШИБКА 3: дублирование нумерации подпунктов!) Срок оказания услуги составляет 5 рабочих дней.
+5. В случае неполного пакета документов отдел рассматривает заявку в течение 30 календарных дней (ОШИБКА 4: прямое противоречие пункту 4.1!).
+7. Приказ вступает в силу со дня его подписания и распространяется на отношения, возникшие с 2015 года (ОШИБКА 5: незаконное придание обратной силы акту!).</div>
+                <div class="prompt-card relative">
+                    <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-3">
+                        <span class="text-amber-400 font-bold block mb-1">ПРОМПТ:</span>
+                        Ты — дотошный эксперт по юридической технике и нормоконтролю Аппарата Правительства РК. Проверь этот проект Приказа. Выяви все юридические, структурные и нумерационные ошибки и перепиши проект Приказа начисто в соответствии со стандартами РК.
+                    </div>
+                    <button onclick="copyPrompt(this)" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                        <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card p-6 mb-6 border-l-8 border-purple-600">
+                <span class="inline-block bg-purple-100 text-purple-800 text-[10px] font-bold px-2 py-1 rounded uppercase mb-2">ИНСТРУМЕНТ: Claude 3.5 Sonnet</span>
+                <h3 class="font-bold text-lg text-indigo-950 mb-2">Промпт 9. Академический перевод НПА на казахский язык</h3>
+                <p class="text-base text-gray-600 mb-3 leading-relaxed"><strong>Когда пригодится:</strong> нужен точный академический перевод юридического текста на казахский язык с правильной терминологией — вместо дословного перевода общими сервисами.</p>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wide mb-1">
+                    <span class="lang-kk">📋 Мысал: бастапқы деректер</span><span class="lang-ru">📋 Пример исходных данных</span>
+                </div>
+                <div class="raw-data bg-slate-50 border border-slate-100 p-3 rounded-lg text-sm font-mono text-slate-700 mb-3 overflow-x-auto whitespace-pre">Раздел IV. Финансовая ответственность и субсидиарные обязательства.
+Статья 24. Введение субсидиарной ответственности должностных лиц
+
+1. Законопроект предусматривает введение персональной субсидиарной ответственности первых руководителей субъектов квазигосударственного сектора за нецелевое использование целевых трансфертов.
+2. В случае установления факта необоснованного перераспределения бюджетных средств, должностные лица привлекаются к возмещению ущерба в порядке солидарного и субсидиарного взыскания через судебные органы.</div>
+                <div class="prompt-card relative">
+                    <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-3">
+                        <span class="text-amber-400 font-bold block mb-1">ПРОМПТ:</span>
+                        Ты — ведущий синхронный переводчик Парламента Мажилиса РК. Переведи этот юридический фрагмент на казахский язык, используя строгий академический заңнамалық стиль и точную терминологию (субсидиарлық жауапкершілік, нысаналы трансферттер, ынтымақтасқан өндіріп алу).
+                    </div>
+                    <button onclick="copyPrompt(this)" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                        <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- МОДУЛЬ 4 -->
+        <section class="mb-16" id="module-4">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#1A237E] border-b-2 border-indigo-100 pb-3">
+                <span class="lang-kk">Модуль 4: Рутинаны оңтайландыру және менеджмент</span>
+                <span class="lang-ru">Модуль 4: Оптимизация рутины и менеджмент</span>
+            </h2>
+
+            <div class="card p-6 mb-6 border-l-8 border-[#FFD600]">
+                <span class="inline-block bg-amber-100 text-amber-900 text-[10px] font-bold px-2 py-1 rounded uppercase mb-2">ИНСТРУМЕНТ: ChatGPT / Claude</span>
+                <h3 class="font-bold text-lg text-indigo-950 mb-2">Промпт 10. Протокол совещания из устной стенограммы</h3>
+                <p class="text-base text-gray-600 mb-3 leading-relaxed"><strong>Когда пригодится:</strong> после совещания у вас только хаотичная запись разговора, а нужен официальный протокол с поручениями, ответственными и дедлайнами.</p>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wide mb-1">
+                    <span class="lang-kk">📋 Мысал: бастапқы деректер</span><span class="lang-ru">📋 Пример исходных данных</span>
+                </div>
+                <div class="raw-data bg-slate-50 border border-slate-100 p-3 rounded-lg text-sm font-mono text-slate-700 mb-3 overflow-x-auto whitespace-pre">СЫРАЯ УСТНАЯ СТЕНОГРАММА СОВЕЩАНИЯ У ЗАМ. АКИМА:
+
+Зам. Акима: «Коллеги, быстро по дорогам. Муратов, что в мкр. Самал? Раскопали и бросили!»
+Муратов (ЖКХ): «"ДорСтрой" не подвез трубы D-500. Касымов обещал в понедельник.»
+Касымов (Подрядчик): «Задержка была из-за вагонов КТЖ. Завтра трубы будут на объекте.»
+Зам. Акима: «Касымов, до пятницы, 19 сентября, 18:00 трубы уложить и траншею засыпать. Или расторгаем договор и в реестр недобросовестных! Асенова, в протокол!
+Смагулов (Транспорт), по 12-му маршруту 50 жалоб! Даю 3 дня, до 22 сентября провести аудит автопарка №2. Доложить письменно.
+Муратов, до 25 сентября паспорта готовности школ к зиме на стол. Всё, работаем.»</div>
+                <div class="prompt-card relative">
+                    <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-3">
+                        <span class="text-amber-400 font-bold block mb-1">ПРОМПТ:</span>
+                        Ты — заведующий секретариатом Акимата. Преобразуй этот разговорный текст в строгий официальный ПРОТОКОЛ ОПЕРАТИВНОГО СОВЕЩАНИЯ в виде таблицы: «№ | Суть поручения | Ответственный | Дедлайн | Форма отчетности | Контроль».
+                    </div>
+                    <button onclick="copyPrompt(this)" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                        <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card p-6 mb-6 border-l-8 border-[#FFD600]">
+                <span class="inline-block bg-amber-100 text-amber-900 text-[10px] font-bold px-2 py-1 rounded uppercase mb-2">ИНСТРУМЕНТ: Gamma.app</span>
+                <h3 class="font-bold text-lg text-indigo-950 mb-2">Промпт 11. Презентация для Министерства без дизайнеров</h3>
+                <p class="text-base text-gray-600 mb-3 leading-relaxed"><strong>Когда пригодится:</strong> нужно быстро подготовить презентацию для вышестоящего органа без дизайнера — достаточно описать структуру слайдов текстом.</p>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wide mb-1">
+                    <span class="lang-kk">📋 Мысал: бастапқы деректер</span><span class="lang-ru">📋 Пример исходных данных</span>
+                </div>
+                <div class="raw-data bg-slate-50 border border-slate-100 p-3 rounded-lg text-sm font-mono text-slate-700 mb-3 overflow-x-auto whitespace-pre">Контент-план 10 слайдов:
+Слайд 1: Титульный (Итоги цифровизации I полугодия 2026 г.).
+Слайд 2: Ключевые метрики (96.8% госуслуг онлайн).
+Слайд 3: ИИ в e-Otinish (автомаршрутизация).
+Слайд 4: Инфраструктура (новый ЦОД, Starlink в 45 школах).
+Слайд 5: Проблема — цифровой разрыв в сельских районах.
+Слайд 6: Дорожная карта II полугодия.
+Слайд 7: Экономический эффект (экономия 140 млн ₸).
+Слайды 8-10: Бюджетный запрос и выводы.</div>
+                <div class="prompt-card relative">
+                    <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-3">
+                        <span class="text-amber-400 font-bold block mb-1">ПРОМПТ:</span>
+                        Ты — эксперт по визуализации данных. Преобразуй этот контент-план в готовый Markdown-промпт для сервиса Gamma.app. Укажи стиль (Corporate Slate Clean), акцентные цвета и правила подбора карточек.
+                    </div>
+                    <button onclick="copyPrompt(this)" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                        <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card p-6 mb-6 border-l-8 border-[#FFD600]">
+                <span class="inline-block bg-amber-100 text-amber-900 text-[10px] font-bold px-2 py-1 rounded uppercase mb-2">ИНСТРУМЕНТ: ChatGPT</span>
+                <h3 class="font-bold text-lg text-indigo-950 mb-2">Промпт 12. Поминутный план-график визита правительственной комиссии</h3>
+                <p class="text-base text-gray-600 mb-3 leading-relaxed"><strong>Когда пригодится:</strong> нужно составить точный поминутный график визита делегации с учётом дороги, обеда и тайминга по каждому объекту — без риска накладок.</p>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wide mb-1">
+                    <span class="lang-kk">📋 Мысал: бастапқы деректер</span><span class="lang-ru">📋 Пример исходных данных</span>
+                </div>
+                <div class="raw-data bg-slate-50 border border-slate-100 p-3 rounded-lg text-sm font-mono text-slate-700 mb-3 overflow-x-auto whitespace-pre">Прилет комиссии в 08:30. 8 VIP-делегатов.
+Объекты осмотра: ТЭЦ-2 (40 мин езды, 45 мин осмотр), Новая больница (20 мин езды, 30 мин осмотр), Путепровод (25 мин езды, 30 мин осмотр).
+Обед: 13:00–14:00. Совещание в Акимате: 14:30–16:30. Брифинг СМИ: 16:30–17:00. Личный прием граждан: 17:00–18:00.
+Вылет в 19:30 (дорога до аэропорта 50 мин с учетом часа пик).</div>
+                <div class="prompt-card relative">
+                    <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-3">
+                        <span class="text-amber-400 font-bold block mb-1">ПРОМПТ:</span>
+                        Ты — шеф протокола Акимата. Составь жесткий поминутный ПЛАН-ГРАФИК визита с 08:30 до 19:30. Учти пробки, досмотры и резервное время. Оформи в виде наглядной таблицы.
+                    </div>
+                    <button onclick="copyPrompt(this)" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                        <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card p-6 mb-6 border-l-8 border-[#FFD600]">
+                <span class="inline-block bg-amber-100 text-amber-900 text-[10px] font-bold px-2 py-1 rounded uppercase mb-2">ИНСТРУМЕНТ: ChatGPT / Claude</span>
+                <h3 class="font-bold text-lg text-indigo-950 mb-2">Промпт 13. Ситуационные тесты для HR-аттестации (этика госслужбы)</h3>
+                <p class="text-base text-gray-600 mb-3 leading-relaxed"><strong>Когда пригодится:</strong> нужно подготовить тест для аттестации сотрудников на знание этического кодекса — с реальными ситуациями, а не скучными вопросами на память.</p>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wide mb-1">
+                    <span class="lang-kk">📋 Мысал: бастапқы деректер</span><span class="lang-ru">📋 Пример исходных данных</span>
+                </div>
+                <div class="raw-data bg-slate-50 border border-slate-100 p-3 rounded-lg text-sm font-mono text-slate-700 mb-3 overflow-x-auto whitespace-pre">Сценарий 1: Конкурс на землю. Победитель — фирма брата супруги руководителя отдела. Уведомление не подавалось.
+Сценарий 2: Предприниматель прислал подарок за 65 000 ₸ в кабинет специалиста на Наурыз. Специалист оставил его себе.
+Сценарий 3: Госслужащий в Instagram нецензурно спорил с жителями о политике города в личное время.
+Сценарий 4: Использование служебного автомобиля для поездки на дачу в выходной день.
+Сценарий 5: Гражданин оставил коробку конфет (3 000 ₸) на столе и ушел.</div>
+                <div class="prompt-card relative">
+                    <div class="prompt-code p-4 rounded-xl text-sm leading-relaxed mb-3">
+                        <span class="text-amber-400 font-bold block mb-1">ПРОМПТ:</span>
+                        Ты — директор Департамента АДГС РК. На основе этих 5 сценариев сформируй интерактивный тест для аттестации. Для каждого кейса: описание, 4 варианта ответа и эталонный ответ со ссылкой на статьи Этического кодекса РК.
+                    </div>
+                    <button onclick="copyPrompt(this)" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-2 px-4 rounded-xl transition-colors">
+                        <span class="lang-kk">Промптты көшіру</span><span class="lang-ru">Копировать промпт</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Как получить лучший результат -->
+        <section class="mb-16">
+            <div class="card p-8 border-l-8 border-red-600">
+                <h2 class="text-xl md:text-2xl font-bold text-red-600 mb-4 flex items-center">
+                    <span class="mr-3">🎯</span>
+                    <span class="lang-kk">Нәтижені қалай жақсартуға болады</span>
+                    <span class="lang-ru">Как получить лучший результат</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-700">
+                    <div>
+                        <div class="font-bold text-gray-900 mb-1">
+                            <span class="lang-kk">Деректерді ауыстырыңыз</span>
+                            <span class="lang-ru">Замените данные на свои</span>
+                        </div>
+                        <p>
+                            <span class="lang-kk">Мысалдағы деректерді өз тапсырмаңыздың нақты (бірақ жеке деректерсіз) деректеріне ауыстырыңыз — құрылым мен промпт логикасы сол қалпында жұмыс істейді.</span>
+                            <span class="lang-ru">Замените данные примера на реальные данные своей задачи (но без персональных данных) — структура и логика промпта продолжит работать без изменений.</span>
+                        </p>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900 mb-1">
+                            <span class="lang-kk">ЖСН мен ДСП-ны жарияламаңыз</span>
+                            <span class="lang-ru">Не указывайте ИИН и пометки «ДСП»</span>
+                        </div>
+                        <p>
+                            <span class="lang-kk">ЖСН, қызметтік құпия деректерді ашық нейрожелілерге (ChatGPT, Claude) жүктемеңіз — шартты белгілермен алмастырыңыз.</span>
+                            <span class="lang-ru">Не вставляйте ИИН и служебные пометки «ДСП» в открытые нейросети (ChatGPT, Claude) — заменяйте их условными обозначениями.</span>
+                        </p>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900 mb-1">
+                            <span class="lang-kk">Нәтижені тексеріңіз</span>
+                            <span class="lang-ru">Проверяйте результат</span>
+                        </div>
+                        <p>
+                            <span class="lang-kk">ИИ дайын құжатты емес, жоба нұсқасын береді. Қол қоюдан бұрын маңызды сандарды, күндерді және НҚА сілтемелерін қолмен тексеріңіз.</span>
+                            <span class="lang-ru">ИИ даёт черновик, а не окончательный документ для подписи. Перед отправкой проверяйте важные цифры, даты и ссылки на НПА вручную.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Источник -->
+        <section class="mb-4">
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center text-sm text-slate-500">
+                <span class="lang-kk">Әдістемелік құрал: «Практикум ИИ в госсекторе», нұсқа 2.0 (2026 ж.) © Офицеров Сергей.</span>
+                <span class="lang-ru">Методическое пособие «Практикум ИИ в госсекторе», версия 2.0 (2026 г.) © Офицеров Сергей.</span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-indigo-950 text-white py-12 px-6 text-center border-t border-indigo-900">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-bold mb-3">
+                <span class="lang-kk">Бүгіннен бастап өз жұмысыңызда қолданыңыз</span>
+                <span class="lang-ru">Начните использовать в своей работе уже сегодня</span>
+            </h2>
+            <p class="text-indigo-300 text-base mb-6">
+                <span class="lang-kk">PDF нұсқасын жүктеп алып, қолыңызда сақтаңыз — барлық промпттар нақты жұмысқа толық дайын.</span>
+                <span class="lang-ru">Скачайте PDF и держите под рукой — все промпты полностью готовы к применению в реальной работе.</span>
+            </p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="../assets/files/ai-praktikum-live-demo.pdf" download class="inline-block bg-amber-400 text-indigo-950 font-bold px-8 py-4 rounded-full text-base uppercase tracking-wider hover:bg-yellow-300 transition-all shadow-lg">
+                    <span class="lang-kk">PDF жүктеп алу</span><span class="lang-ru">Скачать PDF</span>
+                </a>
+                <a href="../index.html" class="inline-block bg-transparent border border-indigo-700 text-white font-semibold px-8 py-4 rounded-full text-base uppercase tracking-wider hover:bg-indigo-900 transition-all">
+                    <span class="lang-kk">Каталогқа оралу</span><span class="lang-ru">Вернуться в каталог</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
