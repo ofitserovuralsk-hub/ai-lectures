@@ -88,20 +88,195 @@
             </p>
         </div>
 
-        <!-- Заглушка: видео пока не опубликованы -->
-        <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-10 text-center max-w-2xl mx-auto md:mx-0">
-            <div class="w-14 h-14 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center mx-auto mb-4">
-                <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
-            </div>
-            <h3 class="font-bold text-lg text-indigo-950 mb-2">
-                <span class="lang-kk">Бейнематериалдар дайындалуда</span>
-                <span class="lang-ru">Видеоматериалы готовятся к публикации</span>
-            </h3>
-            <p class="text-slate-500 text-base max-w-md mx-auto">
-                <span class="lang-kk">Жақын арада бұл бетте авторлық бейнешолулар мен практикумдар орналастырылады. Жаңалықтарды қалып қоймау үшін жиі қайтып соғыңыз.</span>
-                <span class="lang-ru">Скоро здесь появятся авторские видеообзоры и практикумы. Загляните позже, чтобы не пропустить новые материалы.</span>
-            </p>
+        <!-- Сетка видео -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="videoGrid">
+
+            <!-- Видео 1: Текст → презентация -->
+            <article class="video-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col">
+                <div class="video-player relative aspect-video bg-slate-900">
+                    <button type="button" onclick="playVideo(this)" data-video-id="J19_ac76NXI"
+                            class="group absolute inset-0 w-full h-full cursor-pointer"
+                            aria-label="Play video">
+                        <img src="https://i.ytimg.com/vi/J19_ac76NXI/maxresdefault.jpg"
+                             onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/J19_ac76NXI/hqdefault.jpg';"
+                             alt="" loading="lazy"
+                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                        <span class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/15 transition-colors">
+                            <span class="w-16 h-16 rounded-2xl bg-red-600 group-hover:bg-red-500 flex items-center justify-center shadow-lg transition-colors">
+                                <svg class="w-7 h-7 text-white fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                        </span>
+                    </button>
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="text-[10px] font-bold bg-red-100 text-red-800 px-2.5 py-1 rounded-md uppercase">
+                            <span class="lang-kk">Практикум</span><span class="lang-ru">Практикум</span>
+                        </span>
+                        <span class="text-[10px] font-bold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md uppercase">
+                            <span class="lang-kk">Қазақша субтитр</span><span class="lang-ru">Казахские субтитры</span>
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-lg text-indigo-950 mb-2 leading-snug">
+                        <span class="lang-kk">20 бет мәтінді 10 минутта дайын презентацияға қалай айналдыруға болады</span>
+                        <span class="lang-ru">Как превратить 20 страниц текста в готовую презентацию за 10 минут</span>
+                    </h3>
+                    <p class="text-slate-600 text-base leading-relaxed mb-4">
+                        <span class="lang-kk">Презентация шұғыл керек, ал қолда тек көлемді мәтіндік құжат бар ма? Мәтінді жылдам әрі тегін, әуре-сарсаңсыз дайын презентацияға қалай айналдыруға болатынын көрсетемін.</span>
+                        <span class="lang-ru">Нужно срочно сделать презентацию, а у вас есть только огромный текстовый документ? Показываю, как быстро, бесплатно и без головной боли превратить текст в готовую презентацию.</span>
+                    </p>
+                    <div class="flex flex-wrap gap-1 mb-5">
+                        <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">#Презентация</span>
+                        <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">#ЖИ</span>
+                        <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">#Практикум</span>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=J19_ac76NXI" target="_blank" rel="noopener"
+                       class="mt-auto inline-flex items-center justify-center gap-2 text-center bg-indigo-950 hover:bg-indigo-900 text-white font-bold text-sm py-3 px-4 rounded-xl transition-colors">
+                        <svg class="w-4 h-4 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        <span class="lang-kk">YouTube-та ашу →</span><span class="lang-ru">Открыть на YouTube →</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Видео 2: ChatGPT для госслужащих / Е-Өтініш -->
+            <article class="video-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col">
+                <div class="video-player relative aspect-video bg-slate-900">
+                    <button type="button" onclick="playVideo(this)" data-video-id="cPvJSaBoTdg"
+                            class="group absolute inset-0 w-full h-full cursor-pointer"
+                            aria-label="Play video">
+                        <img src="https://i.ytimg.com/vi/cPvJSaBoTdg/maxresdefault.jpg"
+                             onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/cPvJSaBoTdg/hqdefault.jpg';"
+                             alt="" loading="lazy"
+                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                        <span class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/15 transition-colors">
+                            <span class="w-16 h-16 rounded-2xl bg-red-600 group-hover:bg-red-500 flex items-center justify-center shadow-lg transition-colors">
+                                <svg class="w-7 h-7 text-white fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                        </span>
+                    </button>
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="text-[10px] font-bold bg-teal-100 text-teal-800 px-2.5 py-1 rounded-md uppercase">
+                            <span class="lang-kk">Мемлекеттік сектор</span><span class="lang-ru">Госсектор</span>
+                        </span>
+                        <span class="text-[10px] font-bold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md uppercase">
+                            <span class="lang-kk">Қазақша субтитр</span><span class="lang-ru">Казахские субтитры</span>
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-lg text-indigo-950 mb-2 leading-snug">
+                        <span class="lang-kk">Мемлекеттік қызметшілерге арналған ChatGPT: Е-Өтініш жауаптарын автоматтандыру</span>
+                        <span class="lang-ru">ChatGPT для госслужащих: автоматизация ответов в Е-Өтініш</span>
+                    </h3>
+                    <p class="text-slate-600 text-base leading-relaxed mb-4">
+                        <span class="lang-kk">Қағаз жұмысының рутинасына батып, азаматтарға жауап дайындауға сағаттап уақыт кетіп жатыр ма? ChatGPT-ті Е-Өтініш-пен жұмыста жеке көмекшіге қалай айналдыруға болатынын көрсетемін.</span>
+                        <span class="lang-ru">Тонете в рутине бумажной работы и тратите часы на ответы гражданам? Показываю, как превратить ChatGPT в личного помощника при работе с Е-Өтініш.</span>
+                    </p>
+                    <div class="flex flex-wrap gap-1 mb-5">
+                        <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">#ЕӨтініш</span>
+                        <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">#ChatGPT</span>
+                        <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">#Мемсектор</span>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=cPvJSaBoTdg" target="_blank" rel="noopener"
+                       class="mt-auto inline-flex items-center justify-center gap-2 text-center bg-indigo-950 hover:bg-indigo-900 text-white font-bold text-sm py-3 px-4 rounded-xl transition-colors">
+                        <svg class="w-4 h-4 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        <span class="lang-kk">YouTube-та ашу →</span><span class="lang-ru">Открыть на YouTube →</span>
+                    </a>
+                </div>
+            </article>
+
         </div>
+
+        <!-- Секция Reels -->
+        <section class="mt-14" id="reels">
+            <div class="mb-6 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 bg-fuchsia-50 text-fuchsia-700 text-sm font-bold px-3 py-1 rounded-lg mb-3 border border-fuchsia-100">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <span>Instagram Reels</span>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-indigo-950">
+                    <span class="lang-kk">Дәрістердің сахна артында</span>
+                    <span class="lang-ru">Из жизни лекций</span>
+                </h2>
+                <p class="text-slate-600 text-base mt-2 max-w-2xl">
+                    <span class="lang-kk">Нақты дәрістер мен курстардан қысқа бейнелер: аудитория, кейстер және тікелей эфирдегі жұмыс сәттері.</span>
+                    <span class="lang-ru">Короткие видео с реальных лекций и курсов: аудитория, кейсы и рабочие моменты в прямом эфире.</span>
+                </p>
+            </div>
+
+            <!-- Reel 1: Академия госуправления при Президенте РК -->
+            <article class="reel-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col md:flex-row">
+                <div class="reel-embed bg-slate-100 border-b md:border-b-0 md:border-r border-slate-200 flex-shrink-0 w-full max-w-[400px] mx-auto md:mx-0 md:w-[360px] md:max-w-none">
+                    <iframe src="https://www.instagram.com/reel/DQtNjw9DaU-/embed"
+                            title="Instagram Reels"
+                            loading="lazy" scrolling="no" allowfullscreen
+                            class="block w-full border-0" style="height:660px;"></iframe>
+                </div>
+                <div class="p-6 md:p-8 flex flex-col flex-grow md:justify-center">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="text-[10px] font-bold bg-teal-100 text-teal-800 px-2.5 py-1 rounded-md uppercase">
+                            <span class="lang-kk">Мемлекеттік сектор</span><span class="lang-ru">Госсектор</span>
+                        </span>
+                        <span class="text-[10px] font-bold bg-fuchsia-100 text-fuchsia-800 px-2.5 py-1 rounded-md uppercase">
+                            <span class="lang-kk">Дәрістен репортаж</span><span class="lang-ru">Репортаж с лекции</span>
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-lg md:text-xl text-indigo-950 mb-3 leading-snug">
+                        <span class="lang-kk">«Қазақстан мемлекеттік қызметшілеріне арналған жасанды интеллект» курсы — ҚР Президенті жанындағы Мемлекеттік басқару академиясында</span>
+                        <span class="lang-ru">Курс «Искусственный интеллект для госслужащих Казахстана» — в Академии госуправления при Президенте РК</span>
+                    </h3>
+                    <p class="text-slate-600 text-base leading-relaxed mb-4">
+                        <span class="lang-kk">Академияның Батыс Қазақстан филиалында өткен курстан кадрлар. Жасанды интеллект шешім қабылдауға, уақыт үнемдеуге және адамдарға жақсырақ қызмет етуге қалай көмектесетіні туралы сөйлестік.</span>
+                        <span class="lang-ru">Кадры с курса в Западно-Казахстанском филиале Академии. Говорили о том, как искусственный интеллект помогает принимать решения, экономить время и служить людям лучше.</span>
+                    </p>
+                    <div class="flex flex-wrap gap-1 mb-5">
+                        <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">#Академия</span>
+                        <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">#Мемсектор</span>
+                        <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">#Цифрландыру</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="https://www.instagram.com/reel/DQtNjw9DaU-/" target="_blank" rel="noopener"
+                           class="inline-flex items-center justify-center gap-2 text-center text-white font-bold text-sm py-3 px-5 rounded-xl transition-opacity hover:opacity-90"
+                           style="background: linear-gradient(90deg, #833ab4 0%, #c13584 50%, #fd1d1d 100%);">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            <span class="lang-kk">Instagram-да қарау →</span><span class="lang-ru">Смотреть в Instagram →</span>
+                        </a>
+                        <a href="https://www.instagram.com/serg_officer/" target="_blank" rel="noopener"
+                           class="inline-flex items-center justify-center gap-2 text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm py-3 px-5 rounded-xl transition-colors">
+                            @serg_officer
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Скрипт: ленивая загрузка плеера по клику -->
+        <script>
+            // Instagram Reels: высота эмбеда зависит от его ширины (медиа 4:5 + шапка/футер)
+            function sizeReels() {
+                document.querySelectorAll('.reel-embed iframe').forEach(function (frame) {
+                    var width = frame.clientWidth || frame.parentElement.clientWidth;
+                    if (width) frame.style.height = Math.round(width * 1.25 + 210) + 'px';
+                });
+            }
+            document.addEventListener('DOMContentLoaded', sizeReels);
+            window.addEventListener('resize', sizeReels);
+
+            function playVideo(button) {
+                const videoId = button.getAttribute('data-video-id');
+                const holder = button.parentElement;
+                const iframe = document.createElement('iframe');
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0&cc_load_policy=1';
+                iframe.title = 'YouTube video player';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+                iframe.allowFullscreen = true;
+                iframe.className = 'absolute inset-0 w-full h-full';
+                holder.innerHTML = '';
+                holder.appendChild(iframe);
+            }
+        </script>
+
     </main>
 
     <!-- Футер -->
