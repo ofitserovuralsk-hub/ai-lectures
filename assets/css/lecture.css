@@ -47,3 +47,44 @@ h1, h2, h3, h4 {
 
 body[data-lang="kk"] .lang-ru { display: none !important; }
 body[data-lang="ru"] .lang-kk { display: none !important; }
+
+/* Плавающая кнопка «наверх». Селектор намеренно button.back-to-top:
+   preflight из tailwind.css грузится позже и сбрасывает фон у [type='button'],
+   поэтому одного класса не хватает — нужна специфичность выше. */
+button.back-to-top {
+    /* preflight из tailwind.css ставит кнопкам -webkit-appearance:button —
+       с нативной отрисовкой браузер игнорирует background-color, фон пропадает */
+    -webkit-appearance: none;
+    appearance: none;
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 60;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    border-radius: 9999px;
+    background-color: var(--primary);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0.75rem);
+    transition: opacity .25s ease, transform .25s ease, visibility .25s ease, background-color .2s ease;
+}
+button.back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+button.back-to-top:hover { background-color: #0D47A1; }
+button.back-to-top:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+    button.back-to-top { transition: none; }
+}
