@@ -88,3 +88,18 @@ button.back-to-top:focus-visible { outline: 3px solid var(--accent); outline-off
 @media (prefers-reduced-motion: reduce) {
     button.back-to-top { transition: none; }
 }
+
+/* Превью скана документа: показываем верх листа (шапка бланка, номер, заголовок),
+   а не середину — так документ узнаётся с первого взгляда. */
+.doc-thumb {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: top center;
+    background: #fff;
+    border-bottom: 1px solid #E2E8F0;
+}
+@media (max-width: 640px) {
+    .doc-thumb { height: 220px; }
+}
