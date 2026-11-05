@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Шағым мәтіні / Текст жалобы</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <style>
+        :root { --bg:#f1f5f9; --card:#fff; --text:#1e293b; --muted:#64748b; --brand:#1e1b4b; --accent:#fbbf24; --border:#e2e8f0; --ok:#15803d; }
+        @media (prefers-color-scheme: dark) {
+            :root { --bg:#0f172a; --card:#1e293b; --text:#e2e8f0; --muted:#94a3b8; --brand:#fbbf24; --accent:#fbbf24; --border:#334155; --ok:#4ade80; }
+        }
+        * { box-sizing: border-box; }
+        body { margin:0; background:var(--bg); color:var(--text); font-family:Roboto, system-ui, -apple-system, "Segoe UI", Arial, sans-serif; line-height:1.6; }
+        .wrap { max-width:760px; margin:0 auto; padding:16px; }
+        .tabs { display:flex; gap:8px; margin:8px 0 16px; }
+        .tab { flex:1; padding:14px 8px; font-size:18px; font-weight:700; border:2px solid var(--border); background:var(--card); color:var(--text); border-radius:12px; cursor:pointer; }
+        .tab[aria-selected="true"] { background:var(--accent); border-color:var(--accent); color:#1e1b4b; }
+        .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:20px; }
+        .card[hidden] { display:none; }
+        h1 { font-size:20px; margin:0 0 12px; color:var(--brand); }
+        .text { font-size:18px; white-space:pre-wrap; word-wrap:break-word; }
+        .copy { display:block; width:100%; margin-top:20px; padding:16px; font-size:18px; font-weight:700; border:0; border-radius:12px; background:#1e1b4b; color:#fff; cursor:pointer; }
+        @media (prefers-color-scheme: dark) { .copy { background:var(--accent); color:#1e1b4b; } }
+        .copy.done { background:var(--ok); color:#fff; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="tabs" role="tablist">
+        <button class="tab" role="tab" id="tab-kk" aria-selected="true" onclick="show('kk')">ҚАЗАҚША</button>
+        <button class="tab" role="tab" id="tab-ru" aria-selected="false" onclick="show('ru')">РУССКИЙ</button>
+    </div>
+
+    <section class="card" id="card-kk">
+        <h1>Шағым мәтіні (өтініш)</h1>
+        <div class="text" id="text-kk">КІРІС ӨТІНІШ (e-Otinish № EO-2026-99412, 16.09.2026)
+Өтініш беруші: Бектурсынов Асқар Қажымұқанұлы, Самал-2 шағын ауданы, 14-үй, 88-пәтер.
+
+«Сәлеметсіздер ме! Үйіміздің тұрғындарын қашанға дейін мазақ етпек?! Кеше, 15 қыркүйекте, таңғы сағат 7-де ескертусіз ыстық та, суық су да өшіріліп тасталды! Ешқандай хабарландыру болған жоқ, КСК-да «Әкімдікке қоңырау шалыңыздар» дейді, ал 109 жедел желісінде №14 оператор дөрекі жауап беріп, тұтқаны тастай салды! Менің пәтерімде үш жас бала бар, кішісі 9 айлық, оларды қалай жуындырамын, тамақты немен әзірлеймін?! Сіздердің Әкімдік су таситын көлік жібермеді, адамдар дүкеннен суды өз қалтасынан сатып алуға мәжбүр болды!
+
+Бұл әлі бәрі емес! Дәл біздің үйіміз бен №42 мектептің қарсысындағы жолды үш апта бұрын қазып тастады, тереңдігі 3 метрлік шұңқыр қазып, қоршаусыз әрі жарықсыз тастап кетті! Кеше кешке көршінің баласы қараңғыда сонда құлап кете жаздады! Шамдар айдың басынан бері жанбайды! Егер бүгін сағат 18:00-ге дейін су қосылмаса және шұңқыр жабылмаса, мен жеке өзім қол жинап, ұжымдық шағымды Президент Әкімшілігіне, Сыбайлас жемқорлыққа қарсы қызметке жолдаймын және барлық бейнежазбаларды TikTok-қа және БАҚ-қа жариялаймын!»</div>
+        <button class="copy" onclick="copyText('kk', this)">📋 Мәтінді көшіру</button>
+    </section>
+
+    <section class="card" id="card-ru" hidden>
+        <h1>Текст жалобы</h1>
+        <div class="text" id="text-ru">ВХОДЯЩЕЕ ОБРАЩЕНИЕ (e-Otinish № EO-2026-99412 от 16.09.2026)
+Заявитель: Бектурсынов Аскар Кажимуканович, мкр. Самал-2, дом 14, кв. 88.
+
+«Здравствуйте! Сколько можно издеваться над жителями нашего дома?! Вчера, 15 сентября, в 7 утра у нас без предупреждения отключили И горячую, И холодную воду! Объявлений не было, в КСК говорят "звоните в Акимат", а на горячей линии 109 оператор №14 ответила по-хамски и бросила трубку! У меня в квартире трое маленьких детей, младшему 9 месяцев, как мне их мыть и готовить еду?! Водовозы ваш Акимат так и не прислал, людям пришлось покупать воду в магазинах за свой счет!
+
+И это еще не все! Прямо напротив нашего дома и школы №42 перерыли дорогу три недели назад, разрыли котлован 3 метра глубиной, бросили без ограждений и освещения! Вчера вечером ребенок соседей чуть не упал туда в темноте! Фонари не горят с начала месяца! Если сегодня до 18:00 воду не включат и не закроют котлован, я лично собираю подписи и отправляю коллективную жалобу в Администрацию Президента, Антикоррупционную службу и выкладываю все видеозаписи в TikTok и СМИ!»</div>
+        <button class="copy" onclick="copyText('ru', this)">📋 Скопировать текст</button>
+    </section>
+</div>
+
+<script>
+    var LABEL = { kk: '📋 Мәтінді көшіру', ru: '📋 Скопировать текст' };
+    var DONE  = { kk: '✅ Көшірілді!', ru: '✅ Скопировано!' };
+
+    function show(lang) {
+        ['kk', 'ru'].forEach(function (l) {
+            document.getElementById('card-' + l).hidden = (l !== lang);
+            document.getElementById('tab-' + l).setAttribute('aria-selected', l === lang ? 'true' : 'false');
+        });
+        document.documentElement.lang = lang;
+        try { localStorage.setItem('zhaloba-lang', lang); } catch (e) {}
+    }
+
+    function copyText(lang, btn) {
+        var text = document.getElementById('text-' + lang).textContent;
+        function ok() {
+            btn.textContent = DONE[lang];
+            btn.classList.add('done');
+            setTimeout(function () { btn.textContent = LABEL[lang]; btn.classList.remove('done'); }, 2000);
+        }
+        function fallback() {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed'; ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); ok(); } catch (e) {}
+            document.body.removeChild(ta);
+        }
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(ok, fallback);
+        } else { fallback(); }
+    }
+
+    try { var saved = localStorage.getItem('zhaloba-lang'); if (saved === 'ru' || saved === 'kk') show(saved); } catch (e) {}
+</script>
+</body>
+</html>
